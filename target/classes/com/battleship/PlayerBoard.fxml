@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.PlayerBoardController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <GridPane alignment="CENTER" gridLinesVisible="true" maxHeight="550.0" maxWidth="550.0" minHeight="500.0" prefHeight="550.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Rectangle fx:id="A1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="B1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="C1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="D1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="E1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="F1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="G1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="H1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="I1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="J1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="A2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="J2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="I2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="B2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="D3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="E3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="F3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="G3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="H3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="I3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="J3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="C3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="A4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="J4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="I4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="B4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="I5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="J5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="I6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="J6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="I7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="J7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="I8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="J8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="I9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="J9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                  <Rectangle fx:id="A10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                  <Rectangle fx:id="I10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+                  <Rectangle fx:id="H10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+                  <Rectangle fx:id="G10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+                  <Rectangle fx:id="F10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="6" />
+                  <Rectangle fx:id="E10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+                  <Rectangle fx:id="D10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                  <Rectangle fx:id="C10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+                  <Rectangle fx:id="J10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+                  <Rectangle fx:id="B10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                  <Label text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="6" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="7" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="8" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="9" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="A" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="B" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="C" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="D" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="E" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="F" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="G" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="H" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="I" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="J" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="10" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="90.0" prefWidth="496.0">
+                     <children>
+                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="404.0" spacing="5.0">
+                           <children>
+                              <RadioButton fx:id="carrierRadio" mnemonicParsing="false" onAction="#selectShip" selected="true" text="Carrier (5)">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="boatSelect" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="battleshipRadio" mnemonicParsing="false" onAction="#selectShip" text="Battleship (4)" toggleGroup="$boatSelect" />
+                              <RadioButton fx:id="destroyerRadio" mnemonicParsing="false" onAction="#selectShip" text="Destroyer (3)" toggleGroup="$boatSelect" />
+                              <RadioButton fx:id="submarineRadio" mnemonicParsing="false" onAction="#selectShip" text="Submarine (3)" toggleGroup="$boatSelect" />
+                              <RadioButton fx:id="patrolRadio" mnemonicParsing="false" onAction="#selectShip" text="Patrol (2)" toggleGroup="$boatSelect" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="446.0" spacing="5.0">
+                           <children>
+                              <RadioButton fx:id="horizontalShipRadio" mnemonicParsing="false" selected="true" text="Horizontal">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="boatOrientation" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="verticalShipRadio" mnemonicParsing="false" text="Vertical" toggleGroup="$boatOrientation" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <Button maxWidth="100.0" mnemonicParsing="false" onAction="#randomizeShips" text="Random" />
+                        <Button maxWidth="100.0" mnemonicParsing="false" onAction="#confirmShips" text="Confirm" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
