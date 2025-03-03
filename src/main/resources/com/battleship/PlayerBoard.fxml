@@ -13,16 +13,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.PlayerBoardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.PlayerBoardController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <GridPane alignment="CENTER" gridLinesVisible="true" maxHeight="550.0" maxWidth="550.0" minHeight="500.0" prefHeight="550.0">
+            <Text fx:id="TitleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Ship Locations">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <GridPane alignment="CENTER" gridLinesVisible="true" maxHeight="550.0" maxWidth="550.0" minHeight="550.0" prefHeight="550.0" prefWidth="550.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -252,49 +257,69 @@
                   </Label>
                </children>
             </GridPane>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <VBox alignment="BOTTOM_CENTER" prefHeight="90.0" prefWidth="496.0">
+                  <HBox fx:id="PlayBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="404.0" spacing="5.0">
-                           <children>
-                              <RadioButton fx:id="carrierRadio" mnemonicParsing="false" onAction="#selectShip" selected="true" text="Carrier (5)">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="boatSelect" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="battleshipRadio" mnemonicParsing="false" onAction="#selectShip" text="Battleship (4)" toggleGroup="$boatSelect" />
-                              <RadioButton fx:id="destroyerRadio" mnemonicParsing="false" onAction="#selectShip" text="Destroyer (3)" toggleGroup="$boatSelect" />
-                              <RadioButton fx:id="submarineRadio" mnemonicParsing="false" onAction="#selectShip" text="Submarine (3)" toggleGroup="$boatSelect" />
-                              <RadioButton fx:id="patrolRadio" mnemonicParsing="false" onAction="#selectShip" text="Patrol (2)" toggleGroup="$boatSelect" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="446.0" spacing="5.0">
-                           <children>
-                              <RadioButton fx:id="horizontalShipRadio" mnemonicParsing="false" selected="true" text="Horizontal">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="boatOrientation" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="verticalShipRadio" mnemonicParsing="false" text="Vertical" toggleGroup="$boatOrientation" />
-                           </children>
-                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#fire" prefHeight="60.0" prefWidth="60.0" text="FIRE" textAlignment="CENTER" />
+                        <Text fx:id="LocationText" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="A1">
+                           <HBox.margin>
+                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  </HBox>
+                  <HBox fx:id="SelectBox" prefHeight="100.0" prefWidth="200.0" visible="false">
                      <children>
-                        <Button maxWidth="100.0" mnemonicParsing="false" onAction="#randomizeShips" text="Random" />
-                        <Button maxWidth="100.0" mnemonicParsing="false" onAction="#confirmShips" text="Confirm" />
+                        <VBox alignment="BOTTOM_CENTER" prefHeight="90.0" prefWidth="496.0">
+                           <children>
+                              <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="404.0" spacing="5.0">
+                                 <children>
+                                    <RadioButton fx:id="carrierRadio" mnemonicParsing="false" onAction="#selectShip" selected="true" text="Carrier (5)">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="boatSelect" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="battleshipRadio" mnemonicParsing="false" onAction="#selectShip" text="Battleship (4)" toggleGroup="$boatSelect" />
+                                    <RadioButton fx:id="destroyerRadio" mnemonicParsing="false" onAction="#selectShip" text="Destroyer (3)" toggleGroup="$boatSelect" />
+                                    <RadioButton fx:id="submarineRadio" mnemonicParsing="false" onAction="#selectShip" text="Submarine (3)" toggleGroup="$boatSelect" />
+                                    <RadioButton fx:id="patrolRadio" mnemonicParsing="false" onAction="#selectShip" text="Patrol (2)" toggleGroup="$boatSelect" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="446.0" spacing="5.0">
+                                 <children>
+                                    <RadioButton fx:id="horizontalShipRadio" mnemonicParsing="false" selected="true" text="Horizontal">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="boatOrientation" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="verticalShipRadio" mnemonicParsing="false" text="Vertical" toggleGroup="$boatOrientation" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                           <children>
+                              <Button maxWidth="100.0" mnemonicParsing="false" onAction="#randomizeShips" text="Random" />
+                              <Button maxWidth="100.0" mnemonicParsing="false" onAction="#confirmShips" text="Confirm" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </VBox>
+                  </HBox>
                </children>
-            </HBox>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </StackPane>
          </children>
       </VBox>
    </children>

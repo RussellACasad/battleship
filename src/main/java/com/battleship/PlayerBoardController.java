@@ -3,11 +3,16 @@ package com.battleship;
 import com.battleship.Models.BoardLocation;
 import com.battleship.Models.GameConstants;
 import com.battleship.Models.GameState;
+import com.battleship.Models.GridType;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.RadioButton;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 public class PlayerBoardController {
     @FXML
@@ -214,7 +219,7 @@ public class PlayerBoardController {
     private RadioButton horizontalShipRadio;
     @FXML
     private RadioButton verticalShipRadio;
-    @FXML 
+    @FXML
     private RadioButton carrierRadio;
     @FXML
     private RadioButton battleshipRadio;
@@ -224,9 +229,19 @@ public class PlayerBoardController {
     private RadioButton submarineRadio;
     @FXML
     private RadioButton patrolRadio;
+    @FXML
+    private HBox SelectBox;
+    @FXML
+    HBox PlayBox;
+    @FXML
+    private Text TitleText;
+    @FXML
+    private Text LocationText; 
 
     private Rectangle[] _board;
     private int _selectedShip = 0;
+    private BoardLocation _toHit = null;
+    Alert alert = new Alert(AlertType.INFORMATION);
 
     @FXML
     public void initialize() {
@@ -247,6 +262,7 @@ public class PlayerBoardController {
         destroyerRadio.setTextFill(Color.RED);
         submarineRadio.setTextFill(Color.RED);
         patrolRadio.setTextFill(Color.RED);
+        SetUI();
     }
 
     @FXML
@@ -263,38 +279,31 @@ public class PlayerBoardController {
             return;
 
         switch (GameConstants.gameState) {
-            case PlaceShips -> {
-                if (_selectedShip == -1) return;
-
-                var isHorizontal = horizontalShipRadio.isSelected();
-                var didSet = GameConstants.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal, GameConstants.player);
-                if (didSet) {
-                    GameConstants.player.boats[_selectedShip].isPlaced = true;
-
-                    carrierRadio.setTextFill(GameConstants.player.boats[0].isPlaced ? Color.BLACK : Color.RED);
-                    battleshipRadio.setTextFill(GameConstants.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
-                    destroyerRadio.setTextFill(GameConstants.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
-                    submarineRadio.setTextFill(GameConstants.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
-                    patrolRadio.setTextFill(GameConstants.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
-
-                    for (var square : _board) {
-                        square.setFill(Color.CORNFLOWERBLUE); // Set all squares to blue initially
-                    }
-                    for (var boat : GameConstants.player.boats) {
-                        for (var loc : boat.location) {
-                            if (loc != null) {
-                                _board[loc.getValue()].setFill(Color.BURLYWOOD); // Set boat locations to another color
-                            }
+                    case PlaceShips -> {
+                        if (_selectedShip == -1)
+                            return;
+        
+                        var isHorizontal = horizontalShipRadio.isSelected();
+                        var didSet = GameConstants.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
+                                GameConstants.player);
+                        if (didSet) {
+                            GameConstants.player.boats[_selectedShip].isPlaced = true;
+        
+                            carrierRadio.setTextFill(GameConstants.player.boats[0].isPlaced ? Color.BLACK : Color.RED);
+                            battleshipRadio.setTextFill(GameConstants.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
+                            destroyerRadio.setTextFill(GameConstants.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
+                            submarineRadio.setTextFill(GameConstants.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
+                            patrolRadio.setTextFill(GameConstants.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
+        
+                            Draw(GridType.Ocean);
                         }
                     }
-                }
-            }
-            case PlayerTurn -> {
-            }
-            case OpponentTurn -> {
-            }
-            case GameOver -> {
-            }
+                    case PlayerTurn -> {
+                        _toHit = selectedLocation;
+                        LocationText.setText(selectedLocation.name());
+                        Draw(GridType.Target);
+                    }
+                    default -> throw new IllegalArgumentException("Unexpected value: " + GameConstants.gameState);
         }
     }
 
@@ -336,7 +345,7 @@ public class PlayerBoardController {
         for (var boat : GameConstants.player.boats) {
             for (var loc : boat.location) {
                 if (loc != null) {
-                    _board[loc.getValue()].setFill(Color.BURLYWOOD); // Set boat locations to another color
+                    _board[loc.getIndex()].setFill(Color.BURLYWOOD); // Set boat locations to another color
                 }
             }
         }
@@ -345,9 +354,10 @@ public class PlayerBoardController {
     @FXML
     private void confirmShips() {
         if (GameConstants.player.allBoatsPlaced()) {
-            GameConstants.gameState = GameState.PlayerTurn; 
+            GameConstants.gameState = GameState.PlayerTurn;
+            SetUI();
         }
-        
+
         for (var boat : GameConstants.opponent.boats) {
             var isHorizontal = Math.random() < 0.5;
             var loc = BoardLocation.randomLocation();
@@ -357,14 +367,87 @@ public class PlayerBoardController {
             boat.isPlaced = true;
         }
 
+        Draw(GridType.Target);
+    }
+
+    @FXML
+    private void fire() {
+        var type = GameConstants.player.attack(_toHit);
+        if (type != null && type.isSunk()) {
+            alert.setTitle("Hit!");
+            alert.setHeaderText("");
+            alert.setContentText("Shot " + _toHit.name() + " and sunk their " + type.name.getName());
+        } else if (type != null) {
+            alert.setTitle("Hit!");
+            alert.setHeaderText("");
+            alert.setContentText("Shot " + _toHit.name() + " and hit their " + type.name.getName());
+        } else {
+            alert.setTitle("Miss!");
+            alert.setHeaderText("");
+            alert.setContentText("Shot " + _toHit.name() + " missed.");
+        }
+        Draw(GridType.Target);
+        alert.showAndWait();
+        Draw(GridType.Ocean);
+        GameConstants.gameState = GameState.OpponentTurn;
+
+        TitleText.setText("Waiting for opponent to attack...");
+        var attacked = GameConstants.opponent.attack();
+        if (attacked != null) {
+            alert.setTitle("Hit!");
+            alert.setHeaderText("");
+            alert.setContentText("Opponent shot and hit your " + attacked.name.getName());
+        } else {
+            alert.setTitle("Miss!");
+            alert.setHeaderText("");
+            alert.setContentText("Opponent missed.");
+        }
+        Draw(GridType.Ocean);
+        alert.showAndWait();
+        GameConstants.gameState = GameState.PlayerTurn;
+        Draw(GridType.Target);
+    }
+
+    private void SetUI() {
+        if (GameConstants.gameState == GameState.PlaceShips) {
+            SelectBox.visibleProperty().set(true);
+            PlayBox.visibleProperty().set(false);
+        } else {
+            SelectBox.visibleProperty().set(false);
+            PlayBox.visibleProperty().set(true);
+        }
+    }
+
+    private void Draw(GridType grid) {
         for (var square : _board) {
             square.setFill(Color.CORNFLOWERBLUE); // Set all squares to blue initially
         }
-        for (var boat : GameConstants.opponent.boats) {
-            for (var loc : boat.location) {
-                if (loc != null) {
-                    _board[loc.getValue()].setFill(Color.GREEN); // Set boat locations to another color
+        if (grid == GridType.Ocean) {
+            for (var boat : GameConstants.player.boats) {
+                for (var i = 0; i < boat.location.length; i++) {
+                    if (boat.location[i] != null) {
+                        _board[boat.location[i].getIndex()].setFill(Color.BURLYWOOD); // Set boat locations to another
+                                                                                      // color
+                    }
                 }
+
+                for (var hit : GameConstants.opponent.hitAttempts) {
+                    _board[hit.location.getIndex()].setFill(hit.didHit ? Color.RED : Color.WHITE);
+                }
+            }
+        } else if (grid == GridType.Target) {
+            if (GameConstants.gameState == GameState.PlayerTurn) {
+                TitleText.setText("Select spot to attack...");
+            } else if (GameConstants.gameState == GameState.OpponentTurn) {
+                TitleText.setText("Waiting for opponent to attack...");
+            }
+
+            if (GameConstants.gameState == GameState.PlayerTurn && _toHit != null) {
+                _board[_toHit.getIndex()].setFill(Color.MEDIUMAQUAMARINE);
+            }
+
+            for (var hit : GameConstants.player.hitAttempts) {
+                _board[hit.location.getIndex()].setFill(hit.didHit ? Color.RED : Color.WHITE);
             }
         }
     }

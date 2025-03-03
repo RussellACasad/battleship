@@ -102,10 +102,10 @@ public enum BoardLocation {
     J9(98),
     J10(99);
 
-    private final int value;
+    private final int index;
 
-    BoardLocation(int value) {
-        this.value = value;
+    BoardLocation(int index) {
+        this.index = index;
     }
 
     /**
@@ -113,8 +113,8 @@ public enum BoardLocation {
      * 
      * @return The value of the BoardLocation in the Board array.
      */
-    public int getValue() {
-        return value;
+    public int getIndex() {
+        return index;
     }
 
     /**
@@ -163,7 +163,7 @@ public enum BoardLocation {
      */
     public static char getRowChar(int rowNum) {
         if (rowNum < 0 || rowNum > 26) {
-            throw new IllegalArgumentException("Row number must be between 0 and 26");
+            throw new IllegalArgumentException("Row number must be between 0 and 26. Submitted: " + rowNum);
         }
         return (char) ('A' + rowNum - 1);
     }
@@ -176,7 +176,7 @@ public enum BoardLocation {
      */
     public static int getRowNum(char rowChar) {
         if (rowChar < 'A' || rowChar > 'J') {
-            throw new IllegalArgumentException("Row character must be between A and J");
+            throw new IllegalArgumentException("Row character must be between A and J. Submitted: " + rowChar);
         }
         return rowChar - 'A' + 1;
     }
