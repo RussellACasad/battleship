@@ -49,6 +49,11 @@ public class Player {
         return true;
     }
 
+    /**
+     * Attempts an attack on the <b>opponent</b>
+     * @param location The location to attack. 
+     * @return The boat that was attacked. If no boat is attacked, returns null. 
+     */
     public Boat attack(BoardLocation location) {
         var didHit = false;
         Boat hit = null; 

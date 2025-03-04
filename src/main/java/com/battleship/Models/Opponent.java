@@ -5,7 +5,11 @@ public class Opponent extends Player {
         super();
     }
     
-    public Boat attack()
+    /**
+     * Attempts an automated attack on the <b>player</b>
+     * @return The boat that was attacked. If no boat is attacked, returns null.
+     */
+    public Boat attack() // TODO: Make the opponent actually try to win instead of hitting random spots always
     {
         var didHit = false;
         Boat hit = null; 

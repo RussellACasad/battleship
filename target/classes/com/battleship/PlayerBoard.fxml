@@ -262,14 +262,6 @@
                   <HBox fx:id="PlayBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#fire" prefHeight="60.0" prefWidth="60.0" text="FIRE" textAlignment="CENTER" />
-                        <Text fx:id="LocationText" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="A1">
-                           <HBox.margin>
-                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
                      </children>
                   </HBox>
                   <HBox fx:id="SelectBox" prefHeight="100.0" prefWidth="200.0" visible="false">

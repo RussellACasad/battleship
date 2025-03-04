@@ -235,8 +235,6 @@ public class PlayerBoardController {
     HBox PlayBox;
     @FXML
     private Text TitleText;
-    @FXML
-    private Text LocationText; 
 
     private Rectangle[] _board;
     private int _selectedShip = 0;
@@ -299,8 +297,7 @@ public class PlayerBoardController {
                         }
                     }
                     case PlayerTurn -> {
-                        _toHit = selectedLocation;
-                        LocationText.setText(selectedLocation.name());
+                        _toHit = selectedLocation; // TODO: Ensure player cannot hit the same location twice.
                         Draw(GridType.Target);
                     }
                     default -> throw new IllegalArgumentException("Unexpected value: " + GameConstants.gameState);
@@ -339,16 +336,7 @@ public class PlayerBoardController {
         submarineRadio.setTextFill(GameConstants.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
         patrolRadio.setTextFill(GameConstants.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
 
-        for (var square : _board) {
-            square.setFill(Color.CORNFLOWERBLUE); // Set all squares to blue initially
-        }
-        for (var boat : GameConstants.player.boats) {
-            for (var loc : boat.location) {
-                if (loc != null) {
-                    _board[loc.getIndex()].setFill(Color.BURLYWOOD); // Set boat locations to another color
-                }
-            }
-        }
+        Draw(GridType.Ocean); 
     }
 
     @FXML
@@ -371,8 +359,10 @@ public class PlayerBoardController {
     }
 
     @FXML
-    private void fire() {
-        var type = GameConstants.player.attack(_toHit);
+    private void fire() { // TODO: Disable this button when hit location is invalid. TODO: Seperate code out to be more readable and modular. Maybe could allow for LAN multiplayer?
+        if(_toHit == null) return; 
+
+        var type = GameConstants.player.attack(_toHit); // player attacking
         if (type != null && type.isSunk()) {
             alert.setTitle("Hit!");
             alert.setHeaderText("");
@@ -389,8 +379,8 @@ public class PlayerBoardController {
         Draw(GridType.Target);
         alert.showAndWait();
         Draw(GridType.Ocean);
-        GameConstants.gameState = GameState.OpponentTurn;
 
+        GameConstants.gameState = GameState.OpponentTurn; // Opponents turn. TODO: Add pauses to make opponent seem like a "person". 
         TitleText.setText("Waiting for opponent to attack...");
         var attacked = GameConstants.opponent.attack();
         if (attacked != null) {
@@ -408,6 +398,9 @@ public class PlayerBoardController {
         Draw(GridType.Target);
     }
 
+    /**
+     * Sets the buttons for the UI for the gamestate.
+     */
     private void SetUI() {
         if (GameConstants.gameState == GameState.PlaceShips) {
             SelectBox.visibleProperty().set(true);
@@ -417,7 +410,12 @@ public class PlayerBoardController {
             PlayBox.visibleProperty().set(true);
         }
     }
-
+    
+    /**
+     * Draws the grid on the UI.
+     *
+     * @param grid the grid to draw. Ocean represents the player's grid, Target represents the opponent's grid.
+     */
     private void Draw(GridType grid) {
         for (var square : _board) {
             square.setFill(Color.CORNFLOWERBLUE); // Set all squares to blue initially
