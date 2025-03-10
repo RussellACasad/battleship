@@ -15,10 +15,18 @@ public enum BoatType {
         this.name = name; 
     }
 
+    /**
+     * Gets the size of the boat type
+     * @return the boat size as an INT
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Gets a human-readable name for the boat type
+     * @return the boat name as a STRING
+     */
     public String getName()
     {
         return name; 

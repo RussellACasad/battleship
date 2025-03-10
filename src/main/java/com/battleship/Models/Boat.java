@@ -25,7 +25,7 @@ public class Boat
      * @return True if the location is valid, false otherwise
      */
     public boolean SetLocation(BoardLocation location, boolean isHorizontal, Player player) { 
-        if(isHorizontal)
+        if(isHorizontal) // TODO: Comment this
         {
             var locLetter = location.getLetter();
             var locNumber = location.getNumber();

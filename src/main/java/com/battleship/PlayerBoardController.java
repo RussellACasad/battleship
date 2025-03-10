@@ -1,19 +1,27 @@
 package com.battleship;
 
+import java.io.IOException;
+
 import com.battleship.Models.BoardLocation;
-import com.battleship.Models.GameConstants;
+import com.battleship.Models.GameManager;
 import com.battleship.Models.GameState;
 import com.battleship.Models.GridType;
+import com.battleship.Models.OpponentAttack;
 
+import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
+@SuppressWarnings("unused")
 public class PlayerBoardController {
     @FXML
     private Rectangle A1;
@@ -230,20 +238,48 @@ public class PlayerBoardController {
     @FXML
     private RadioButton patrolRadio;
     @FXML
+    private RadioButton oceanGridRadio;
+    @FXML
+    private RadioButton targetGridRadio;
+    @FXML
     private HBox SelectBox;
     @FXML
-    HBox PlayBox;
+    private HBox PlayBox;
     @FXML
     private Text TitleText;
+    @FXML
+    private Text MessageText;
+    @FXML
+    private Button fireButton;
 
     private Rectangle[] _board;
     private int _selectedShip = 0;
     private BoardLocation _toHit = null;
-    Alert alert = new Alert(AlertType.INFORMATION);
+    private Alert alert = new Alert(AlertType.INFORMATION);
+
+    private final Thread pingpong = new Thread(() -> { // Runs during multiplayer when attacking opponent. Pings opponent every 1 sec and gets a response. If no response, the game is ended with a communication error.
+        while (GameManager.gameState == GameState.PlayerTurn) {
+            try {
+                GameManager.out.println("ping"); // sends ping
+                var x = GameManager.in.readLine(); // expects pong
+                if (x == null) { // if null, means a disconnect occured
+                    Platform.runLater(() -> closeGame(true)); // ends the game
+                    break;
+                }
+                Thread.sleep(1000); // waits 1 sec, TODO: Make use of a ScheduledExecutorService for pause
+            } catch (IOException ex) {
+                Platform.runLater(() -> closeGame(true));
+                break;
+            } catch (InterruptedException ex)
+            {
+
+            }
+        }
+    });
 
     @FXML
     public void initialize() {
-        _board = new Rectangle[] {
+        _board = new Rectangle[] { // Creates the board grid
                 A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                 B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                 C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
@@ -255,57 +291,76 @@ public class PlayerBoardController {
                 I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
                 J1, J2, J3, J4, J5, J6, J7, J8, J9, J10
         };
-        carrierRadio.setTextFill(Color.RED);
+        carrierRadio.setTextFill(Color.RED); // sets the radio colors to red
         battleshipRadio.setTextFill(Color.RED);
         destroyerRadio.setTextFill(Color.RED);
         submarineRadio.setTextFill(Color.RED);
         patrolRadio.setTextFill(Color.RED);
         SetUI();
+
+        if (!GameManager.isSinglePlayer) { // If multiplayer, listens for when the opponent peer has placed their ships
+            new Thread(() -> {
+                var areShipsSet = "";
+                try {
+                    areShipsSet = GameManager.in.readLine();
+                } catch (IOException ex) {
+                    ex.getStackTrace();
+                }
+                if (areShipsSet.equals("t")) {
+                    GameManager.opponent.shipsSet = true;
+                }
+            }).start();
+        }
     }
 
     @FXML
-    void squareClicked() {
+    void squareClicked() { // when a square is clicked
         BoardLocation selectedLocation = null;
-        for (var i = 0; i < _board.length; i++) {
-            if (_board[i].isHover()) {
+        for (var i = 0; i < _board.length; i++) { // scans through the board
+            if (_board[i].isHover()) { // returns the square the user is hovering over
                 selectedLocation = BoardLocation.parseInt(i);
                 break;
             }
         }
 
-        if (selectedLocation == null)
+        if (selectedLocation == null) // handles null exceptions
             return;
 
-        switch (GameConstants.gameState) {
-                    case PlaceShips -> {
-                        if (_selectedShip == -1)
-                            return;
-        
-                        var isHorizontal = horizontalShipRadio.isSelected();
-                        var didSet = GameConstants.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
-                                GameConstants.player);
-                        if (didSet) {
-                            GameConstants.player.boats[_selectedShip].isPlaced = true;
-        
-                            carrierRadio.setTextFill(GameConstants.player.boats[0].isPlaced ? Color.BLACK : Color.RED);
-                            battleshipRadio.setTextFill(GameConstants.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
-                            destroyerRadio.setTextFill(GameConstants.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
-                            submarineRadio.setTextFill(GameConstants.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
-                            patrolRadio.setTextFill(GameConstants.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
-        
-                            Draw(GridType.Ocean);
-                        }
-                    }
-                    case PlayerTurn -> {
-                        _toHit = selectedLocation; // TODO: Ensure player cannot hit the same location twice.
-                        Draw(GridType.Target);
-                    }
-                    default -> throw new IllegalArgumentException("Unexpected value: " + GameConstants.gameState);
+        for (var att : GameManager.player.hitAttempts) { // stops the player from selecting a spot they hit already
+            if (att.location == selectedLocation) {
+                return;
+            }
+        }
+
+        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and ships
+            case PlaceShips -> {
+
+                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship horizontally
+                var didSet = GameManager.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
+                        GameManager.player); // attempts to set the boat
+                if (didSet) { // if the boat is set, upsates the UI and marks the boat as placed
+                    GameManager.player.boats[_selectedShip].isPlaced = true;
+
+                    carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED);
+                    battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
+                    destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
+                    submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
+                    patrolRadio.setTextFill(GameManager.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
+
+                    setGrid(GridType.Ocean); // redraws the ocean to show the new boat
+                }
+            }
+            case PlayerTurn -> { // if the player turn
+                _toHit = selectedLocation; // sets the local variable
+                setGrid(GridType.Target); // redraws the grid
+            }
+            default -> { // does nothing normally
+            }
         }
     }
 
     @FXML
-    void selectShip() {
+    void selectShip() { // selects the new ship during ship selection 
         if (carrierRadio.isSelected()) {
             _selectedShip = 0;
         } else if (battleshipRadio.isSelected()) {
@@ -320,131 +375,254 @@ public class PlayerBoardController {
     }
 
     @FXML
-    private void randomizeShips() {
-        for (var boat : GameConstants.player.boats) {
-            var isHorizontal = Math.random() < 0.5;
-            var loc = BoardLocation.randomLocation();
-            while (!boat.SetLocation(loc, isHorizontal, GameConstants.player)) {
+    private void randomizeShips() {// when the random button is pressed
+        for (var boat : GameManager.player.boats) { // for each boat
+            var isHorizontal = Math.random() < 0.5; // 50% chance of being horizontal
+            var loc = BoardLocation.randomLocation(); // picks a random location
+            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat sets
                 loc = BoardLocation.randomLocation();
             }
             boat.isPlaced = true;
         }
 
-        carrierRadio.setTextFill(GameConstants.player.boats[0].isPlaced ? Color.BLACK : Color.RED);
-        battleshipRadio.setTextFill(GameConstants.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
-        destroyerRadio.setTextFill(GameConstants.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
-        submarineRadio.setTextFill(GameConstants.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
-        patrolRadio.setTextFill(GameConstants.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
+        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of the radios
+        battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
+        destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
+        submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
+        patrolRadio.setTextFill(GameManager.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
 
-        Draw(GridType.Ocean); 
+        setGrid(GridType.Ocean); // redraws the grid to show boats
     }
 
     @FXML
     private void confirmShips() {
-        if (GameConstants.player.allBoatsPlaced()) {
-            GameConstants.gameState = GameState.PlayerTurn;
-            SetUI();
-        }
-
-        for (var boat : GameConstants.opponent.boats) {
-            var isHorizontal = Math.random() < 0.5;
-            var loc = BoardLocation.randomLocation();
-            while (!boat.SetLocation(loc, isHorizontal, GameConstants.opponent)) {
-                loc = BoardLocation.randomLocation();
+        if (GameManager.player.allBoatsPlaced()) { // checks if all the boats are placed
+            if (GameManager.isSinglePlayer) // places the opponent boats if singleplayer
+            {
+                alert.initOwner(A1.getScene().getWindow());
+                for (var boat : GameManager.opponent.boats) {
+                    var isHorizontal = Math.random() < 0.5;
+                    var loc = BoardLocation.randomLocation();
+                    while (!boat.SetLocation(loc, isHorizontal, GameManager.opponent)) {
+                        loc = BoardLocation.randomLocation();
+                    }
+                    boat.isPlaced = true;
+                }
+                GameManager.opponent.shipsSet = true;
+            } else { // if multiplayer, announces all the boats are placed
+                GameManager.out.println("t");
             }
-            boat.isPlaced = true;
+            GameManager.gameState = GameState.Wait; // waits for the opponents to place their boats
+            SetUI();
+            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in singleplayer, will not wait
+                while (!GameManager.opponent.shipsSet) {
+                    TitleText.setText("Waiting for opponent to set their ships...");
+                }
+                Platform.runLater(() -> { // assigns the roles to the players according to their status as host or singleplayer, and starts the actual game
+                    if (!GameManager.isSinglePlayer && !GameManager.isHost) {
+                        GameManager.gameState = GameState.OpponentTurn;
+                        setGrid(GridType.Ocean);
+                    } else {
+                        GameManager.gameState = GameState.PlayerTurn;
+                        setGrid(GridType.Target);
+                        pingpong.start();
+                    }
+                    SetUI(); // sets the UI for gamestate palyer/opponent turn 
+                    if (GameManager.gameState == GameState.OpponentTurn) {
+                        TitleText.setText("Opponent's Turn...");
+                        OpponentTurn();
+                    } else {
+                        MessageText.setText("Select a spot to attack.");
+                        TitleText.setText("Your Turn...");
+                    }
+                });
+            }).start();
         }
-
-        Draw(GridType.Target);
     }
 
     @FXML
-    private void fire() { // TODO: Disable this button when hit location is invalid. TODO: Seperate code out to be more readable and modular. Maybe could allow for LAN multiplayer?
-        if(_toHit == null) return; 
-
-        var type = GameConstants.player.attack(_toHit); // player attacking
-        if (type != null && type.isSunk()) {
-            alert.setTitle("Hit!");
-            alert.setHeaderText("");
-            alert.setContentText("Shot " + _toHit.name() + " and sunk their " + type.name.getName());
-        } else if (type != null) {
-            alert.setTitle("Hit!");
-            alert.setHeaderText("");
-            alert.setContentText("Shot " + _toHit.name() + " and hit their " + type.name.getName());
-        } else {
-            alert.setTitle("Miss!");
-            alert.setHeaderText("");
-            alert.setContentText("Shot " + _toHit.name() + " missed.");
-        }
-        Draw(GridType.Target);
-        alert.showAndWait();
-        Draw(GridType.Ocean);
-
-        GameConstants.gameState = GameState.OpponentTurn; // Opponents turn. TODO: Add pauses to make opponent seem like a "person". 
-        TitleText.setText("Waiting for opponent to attack...");
-        var attacked = GameConstants.opponent.attack();
-        if (attacked != null) {
-            alert.setTitle("Hit!");
-            alert.setHeaderText("");
-            alert.setContentText("Opponent shot and hit your " + attacked.name.getName());
-        } else {
-            alert.setTitle("Miss!");
-            alert.setHeaderText("");
-            alert.setContentText("Opponent missed.");
-        }
-        Draw(GridType.Ocean);
-        alert.showAndWait();
-        GameConstants.gameState = GameState.PlayerTurn;
-        Draw(GridType.Target);
+    private void fire() throws InterruptedException {
+        if (_toHit == null)
+            return;
+        // when fire is hit (player's turn)
+        PlayerTurn(); // send the player's turn to the oppoent
+        PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // wait
+        opponentTurnPause.setOnFinished(_ -> OpponentTurn()); // when wait done, wait for opponent to fire back
+        opponentTurnPause.play();
+        _toHit = null;
+        // TODO: Check for player / opponent win, end game if so, end multiplayer
+        // connections as well
     }
+
+    /**
+     * The player's turn bundle, handles attacking and switching the gamestate
+     */
+    private void PlayerTurn() { 
+        var playerAttack = GameManager.player.attack(_toHit);
+        setGrid(GridType.Target);
+        GameManager.gameState = GameState.OpponentTurn;
+        TitleText.setText(GetMessage(playerAttack, true));
+        MessageText.setText("Firing...");
+        TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
+    }
+
+    /**
+     * The opponent's turn, handles recieving attacks on multiplayer, or generating attacks with singleplayer.
+     */
+    private void OpponentTurn() {
+        var opponentAttack = new OpponentAttack(_toHit);
+        new Thread(() -> {
+            opponentAttack.start(); // starts the opponent turn wait, waits for the oppoent to send their attack
+            while (opponentAttack.isAlive()) // waits fot the opponent to send their turn
+            {
+                MessageText.setText("Awaiting opponent's turn...");
+                fireButton.setDisable(true);
+            }
+            javafx.application.Platform.runLater(() -> { // when opponent attacks...
+                switch (opponentAttack.out) {
+                    case "CLOSE" -> closeGame(true);
+                    default -> {
+                        setGrid(GridType.Ocean); // set grid to show where opponent attacked
+                        GameManager.gameState = GameState.PlayerTurn; // sets the state back to the player turn
+                        TitleText.setText(GetMessage(opponentAttack.out, false)); // sets the message text for the
+                                                                                  // attack
+                        TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
+                        PauseTransition attackPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE));
+                        attackPause.setOnFinished(_ -> { // when pause finished
+                            setGrid(GridType.Target); // show the target grid...
+                            MessageText.setText("Select a spot to attack.");// ... and prompts to attack
+                            pingpong.start();
+                        });
+                        attackPause.play();
+                    }
+                }
+            });
+        }).start();
+    }
+
+    @FXML
+    private void setGrid() { // draws the grid selected by the radio buttons
+        if (oceanGridRadio.selectedProperty().get()) {
+            fireButton.setDisable(true);
+            Draw(GridType.Ocean);
+        } else if (targetGridRadio.selectedProperty().get()) {
+            fireButton.setDisable(false);
+            Draw(GridType.Target);
+        }
+    }
+
+    /**
+     * Sets the grid internally, ensures the correct grid is drawn and the radiobutton is selected on the UI
+     * @param type The GridType to draw. Ocean = player, Target = Opponent
+     */
+    private void setGrid(GridType type) {
+        if (type == GridType.Ocean) {
+            fireButton.setDisable(true);
+            Draw(GridType.Ocean);
+            oceanGridRadio.setSelected(true);
+        } else if (type == GridType.Target) {
+            fireButton.setDisable(false);
+            Draw(GridType.Target);
+            targetGridRadio.setSelected(true);
+        }
+    }
+
+    /**
+     * Ends the game and resets the game manager 
+     * @param showCommunicationError Shows a dialogue that states a communication error happened, for multiplayer
+     */
+    private void closeGame(boolean showCommunicationError) { 
+        if (GameManager.isSinglePlayer) {
+            // TODO: singleplayer end
+        } else {
+            try { // if opponent disconnects
+                App.setRoot("MainMenu");
+                GameManager.Reset();
+                alert.setTitle("Communication Error");
+                alert.setContentText("Connection closed by opponent.");
+                if (showCommunicationError)
+                    alert.show();
+            } catch (IOException ex) {
+                System.out.println(">> ERR 0x0001: " + ex.getMessage());
+            }
+        }
+    }
+
 
     /**
      * Sets the buttons for the UI for the gamestate.
      */
     private void SetUI() {
-        if (GameConstants.gameState == GameState.PlaceShips) {
-            SelectBox.visibleProperty().set(true);
-            PlayBox.visibleProperty().set(false);
-        } else {
-            SelectBox.visibleProperty().set(false);
-            PlayBox.visibleProperty().set(true);
+        switch (GameManager.gameState) {
+            case GameState.PlaceShips -> {
+                SelectBox.visibleProperty().set(true);
+                PlayBox.visibleProperty().set(false);
+            }
+            case GameState.PlayerTurn, GameState.OpponentTurn -> {
+                SelectBox.visibleProperty().set(false);
+                PlayBox.visibleProperty().set(true);
+            }
+            case GameState.Wait -> {
+                SelectBox.visibleProperty().set(false);
+                PlayBox.visibleProperty().set(false);
+            }
+            default -> {
+            }
         }
     }
-    
+
+    /**
+     * Gets a readable message from the string returned from the player or
+     * opponent's <b>Attack</b> method
+     * 
+     * @param string   The string to convert
+     * @param isPlayer if the message is from the player or not
+     * @return the human-readable string
+     */
+    private String GetMessage(String string, boolean isPlayer) {
+        var stringSection = string.split(",");
+        var message = (isPlayer ? "You" : "Opponent") + " attacked " + stringSection[0] + " and ";
+        if (stringSection.length == 1) {
+            message += "missed.";
+        } else if (stringSection[2].equals("t")) {
+            message += "sunk " + (isPlayer ? "their " : "your ") + stringSection[1];
+        } else {
+            message += "hit " + (isPlayer ? "their " : "your ") + stringSection[1];
+        }
+
+        return message;
+    }
+
     /**
      * Draws the grid on the UI.
      *
-     * @param grid the grid to draw. Ocean represents the player's grid, Target represents the opponent's grid.
+     * @param grid the grid to draw. Ocean represents the player's grid, Target
+     *             represents the opponent's grid.
      */
     private void Draw(GridType grid) {
         for (var square : _board) {
             square.setFill(Color.CORNFLOWERBLUE); // Set all squares to blue initially
         }
         if (grid == GridType.Ocean) {
-            for (var boat : GameConstants.player.boats) {
-                for (var i = 0; i < boat.location.length; i++) {
-                    if (boat.location[i] != null) {
-                        _board[boat.location[i].getIndex()].setFill(Color.BURLYWOOD); // Set boat locations to another
-                                                                                      // color
+            for (var boat : GameManager.player.boats) {
+                for (BoardLocation location : boat.location) {
+                    if (location != null) {
+                        _board[location.getIndex()].setFill(Color.BURLYWOOD); // Set boat locations to another
+                        // color
                     }
                 }
 
-                for (var hit : GameConstants.opponent.hitAttempts) {
+                for (var hit : GameManager.opponent.hitAttempts) {
                     _board[hit.location.getIndex()].setFill(hit.didHit ? Color.RED : Color.WHITE);
                 }
             }
         } else if (grid == GridType.Target) {
-            if (GameConstants.gameState == GameState.PlayerTurn) {
-                TitleText.setText("Select spot to attack...");
-            } else if (GameConstants.gameState == GameState.OpponentTurn) {
-                TitleText.setText("Waiting for opponent to attack...");
-            }
 
-            if (GameConstants.gameState == GameState.PlayerTurn && _toHit != null) {
+            if (GameManager.gameState == GameState.PlayerTurn && _toHit != null) {
                 _board[_toHit.getIndex()].setFill(Color.MEDIUMAQUAMARINE);
             }
 
-            for (var hit : GameConstants.player.hitAttempts) {
+            for (var hit : GameManager.player.hitAttempts) {
                 _board[hit.location.getIndex()].setFill(hit.didHit ? Color.RED : Color.WHITE);
             }
         }

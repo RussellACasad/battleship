@@ -2,11 +2,14 @@ package com.battleship;
 
 import java.io.IOException;
 
+import com.battleship.Models.GameManager;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * JavaFX App
@@ -19,6 +22,26 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("MainMenu"), 700, 700);
         stage.setScene(scene);
+        stage.setOnCloseRequest((WindowEvent _) -> {
+            if (!GameManager.isSinglePlayer) {
+                if(GameManager.clientSocket != null)
+                {
+                    try {
+                        GameManager.clientSocket.close();
+                    } catch (IOException ex) {
+                        ex.getStackTrace(); 
+                    }
+                }
+                if(GameManager.hostSocket != null)
+                {
+                    try {
+                        GameManager.hostSocket.close();
+                    } catch (IOException ex) {
+                        ex.getStackTrace(); 
+                    }
+                }
+            }
+        });
         stage.show();
     }
 

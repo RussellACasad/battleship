@@ -257,11 +257,22 @@
                   </Label>
                </children>
             </GridPane>
+            <Text fx:id="MessageText" strokeType="OUTSIDE" strokeWidth="0.0" />
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <HBox fx:id="PlayBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox fx:id="PlayBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#fire" prefHeight="60.0" prefWidth="60.0" text="FIRE" textAlignment="CENTER" />
+                        <Button fx:id="fireButton" mnemonicParsing="false" onAction="#fire" prefHeight="60.0" prefWidth="60.0" text="FIRE" textAlignment="CENTER" />
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <RadioButton fx:id="oceanGridRadio" mnemonicParsing="false" onAction="#setGrid" prefWidth="100.0" text="Ocean Grid">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gridSelect" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="targetGridRadio" mnemonicParsing="false" onAction="#setGrid" prefWidth="100.0" text="Target Grid" toggleGroup="$gridSelect" />
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox fx:id="SelectBox" prefHeight="100.0" prefWidth="200.0" visible="false">

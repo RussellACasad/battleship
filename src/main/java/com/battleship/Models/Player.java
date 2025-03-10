@@ -1,11 +1,13 @@
 package com.battleship.Models;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     public Boat[] boats;
     public List<HitAttempt> hitAttempts = new ArrayList<>();
+    public volatile boolean shipsSet; 
 
     public Player() {
         boats = new Boat[5];
@@ -14,6 +16,8 @@ public class Player {
         boats[2] = new Boat(BoatType.destroyer);
         boats[3] = new Boat(BoatType.submarine);
         boats[4] = new Boat(BoatType.patrolBoat);
+        shipsSet = false; 
+        hitAttempts = new ArrayList<>();
     }
 
     /**
@@ -54,22 +58,49 @@ public class Player {
      * @param location The location to attack. 
      * @return The boat that was attacked. If no boat is attacked, returns null. 
      */
-    public Boat attack(BoardLocation location) {
-        var didHit = false;
-        Boat hit = null; 
-
-        boatCheck: for (var boat : GameConstants.opponent.boats) {
-            for (var i = 0; i < boat.location.length; i++) {
-                if (location == boat.location[i]) {
-                    didHit = true;
-                    boat.isHit[i] = true;
-                    hit = boat;
-                    break boatCheck;
+    public String attack(BoardLocation location) {
+        if (GameManager.isSinglePlayer) // if is a single player game
+        {
+            var didHit = false;
+            Boat hit = null; 
+    
+            boatCheck: for (var boat : GameManager.opponent.boats) { // checks each boat for a hit
+                for (var i = 0; i < boat.location.length; i++) {
+                    if (location == boat.location[i]) {
+                        didHit = true;
+                        boat.isHit[i] = true;
+                        hit = boat;
+                        break boatCheck;
+                    }
                 }
             }
+    
+            hitAttempts.add(new HitAttempt(location, didHit)); // adds to the hit attempts
+    
+            var output = "";  // returns the output string
+    
+            output += location.name() + ","; 
+            if (hit != null)
+            {
+                output += hit.name.getName() + ","; 
+                output += hit.isSunk() ? "t" : "f"; 
+            }
+            return output; // returns the result
         }
-
-        hitAttempts.add(new HitAttempt(location, didHit));
-        return hit; 
+        else // if is multiplayer game
+        {
+            var result = "";  
+            try{
+                GameManager.out.println(location.toString()); // sends the attack to the opponent
+                while(!GameManager.in.ready()) {} // waits for input to be ready
+                result = GameManager.in.readLine(); // gets the result of the atack
+            }
+            catch(IOException ex)
+            {
+                System.out.println("ERR 0x0003 : " + ex.getMessage());
+            }
+            hitAttempts.add(new HitAttempt(location, result.length() > 3)); // adds to the hit attempts
+            return result; // returns the result
+        }
     }
 }
