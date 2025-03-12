@@ -25,16 +25,16 @@ public class Boat
      * @return True if the location is valid, false otherwise
      */
     public boolean SetLocation(BoardLocation location, boolean isHorizontal, Player player) { 
-        if(isHorizontal) // TODO: Comment this
+        if(isHorizontal) 
         {
-            var locLetter = location.getLetter();
-            var locNumber = location.getNumber();
-            if (locNumber + (name.getSize() - 1) > 10)
+            var locLetter = location.getLetter(); // gets the location letter
+            var locNumber = location.getNumber(); // gets the location  number
+            if (locNumber + (name.getSize() - 1) > 10) // if the boat will fall out from the board...
             {
-                return false; 
+                return false; // ... say location set failed
             }
 
-            for (var t : player.boats) {
+            for (var t : player.boats) { // check the boats already placed
                 if (t == this) break;
                 for(var e : t.location)
                 {

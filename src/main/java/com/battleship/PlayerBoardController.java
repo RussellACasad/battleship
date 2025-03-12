@@ -255,7 +255,7 @@ public class PlayerBoardController {
     private Rectangle[] _board;
     private int _selectedShip = 0;
     private BoardLocation _toHit = null;
-    private Alert alert = new Alert(AlertType.INFORMATION);
+    private final Alert alert = new Alert(AlertType.INFORMATION);
 
     private final Thread pingpong = new Thread(() -> { // Runs during multiplayer when attacking opponent. Pings opponent every 1 sec and gets a response. If no response, the game is ended with a communication error.
         while (GameManager.gameState == GameState.PlayerTurn) {
@@ -447,7 +447,7 @@ public class PlayerBoardController {
         // when fire is hit (player's turn)
         PlayerTurn(); // send the player's turn to the oppoent
         PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // wait
-        opponentTurnPause.setOnFinished(_ -> OpponentTurn()); // when wait done, wait for opponent to fire back
+        opponentTurnPause.setOnFinished(x -> OpponentTurn()); // when wait done, wait for opponent to fire back
         opponentTurnPause.play();
         _toHit = null;
         // TODO: Check for player / opponent win, end game if so, end multiplayer
@@ -488,7 +488,7 @@ public class PlayerBoardController {
                                                                                   // attack
                         TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
                         PauseTransition attackPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE));
-                        attackPause.setOnFinished(_ -> { // when pause finished
+                        attackPause.setOnFinished(x -> { // when pause finished
                             setGrid(GridType.Target); // show the target grid...
                             MessageText.setText("Select a spot to attack.");// ... and prompts to attack
                             pingpong.start();

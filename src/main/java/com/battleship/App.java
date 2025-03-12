@@ -22,7 +22,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("MainMenu"), 700, 700);
         stage.setScene(scene);
-        stage.setOnCloseRequest((WindowEvent _) -> {
+        stage.setOnCloseRequest((WindowEvent x) -> {
             if (!GameManager.isSinglePlayer) {
                 if(GameManager.clientSocket != null)
                 {
