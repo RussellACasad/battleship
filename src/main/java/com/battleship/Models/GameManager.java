@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameManager {
-    public static final String VERSION = "Beta 1.0.0"; // game version
+    public static final String VERSION = "Beta 1.1.0"; // game version
     public static final int FIREPAUSE = 3; // the pause when the fire button is pressed
 
     public static GameMode gameMode = GameMode.classic; 
@@ -20,6 +22,8 @@ public class GameManager {
     public static BufferedReader in = null;
     public static PrintWriter out = null;
     public static boolean isSinglePlayer = true;
+    public static transient volatile String multiplayerInput = ""; 
+    public static transient List<String> multiplayerFeed = new ArrayList<>();
 
     /**
      * Resets the GameManager to default settings, as well as closes all multiplayer streams and sets them back to NULL. 

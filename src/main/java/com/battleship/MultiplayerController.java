@@ -14,45 +14,75 @@ import com.battleship.Models.GameManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.text.Text;
 
 @SuppressWarnings("unused")
 public class MultiplayerController { // TODO: Revamp multiplayer screen to list available games on LAN + allow for port forwarding
     @FXML
-    private TextField portTextField;
+    private TextField hostPortText;
+    @FXML
+    private TextField joinPortText;
+    @FXML
+    private TextField joinIPText;
     @FXML
     private Text statusMessage;
     @FXML
-    private TextField ipTextField1; 
-    @FXML
-    private TextField ipTextField2; 
-    @FXML
     private Text localIPText; 
+    @FXML
+    private TitledPane joinPane; 
+    @FXML 
+    private TitledPane hostPane; 
+
+    private String ip; 
 
     @FXML
     public void initialize() throws UnknownHostException
     {
-        var ip = InetAddress.getLocalHost().getHostAddress(); 
+        ip = InetAddress.getLocalHost().getHostAddress(); 
         localIPText.setText("Your local IP: " + ip.trim()); // shows local IP on multiplayer menu
     }
 
     @FXML
+    public void copyIP()
+    {
+        Clipboard clipboard = Clipboard.getSystemClipboard(); 
+        ClipboardContent content = new ClipboardContent(); 
+        content.putString(ip); 
+        clipboard.setContent(content); 
+    }
+
+    @FXML
+    public void copyPort()
+    {
+        Clipboard clipboard = Clipboard.getSystemClipboard(); 
+        ClipboardContent content = new ClipboardContent(); 
+        content.putString(hostPortText.getText().trim()); 
+        clipboard.setContent(content); 
+    }
+
+    @FXML
     private void host() { // peer as host
-        if (portTextField.getText().isEmpty()) // if no port is applied, set to 0 to randomly assign a port
-            portTextField.setText("0");
+        if (hostPortText.getText().isEmpty()) // if no port is applied, set to 0 to randomly assign a port
+            hostPortText.setText("0");
         int port;
         try { // converts the port to an int
-            port = Integer.parseInt(portTextField.getText().trim());
+            port = Integer.parseInt(hostPortText.getText().trim());
         } catch (NumberFormatException ex) {
-            System.err.println("Invalid port number: " + portTextField.getText());
+            System.err.println("Invalid port number: " + hostPortText.getText());
             return;
         }
+
+        joinPane.setDisable(true);
+        hostPortText.setDisable(true);
 
         statusMessage.setText("Awaiting client..."); // sets the message to be awaiting a client
         GameManager.isHost = true;
         new Thread(() -> { // starts a new thread to not hang the UI and allow to cancel
             try (ServerSocket serverSocket = new ServerSocket(port)) {// creates the new socket
-                if(port == 0) portTextField.setText(String.valueOf(serverSocket.getLocalPort())); // ensures the port textfield has the correct port, or sets if randomly assigned
+                if(port == 0) hostPortText.setText(String.valueOf(serverSocket.getLocalPort())); // ensures the port textfield has the correct port, or sets if randomly assigned
                 GameManager.hostSocket = serverSocket;
                 GameManager.clientSocket = serverSocket.accept(); // waits for the client peer to connect
                 GameManager.in = new BufferedReader(new InputStreamReader(GameManager.clientSocket.getInputStream())); // establish I/O
@@ -84,26 +114,19 @@ public class MultiplayerController { // TODO: Revamp multiplayer screen to list 
 
     @FXML
     private void join() { // peer as client
-        if (portTextField.getText().equals(""))
+        if (joinPortText.getText().equals(""))
             return;
         int port;
         try { // converts port to an INT
-            port = Integer.parseInt(portTextField.getText().trim());
+            port = Integer.parseInt(joinPortText.getText().trim());
         } catch (NumberFormatException ex) {
-            System.err.println("Invalid port number: " + portTextField.getText());
+            System.err.println("Invalid port number: " + joinPortText.getText());
             return;
         }
+         
+        String ip = joinIPText.getText().trim(); 
 
-        String ip1 = ipTextField1.getText().trim(); // gets the IP
-        String ip2 = ipTextField2.getText().trim();
-        String ip; 
-        if (ip1.isEmpty() || ip2.isEmpty()) { // if either IP field is empty, set to localhost instead
-            ip = "localhost"; 
-        }
-        else
-        {
-            ip = "192.168." + ip1 + "."+ ip2;
-        }
+        ip = ip.isEmpty() ? "localhost" : ip; // if IP empty, set to local host
 
         try {
             GameManager.isHost = false; // sets the gamemanager to know this is not a host
@@ -125,7 +148,7 @@ public class MultiplayerController { // TODO: Revamp multiplayer screen to list 
 
             App.setRoot("PlayerBoard"); // sets root to playerboard
         } catch (IOException e) {
-            statusMessage.setText("Connection Fail");
+            statusMessage.setText("Connection Failed");
         }
     }
 

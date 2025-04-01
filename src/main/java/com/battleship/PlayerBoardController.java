@@ -3,6 +3,7 @@ package com.battleship;
 import java.io.IOException;
 
 import com.battleship.Models.BoardLocation;
+import com.battleship.Models.Boat;
 import com.battleship.Models.GameManager;
 import com.battleship.Models.GameState;
 import com.battleship.Models.GridType;
@@ -254,25 +255,48 @@ public class PlayerBoardController {
 
     private Rectangle[] _board;
     private int _selectedShip = 0;
-    private BoardLocation _toHit = null;
+    private transient BoardLocation _toHit = null;
     private final Alert alert = new Alert(AlertType.INFORMATION);
 
-    private final Thread pingpong = new Thread(() -> { // Runs during multiplayer when attacking opponent. Pings opponent every 1 sec and gets a response. If no response, the game is ended with a communication error.
-        while (GameManager.gameState == GameState.PlayerTurn) {
-            try {
-                GameManager.out.println("ping"); // sends ping
-                var x = GameManager.in.readLine(); // expects pong
-                if (x == null) { // if null, means a disconnect occured
-                    Platform.runLater(() -> closeGame(true)); // ends the game
+    private final Thread FeedManager = new Thread(() -> {
+        String input;
+        while (true) {
+            System.out.println("FEED: " + GameManager.multiplayerFeed);
+            if (GameManager.multiplayerFeed.isEmpty()) {
+                GameManager.out.println("ping");
+                try {
+                    input = GameManager.in.readLine();
+                    if (input == null) {
+                        Platform.runLater(() -> closeGame(true));
+                        break;
+                    }
+                    if (!input.equals("ping")) {
+                        GameManager.multiplayerInput = input;
+                    }
+                    if (input.equals("win")) {
+                        Platform.runLater(() -> endMessage(true));
+                        break;
+                    }
+                } catch (IOException ex) {
+                    Platform.runLater(() -> closeGame(true));
                     break;
                 }
-                Thread.sleep(1000); // waits 1 sec, TODO: Make use of a ScheduledExecutorService for pause
-            } catch (IOException ex) {
-                Platform.runLater(() -> closeGame(true));
-                break;
-            } catch (InterruptedException ex)
-            {
+            } else {
+                var x = GameManager.multiplayerFeed.removeFirst();
+                GameManager.out.println(x);
+                System.out.println(x + " Sent");
 
+                if (x.equals("win")) {
+                    endMessage(false);
+                }
+            }
+            System.out.println("State: " + GameManager.gameState);
+            System.out.println("Selected Location: " + _toHit);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+
+                System.out.println("Error in FeedManager Wait");
             }
         }
     });
@@ -332,10 +356,12 @@ public class PlayerBoardController {
             }
         }
 
-        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and ships
+        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and
+                                         // ships
             case PlaceShips -> {
 
-                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship horizontally
+                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship
+                                                                     // horizontally
                 var didSet = GameManager.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
                         GameManager.player); // attempts to set the boat
                 if (didSet) { // if the boat is set, upsates the UI and marks the boat as placed
@@ -360,7 +386,7 @@ public class PlayerBoardController {
     }
 
     @FXML
-    void selectShip() { // selects the new ship during ship selection 
+    void selectShip() { // selects the new ship during ship selection
         if (carrierRadio.isSelected()) {
             _selectedShip = 0;
         } else if (battleshipRadio.isSelected()) {
@@ -379,13 +405,15 @@ public class PlayerBoardController {
         for (var boat : GameManager.player.boats) { // for each boat
             var isHorizontal = Math.random() < 0.5; // 50% chance of being horizontal
             var loc = BoardLocation.randomLocation(); // picks a random location
-            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat sets
+            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat
+                                                                               // sets
                 loc = BoardLocation.randomLocation();
             }
             boat.isPlaced = true;
         }
 
-        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of the radios
+        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of
+                                                                                                  // the radios
         battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
         destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
         submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
@@ -414,20 +442,21 @@ public class PlayerBoardController {
             }
             GameManager.gameState = GameState.Wait; // waits for the opponents to place their boats
             SetUI();
-            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in singleplayer, will not wait
+            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in
+                               // singleplayer, will not wait
                 while (!GameManager.opponent.shipsSet) {
                     TitleText.setText("Waiting for opponent to set their ships...");
                 }
-                Platform.runLater(() -> { // assigns the roles to the players according to their status as host or singleplayer, and starts the actual game
+                Platform.runLater(() -> { // assigns the roles to the players according to their status as host or
+                                          // singleplayer, and starts the actual game
                     if (!GameManager.isSinglePlayer && !GameManager.isHost) {
                         GameManager.gameState = GameState.OpponentTurn;
                         setGrid(GridType.Ocean);
                     } else {
                         GameManager.gameState = GameState.PlayerTurn;
                         setGrid(GridType.Target);
-                        pingpong.start();
                     }
-                    SetUI(); // sets the UI for gamestate palyer/opponent turn 
+                    SetUI(); // sets the UI for gamestate palyer/opponent turn
                     if (GameManager.gameState == GameState.OpponentTurn) {
                         TitleText.setText("Opponent's Turn...");
                         OpponentTurn();
@@ -435,6 +464,8 @@ public class PlayerBoardController {
                         MessageText.setText("Select a spot to attack.");
                         TitleText.setText("Your Turn...");
                     }
+                    FeedManager.start();
+
                 });
             }).start();
         }
@@ -444,30 +475,74 @@ public class PlayerBoardController {
     private void fire() throws InterruptedException {
         if (_toHit == null)
             return;
+        MessageText.setText("Firing...");
         // when fire is hit (player's turn)
         PlayerTurn(); // send the player's turn to the oppoent
         PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // wait
         opponentTurnPause.setOnFinished(x -> OpponentTurn()); // when wait done, wait for opponent to fire back
         opponentTurnPause.play();
-        _toHit = null;
-        // TODO: Check for player / opponent win, end game if so, end multiplayer
-        // connections as well
+    }
+
+    private void checkWin() {
+        // Check all boats to see if sunk
+        if (GameManager.isSinglePlayer) { // Singleplayer
+            var allPlayerBoatsSunk = true;
+            for (Boat boat : GameManager.player.boats) {
+                if (!boat.isSunk()) {
+                    allPlayerBoatsSunk = false;
+                    break;
+                }
+            }
+            if (allPlayerBoatsSunk) {
+                endMessage(false);
+            }
+
+            var allOpponentBoatsSunk = true;
+            for (Boat boat : GameManager.player.boats) {
+                if (!boat.isSunk()) {
+                    allOpponentBoatsSunk = false;
+                    break;
+                }
+            }
+            if (allOpponentBoatsSunk) {
+                endMessage(true);
+            }
+
+        } else { // Multiplayer
+            var allBoatsSunk = true;
+            for (Boat boat : GameManager.player.boats) {
+                if (!boat.isSunk()) {
+                    allBoatsSunk = false;
+                    break;
+                }
+            }
+            if (allBoatsSunk) {
+                GameManager.multiplayerFeed.add("win");
+            }
+        }
     }
 
     /**
      * The player's turn bundle, handles attacking and switching the gamestate
      */
-    private void PlayerTurn() { 
-        var playerAttack = GameManager.player.attack(_toHit);
-        setGrid(GridType.Target);
-        GameManager.gameState = GameState.OpponentTurn;
-        TitleText.setText(GetMessage(playerAttack, true));
-        MessageText.setText("Firing...");
-        TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
+    private void PlayerTurn() {
+        Thread playerTurnThread = new Thread(() -> {
+            var playerAttack = GameManager.player.attack(_toHit);
+            Platform.runLater(() -> {
+                System.out.println(playerAttack);
+                setGrid(GridType.Target);
+                TitleText.setText(GetMessage(playerAttack, true));
+                TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
+                checkWin();
+                _toHit = null;
+            });
+        });
+        playerTurnThread.start();
     }
 
     /**
-     * The opponent's turn, handles recieving attacks on multiplayer, or generating attacks with singleplayer.
+     * The opponent's turn, handles recieving attacks on multiplayer, or generating
+     * attacks with singleplayer.
      */
     private void OpponentTurn() {
         var opponentAttack = new OpponentAttack(_toHit);
@@ -479,23 +554,19 @@ public class PlayerBoardController {
                 fireButton.setDisable(true);
             }
             javafx.application.Platform.runLater(() -> { // when opponent attacks...
-                switch (opponentAttack.out) {
-                    case "CLOSE" -> closeGame(true);
-                    default -> {
-                        setGrid(GridType.Ocean); // set grid to show where opponent attacked
-                        GameManager.gameState = GameState.PlayerTurn; // sets the state back to the player turn
-                        TitleText.setText(GetMessage(opponentAttack.out, false)); // sets the message text for the
-                                                                                  // attack
-                        TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
-                        PauseTransition attackPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE));
-                        attackPause.setOnFinished(x -> { // when pause finished
-                            setGrid(GridType.Target); // show the target grid...
-                            MessageText.setText("Select a spot to attack.");// ... and prompts to attack
-                            pingpong.start();
-                        });
-                        attackPause.play();
-                    }
-                }
+                setGrid(GridType.Ocean); // set grid to show where opponent attacked
+                GameManager.gameState = GameState.PlayerTurn; // sets the state back to the player turn
+                TitleText.setText(GetMessage(opponentAttack.out, false)); // sets the message text for the
+                                                                          // attack
+                MessageText.setText(opponentAttack.out.length() > 3 ? "Hit!" : "Miss!");
+                TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
+                PauseTransition attackPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE));
+                attackPause.setOnFinished(x -> { // when pause finished
+                    setGrid(GridType.Target); // show the target grid...
+                    MessageText.setText("Select a spot to attack.");// ... and prompts to attack
+                });
+                attackPause.play();
+                checkWin();
             });
         }).start();
     }
@@ -512,7 +583,9 @@ public class PlayerBoardController {
     }
 
     /**
-     * Sets the grid internally, ensures the correct grid is drawn and the radiobutton is selected on the UI
+     * Sets the grid internally, ensures the correct grid is drawn and the
+     * radiobutton is selected on the UI
+     * 
      * @param type The GridType to draw. Ocean = player, Target = Opponent
      */
     private void setGrid(GridType type) {
@@ -528,26 +601,48 @@ public class PlayerBoardController {
     }
 
     /**
-     * Ends the game and resets the game manager 
-     * @param showCommunicationError Shows a dialogue that states a communication error happened, for multiplayer
+     * Ends the game and resets the game manager
+     * 
+     * @param showCommunicationError Shows a dialogue that states a communication
+     *                               error happened, for multiplayer
      */
-    private void closeGame(boolean showCommunicationError) { 
-        if (GameManager.isSinglePlayer) {
-            // TODO: singleplayer end
-        } else {
-            try { // if opponent disconnects
-                App.setRoot("MainMenu");
-                GameManager.Reset();
+    private void closeGame(boolean showCommunicationError) {
+        try { // if opponent disconnects
+            App.setRoot("MainMenu");
+            GameManager.Reset();
+            if (showCommunicationError) {
+                alert.setAlertType(AlertType.ERROR);
                 alert.setTitle("Communication Error");
                 alert.setContentText("Connection closed by opponent.");
-                if (showCommunicationError)
-                    alert.show();
-            } catch (IOException ex) {
-                System.out.println(">> ERR 0x0001: " + ex.getMessage());
+                alert.show();
             }
+        } catch (IOException ex) {
+            System.out.println(">> ERR 0x0001: " + ex.getMessage());
         }
     }
 
+    /**
+     * Shows a win/lose message and resets the game manager.
+     * 
+     * @param win Whether or not the user recieving the message won.
+     */
+    private void endMessage(boolean win) {
+        try {
+            App.setRoot("MainMenu");
+            GameManager.Reset();
+            alert.setAlertType(AlertType.NONE);
+            if (win) {
+                alert.setTitle("You win!");
+                alert.setContentText("You sunk all of their ships!");
+            } else {
+                alert.setTitle("You lose.");
+                alert.setContentText("They sunk all of your ships.");
+            }
+            alert.show();
+        } catch (IOException ex) {
+            System.out.println(">> ERR 0x0001: " + ex.getMessage());
+        }
+    }
 
     /**
      * Sets the buttons for the UI for the gamestate.
