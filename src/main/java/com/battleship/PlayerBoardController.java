@@ -261,7 +261,6 @@ public class PlayerBoardController {
     private final Thread FeedManager = new Thread(() -> {
         String input;
         while (true) {
-            System.out.println("FEED: " + GameManager.multiplayerFeed);
             if (GameManager.multiplayerFeed.isEmpty()) {
                 GameManager.out.println("ping");
                 try {
@@ -284,14 +283,11 @@ public class PlayerBoardController {
             } else {
                 var x = GameManager.multiplayerFeed.removeFirst();
                 GameManager.out.println(x);
-                System.out.println(x + " Sent");
 
                 if (x.equals("win")) {
                     endMessage(false);
                 }
             }
-            System.out.println("State: " + GameManager.gameState);
-            System.out.println("Selected Location: " + _toHit);
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
@@ -529,7 +525,6 @@ public class PlayerBoardController {
         Thread playerTurnThread = new Thread(() -> {
             var playerAttack = GameManager.player.attack(_toHit);
             Platform.runLater(() -> {
-                System.out.println(playerAttack);
                 setGrid(GridType.Target);
                 TitleText.setText(GetMessage(playerAttack, true));
                 TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update

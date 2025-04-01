@@ -137,7 +137,7 @@ public class MultiplayerController { // TODO: Revamp multiplayer screen to list 
 
             GameManager.out.println(GameManager.VERSION); // sends the version
             var canConnect = GameManager.in.readLine(); // if can connect, recieves "t", otherwise recieves the host version
-            System.out.println(canConnect);
+            
             
             if (!canConnect.equals("t")) // cancels connect if version mismatch
             {

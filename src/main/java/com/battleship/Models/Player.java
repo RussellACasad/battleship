@@ -87,14 +87,12 @@ public class Player {
             return output; // returns the result
         } else // if is multiplayer game
         {
-            System.out.println(location);
             GameManager.multiplayerFeed.add(location.toString()); // sends the attack to the opponent
             while (GameManager.multiplayerInput.equals("")) {}
             var result = GameManager.multiplayerInput; // gets the result of the atack
             GameManager.multiplayerInput = "";
             hitAttempts.add(new HitAttempt(location, result.length() > 3)); // adds to the hit attempts
             GameManager.gameState = GameState.OpponentTurn;
-            System.out.println("RETURN: " + result);
             return result; // returns the result
         }
     }
