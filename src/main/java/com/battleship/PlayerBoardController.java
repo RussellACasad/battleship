@@ -7,6 +7,7 @@ import com.battleship.Models.Boat;
 import com.battleship.Models.GameManager;
 import com.battleship.Models.GameState;
 import com.battleship.Models.GridType;
+import com.battleship.Models.HitAttempt;
 import com.battleship.Models.OpponentAttack;
 
 import javafx.animation.PauseTransition;
@@ -16,214 +17,214 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 @SuppressWarnings("unused")
 public class PlayerBoardController {
     @FXML
-    private Rectangle A1;
+    private ImageView A1;
     @FXML
-    private Rectangle A2;
+    private ImageView A2;
     @FXML
-    private Rectangle A3;
+    private ImageView A3;
     @FXML
-    private Rectangle A4;
+    private ImageView A4;
     @FXML
-    private Rectangle A5;
+    private ImageView A5;
     @FXML
-    private Rectangle A6;
+    private ImageView A6;
     @FXML
-    private Rectangle A7;
+    private ImageView A7;
     @FXML
-    private Rectangle A8;
+    private ImageView A8;
     @FXML
-    private Rectangle A9;
+    private ImageView A9;
     @FXML
-    private Rectangle A10;
+    private ImageView A10;
     @FXML
-    private Rectangle B1;
+    private ImageView B1;
     @FXML
-    private Rectangle B2;
+    private ImageView B2;
     @FXML
-    private Rectangle B3;
+    private ImageView B3;
     @FXML
-    private Rectangle B4;
+    private ImageView B4;
     @FXML
-    private Rectangle B5;
+    private ImageView B5;
     @FXML
-    private Rectangle B6;
+    private ImageView B6;
     @FXML
-    private Rectangle B7;
+    private ImageView B7;
     @FXML
-    private Rectangle B8;
+    private ImageView B8;
     @FXML
-    private Rectangle B9;
+    private ImageView B9;
     @FXML
-    private Rectangle B10;
+    private ImageView B10;
     @FXML
-    private Rectangle C1;
+    private ImageView C1;
     @FXML
-    private Rectangle C2;
+    private ImageView C2;
     @FXML
-    private Rectangle C3;
+    private ImageView C3;
     @FXML
-    private Rectangle C4;
+    private ImageView C4;
     @FXML
-    private Rectangle C5;
+    private ImageView C5;
     @FXML
-    private Rectangle C6;
+    private ImageView C6;
     @FXML
-    private Rectangle C7;
+    private ImageView C7;
     @FXML
-    private Rectangle C8;
+    private ImageView C8;
     @FXML
-    private Rectangle C9;
+    private ImageView C9;
     @FXML
-    private Rectangle C10;
+    private ImageView C10;
     @FXML
-    private Rectangle D1;
+    private ImageView D1;
     @FXML
-    private Rectangle D2;
+    private ImageView D2;
     @FXML
-    private Rectangle D3;
+    private ImageView D3;
     @FXML
-    private Rectangle D4;
+    private ImageView D4;
     @FXML
-    private Rectangle D5;
+    private ImageView D5;
     @FXML
-    private Rectangle D6;
+    private ImageView D6;
     @FXML
-    private Rectangle D7;
+    private ImageView D7;
     @FXML
-    private Rectangle D8;
+    private ImageView D8;
     @FXML
-    private Rectangle D9;
+    private ImageView D9;
     @FXML
-    private Rectangle D10;
+    private ImageView D10;
     @FXML
-    private Rectangle E1;
+    private ImageView E1;
     @FXML
-    private Rectangle E2;
+    private ImageView E2;
     @FXML
-    private Rectangle E3;
+    private ImageView E3;
     @FXML
-    private Rectangle E4;
+    private ImageView E4;
     @FXML
-    private Rectangle E5;
+    private ImageView E5;
     @FXML
-    private Rectangle E6;
+    private ImageView E6;
     @FXML
-    private Rectangle E7;
+    private ImageView E7;
     @FXML
-    private Rectangle E8;
+    private ImageView E8;
     @FXML
-    private Rectangle E9;
+    private ImageView E9;
     @FXML
-    private Rectangle E10;
+    private ImageView E10;
     @FXML
-    private Rectangle F1;
+    private ImageView F1;
     @FXML
-    private Rectangle F2;
+    private ImageView F2;
     @FXML
-    private Rectangle F3;
+    private ImageView F3;
     @FXML
-    private Rectangle F4;
+    private ImageView F4;
     @FXML
-    private Rectangle F5;
+    private ImageView F5;
     @FXML
-    private Rectangle F6;
+    private ImageView F6;
     @FXML
-    private Rectangle F7;
+    private ImageView F7;
     @FXML
-    private Rectangle F8;
+    private ImageView F8;
     @FXML
-    private Rectangle F9;
+    private ImageView F9;
     @FXML
-    private Rectangle F10;
+    private ImageView F10;
     @FXML
-    private Rectangle G1;
+    private ImageView G1;
     @FXML
-    private Rectangle G2;
+    private ImageView G2;
     @FXML
-    private Rectangle G3;
+    private ImageView G3;
     @FXML
-    private Rectangle G4;
+    private ImageView G4;
     @FXML
-    private Rectangle G5;
+    private ImageView G5;
     @FXML
-    private Rectangle G6;
+    private ImageView G6;
     @FXML
-    private Rectangle G7;
+    private ImageView G7;
     @FXML
-    private Rectangle G8;
+    private ImageView G8;
     @FXML
-    private Rectangle G9;
+    private ImageView G9;
     @FXML
-    private Rectangle G10;
+    private ImageView G10;
     @FXML
-    private Rectangle H1;
+    private ImageView H1;
     @FXML
-    private Rectangle H2;
+    private ImageView H2;
     @FXML
-    private Rectangle H3;
+    private ImageView H3;
     @FXML
-    private Rectangle H4;
+    private ImageView H4;
     @FXML
-    private Rectangle H5;
+    private ImageView H5;
     @FXML
-    private Rectangle H6;
+    private ImageView H6;
     @FXML
-    private Rectangle H7;
+    private ImageView H7;
     @FXML
-    private Rectangle H8;
+    private ImageView H8;
     @FXML
-    private Rectangle H9;
+    private ImageView H9;
     @FXML
-    private Rectangle H10;
+    private ImageView H10;
     @FXML
-    private Rectangle I1;
+    private ImageView I1;
     @FXML
-    private Rectangle I2;
+    private ImageView I2;
     @FXML
-    private Rectangle I3;
+    private ImageView I3;
     @FXML
-    private Rectangle I4;
+    private ImageView I4;
     @FXML
-    private Rectangle I5;
+    private ImageView I5;
     @FXML
-    private Rectangle I6;
+    private ImageView I6;
     @FXML
-    private Rectangle I7;
+    private ImageView I7;
     @FXML
-    private Rectangle I8;
+    private ImageView I8;
     @FXML
-    private Rectangle I9;
+    private ImageView I9;
     @FXML
-    private Rectangle I10;
+    private ImageView I10;
     @FXML
-    private Rectangle J1;
+    private ImageView J1;
     @FXML
-    private Rectangle J2;
+    private ImageView J2;
     @FXML
-    private Rectangle J3;
+    private ImageView J3;
     @FXML
-    private Rectangle J4;
+    private ImageView J4;
     @FXML
-    private Rectangle J5;
+    private ImageView J5;
     @FXML
-    private Rectangle J6;
+    private ImageView J6;
     @FXML
-    private Rectangle J7;
+    private ImageView J7;
     @FXML
-    private Rectangle J8;
+    private ImageView J8;
     @FXML
-    private Rectangle J9;
+    private ImageView J9;
     @FXML
-    private Rectangle J10;
+    private ImageView J10;
     @FXML
     private RadioButton horizontalShipRadio;
     @FXML
@@ -253,7 +254,7 @@ public class PlayerBoardController {
     @FXML
     private Button fireButton;
 
-    private Rectangle[] _board;
+    private ImageView[] _board;
     private int _selectedShip = 0;
     private transient BoardLocation _toHit = null;
     private final Alert alert = new Alert(AlertType.INFORMATION);
@@ -299,7 +300,8 @@ public class PlayerBoardController {
 
     @FXML
     public void initialize() {
-        _board = new Rectangle[] { // Creates the board grid
+        GameManager.LoadSprites();
+        _board = new ImageView[] { // Creates the board grid
                 A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                 B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                 C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
@@ -316,6 +318,7 @@ public class PlayerBoardController {
         destroyerRadio.setTextFill(Color.RED);
         submarineRadio.setTextFill(Color.RED);
         patrolRadio.setTextFill(Color.RED);
+        Draw(GridType.Ocean);
         SetUI();
 
         if (!GameManager.isSinglePlayer) { // If multiplayer, listens for when the opponent peer has placed their ships
@@ -352,12 +355,10 @@ public class PlayerBoardController {
             }
         }
 
-        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and
-                                         // ships
+        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and ships
             case PlaceShips -> {
 
-                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship
-                                                                     // horizontally
+                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship horizontally
                 var didSet = GameManager.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
                         GameManager.player); // attempts to set the boat
                 if (didSet) { // if the boat is set, upsates the UI and marks the boat as placed
@@ -401,15 +402,13 @@ public class PlayerBoardController {
         for (var boat : GameManager.player.boats) { // for each boat
             var isHorizontal = Math.random() < 0.5; // 50% chance of being horizontal
             var loc = BoardLocation.randomLocation(); // picks a random location
-            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat
-                                                                               // sets
+            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat sets
                 loc = BoardLocation.randomLocation();
             }
             boat.isPlaced = true;
         }
 
-        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of
-                                                                                                  // the radios
+        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of the radios
         battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
         destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
         submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
@@ -438,8 +437,7 @@ public class PlayerBoardController {
             }
             GameManager.gameState = GameState.Wait; // waits for the opponents to place their boats
             SetUI();
-            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in
-                               // singleplayer, will not wait
+            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in singleplayer, will not wait
                 while (!GameManager.opponent.shipsSet) {
                     TitleText.setText("Waiting for opponent to set their ships...");
                 }
@@ -551,8 +549,7 @@ public class PlayerBoardController {
             javafx.application.Platform.runLater(() -> { // when opponent attacks...
                 setGrid(GridType.Ocean); // set grid to show where opponent attacked
                 GameManager.gameState = GameState.PlayerTurn; // sets the state back to the player turn
-                TitleText.setText(GetMessage(opponentAttack.out, false)); // sets the message text for the
-                                                                          // attack
+                TitleText.setText(GetMessage(opponentAttack.out, false)); // sets the message text for the attack
                 MessageText.setText(opponentAttack.out.length() > 3 ? "Hit!" : "Miss!");
                 TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
                 PauseTransition attackPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE));
@@ -691,30 +688,141 @@ public class PlayerBoardController {
      */
     private void Draw(GridType grid) {
         for (var square : _board) {
-            square.setFill(Color.CORNFLOWERBLUE); // Set all squares to blue initially
+            square.setImage(GameManager.Sprites.get("ocean").Picture); // Set all squares to ocean initially
+            square.setRotate(0);
         }
         if (grid == GridType.Ocean) {
             for (var boat : GameManager.player.boats) {
-                for (BoardLocation location : boat.location) {
-                    if (location != null) {
-                        _board[location.getIndex()].setFill(Color.BURLYWOOD); // Set boat locations to another
-                        // color
+                boolean isHorizontal; 
+                if(boat.location[0] == null)
+                {
+                    continue;
+                }
+                if (boat.location.length == 1)
+                {
+                    isHorizontal = true; 
+                } else {
+                    isHorizontal = boat.location[0].getLetter() != boat.location[1].getLetter();
+                }
+                for (var i = 0; i < boat.location.length; i++) {
+                    if (boat.location != null) {
+                        // TODO: Find what ship image needs to be displayed, rotation, and set it to the image
+                        var imgName = "boat";
+                        imgName += (i == 0 || i == boat.location.length - 1) ? "End" : "Middle";
+                        if (grid == GridType.Ocean) {
+                            for (var hit : GameManager.opponent.hitAttempts) {
+                                if (hit.location.equals(boat.location[i])) {
+                                    imgName += "Hit";
+                                    break;
+                                }
+                            }
+                        }
+                        var img = GameManager.Sprites.get(imgName);
+                        var rotation = 0;
+                        _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set rotate
+                        if (i == boat.location.length - 1) {
+                            _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+                        }
+                        _board[boat.location[i].getIndex()].setImage(img.Picture);
                     }
                 }
-
                 for (var hit : GameManager.opponent.hitAttempts) {
-                    _board[hit.location.getIndex()].setFill(hit.didHit ? Color.RED : Color.WHITE);
+                    if (!hit.didHit) {
+                        _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").Picture);
+                    }
                 }
             }
         } else if (grid == GridType.Target) {
-
             if (GameManager.gameState == GameState.PlayerTurn && _toHit != null) {
-                _board[_toHit.getIndex()].setFill(Color.MEDIUMAQUAMARINE);
+                _board[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").Picture);
             }
-
-            for (var hit : GameManager.player.hitAttempts) {
-                _board[hit.location.getIndex()].setFill(hit.didHit ? Color.RED : Color.WHITE);
+            for (var boat : GameManager.opponent.boats) {
+                boolean isHorizontal; 
+                if(boat.location[0] == null)
+                {
+                    continue;
+                }
+                if (boat.location.length == 1)
+                {
+                    isHorizontal = true; 
+                } else {
+                    isHorizontal = boat.location[0].getLetter() != boat.location[1].getLetter();
+                }
+                for (var hit : GameManager.player.hitAttempts) {
+                    if (!hit.didHit) {
+                        _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").Picture);
+                    } else {
+                        for (int i = 0; i < boat.location.length; i++) {
+                            if (hit.location.equals(boat.location[i])) {
+                                String imgName = "boat";
+                                imgName += (i == 0 || i == boat.location.length - 1) ? "EndHit" : "MiddleHit";
+                                var img = GameManager.Sprites.get(imgName);
+                                var rotation = 0;
+                                _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0);
+                                if (i == boat.location.length - 1) {
+                                    _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+                                }
+                                _board[boat.location[i].getIndex()].setImage(img.Picture);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
+// JORDAN'S BLOOD, SWEAT, AND TEARS
+
+// for (var i = 0; i < boat.location.length; i++) {
+//     if (boat.location != null) {
+//         // TODO: Find what ship image needs to be displayed, rotation, and set it to the image
+//         var imgName = "boat";
+//         imgName += (i == 0 || i == boat.location.length - 1) ? "End" : "Middle";
+//         if (grid == GridType.Ocean) {
+//             for (var hit : GameManager.player.hitAttempts) {
+//                 if (hit.didHit) {
+//                     System.out.println("SUCCESSFUL HIT");
+//                 }
+//                 System.out.println("REACHED:\t2");
+//                 if (hit.location.equals(boat.location[i])) {
+//                     System.out.println("REACHED:\t3");
+//                     imgName += "Hit";
+//                     System.out.println(imgName);
+//                     var img = GameManager.Sprites.get(imgName);
+//                     var rotation = 0;
+//                     _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set rotate
+//                     if (i == boat.location.length - 1) {
+//                         _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+//                     }
+//                     _board[boat.location[i].getIndex()].setImage(img.Picture);
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// if (GameManager.gameState == GameState.PlayerTurn && _toHit != null) {
+//     _board[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").Picture);
+// }
+// for (var hit : GameManager.player.hitAttempts) {
+//     _board[hit.location.getIndex()].setImage((hit.didHit ? GameManager.Sprites.get("oceanHit") : GameManager.Sprites.get("oceanMiss")).Picture);
+// }
+
+// var img = GameManager.Sprites.get(imgName);
+// var rotation = 0;
+// _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set rotate
+// if (i == boat.location.length - 1) {
+//     _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+// }
+// _board[boat.location[i].getIndex()].setImage(img.Picture);
+
+// for (var i = 0; i < boat.location.length; i++) {
+//     for (var hit : GameManager.player.hitAttempts) {
+//         if (i == 0 || i == boat.location.length - 1) {
+//             _board[hit.location.getIndex()].setImage((hit.didHit ? GameManager.Sprites.get("boatEndHit") : GameManager.Sprites.get("oceanMiss")).Picture);
+//         } else {
+//             _board[hit.location.getIndex()].setImage((hit.didHit ? GameManager.Sprites.get("boatMiddleHit") : GameManager.Sprites.get("oceanMiss")).Picture);
+//         }
+//     }
+// }

@@ -6,7 +6,10 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+import javafx.scene.image.Image;
 
 public class GameManager {
     public static final String VERSION = "Beta 1.1.0"; // game version
@@ -24,6 +27,7 @@ public class GameManager {
     public static boolean isSinglePlayer = true;
     public static transient volatile String multiplayerInput = ""; 
     public static transient List<String> multiplayerFeed = new ArrayList<>();
+    public static HashMap<String, Sprite> Sprites = new HashMap<>(); 
 
     /**
      * Resets the GameManager to default settings, as well as closes all multiplayer streams and sets them back to NULL. 
@@ -63,5 +67,19 @@ public class GameManager {
                 ex.getStackTrace();
             }
         }
+    }
+
+    public static void LoadSprites()
+    {
+        Sprites.put("boatEnd", new Sprite(new Image("/com/battleship/Assets/boat-end.jpg")));
+        Sprites.put("boatEndHit", new Sprite(new Image("/com/battleship/Assets/boat-end-hit.jpg")));
+        Sprites.put("boatMiddle", new Sprite(new Image("/com/battleship/Assets/boat-middle.jpg")));
+        Sprites.put("boatMiddleHit", new Sprite(new Image("/com/battleship/Assets/boat-middle-hit.jpg")));
+        Sprites.put("boatTile", new Sprite(new Image("/com/battleship/Assets/boat-tile.jpg")));
+        Sprites.put("ocean", new Sprite(new Image("/com/battleship/Assets/ocean.jpg")));
+        Sprites.put("oceanHit", new Sprite(new Image("/com/battleship/Assets/ocean-hit.jpg")));
+        Sprites.put("oceanMiss", new Sprite(new Image("/com/battleship/Assets/ocean-miss.jpg")));
+        Sprites.put("oceanTarget", new Sprite(new Image("/com/battleship/Assets/ocean-target.jpg")));
+        Sprites.put("cat", new Sprite(new Image("/com/battleship/Assets/cat.gif")));
     }
 }
