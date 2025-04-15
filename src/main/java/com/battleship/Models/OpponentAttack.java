@@ -1,6 +1,10 @@
 package com.battleship.Models;
 
-public class OpponentAttack extends Thread { // TODO: Move back into opponent class, for better OOP support
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class OpponentAttack extends Thread {
     BoardLocation location;
     public String out = "";
 
@@ -10,52 +14,106 @@ public class OpponentAttack extends Thread { // TODO: Move back into opponent cl
 
     @Override
     public void run() {
-        var didHit = false;
-        Boat hit = null;
+        if (!GameManager.isSinglePlayer) {
+            // Network play: use provided protocol.
+            try {
+                while (!GameManager.in.ready()) {
+                    // Wait for input
+                }
+                String output = "ping";
+                while (output.equals("ping")) {
+                    output = GameManager.in.readLine();
+                    if (output.equals("ping")) {
+                        GameManager.out.println("pong");
+                    }
+                }
+                this.location = BoardLocation.parseString(output);
+            } catch (IOException e) {
+                System.out.println(">> ERR 0x0002: " + e.getMessage());
+                this.out = null;
+                return;
+            }
+        } else {
+            // Single-player: use the enhanced AI logic.
+            this.location = getNextAttackLocation();
+        }
 
-        if (GameManager.isSinglePlayer) // if a singleplayer game
-        {
-            while (location == null) // TODO: Make the opponent actually try to win instead of always hitting random
-                                     // spots
-            {
-                location = BoardLocation.randomLocation();
-                for (var attempt : GameManager.opponent.hitAttempts) {
-                    if (attempt.location == location) {
-                        location = null;
+        boolean didHit = false;
+        Boat hitBoat = null;
+        // Check if the chosen location hits any of the player's boats.
+        for (Boat boat : GameManager.player.boats) {
+            for (int i = 0; i < boat.location.length; i++) {
+                if (this.location == boat.location[i]) {
+                    didHit = true;
+                    boat.isHit[i] = true;
+                    hitBoat = boat;
+                    break;
+                }
+            }
+            if (didHit) break;
+        }
+
+        GameManager.opponent.hitAttempts.add(new HitAttempt(this.location, didHit));
+
+        String output = (this.location != null ? this.location.name() : "ERR");
+        if (hitBoat != null) {
+            output += "," + hitBoat.name.getName() + ",";
+            output += (hitBoat.isSunk() ? "t" : "f");
+        }
+        if (!GameManager.isSinglePlayer) {
+            GameManager.out.println(output);
+        }
+        this.out = output;
+    }
+
+    //*****Determines the next attack location using the hunt/target methods.
+     
+    private BoardLocation getNextAttackLocation() {
+        // Target mode: if any previous hit exists, try its neighbors.
+        for (HitAttempt attempt : GameManager.opponent.hitAttempts) {
+            if (attempt.didHit) {
+                for (BoardLocation neighbor : attempt.location.getNeighbors()) {
+                    if (!hasAttempted(neighbor)) {
+                        return neighbor;
                     }
                 }
             }
-        } else // if multiplayer game
-        {
-            while (GameManager.multiplayerInput.equals("")) {} // waits for input
-            location = BoardLocation.parseString(GameManager.multiplayerInput); // assigns the attack to the location
-            GameManager.multiplayerInput = "";
         }
-
-        boatCheck: for (var boat : GameManager.player.boats) { // checks boats in PLAYER board, true if hit, false if
-                                                               // not
-            for (var i = 0; i < boat.location.length; i++) {
-                if (location == boat.location[i]) {
-                    didHit = true;
-                    boat.isHit[i] = true;
-                    hit = boat;
-                    break boatCheck;
+        // Hunt mode: choose from unattempted locations in a checkerboard pattern.
+        List<BoardLocation> candidates = new ArrayList<>();
+        for (BoardLocation loc : BoardLocation.values()) {
+            int row = loc.getLetter() - 'A';
+            int col = loc.getNumber() - 1;
+            // Use a checkerboard pattern: only consider locations where (row+col) is even.
+            if ((row + col) % 2 == 0 && !hasAttempted(loc)) {
+                candidates.add(loc);
+            }
+        }
+        // If nothing found, pick any unattempted location.
+        if (candidates.isEmpty()) {
+            for (BoardLocation loc : BoardLocation.values()) {
+                if (!hasAttempted(loc)) {
+                    candidates.add(loc);
                 }
             }
         }
-        GameManager.opponent.hitAttempts.add(new HitAttempt(location, didHit)); // adds the hit attempt to the opponent
-
-        var output = ""; // generates the output string
-        output += (location != null ? location.name() : "ERR");
-
-        if (hit != null) {
-            output += "," + hit.name.getName() + ",";
-            output += hit.isSunk() ? "t" : "f";
+        if (!candidates.isEmpty()) {
+            int index = (int) (Math.random() * candidates.size());
+            return candidates.get(index);
         }
+        // If every spot has been attempted, return null.
+        return null;
+    }
 
-        if (!GameManager.isSinglePlayer) {
-            GameManager.multiplayerFeed.add(output); // sends the output if multiplayer
+    //Checks if the chosen location has already been attacked.
+     
+    private boolean hasAttempted(BoardLocation loc) {
+        for (HitAttempt attempt : GameManager.opponent.hitAttempts) {
+            if (attempt.location == loc) {
+                return true;
+            }
         }
-        out = output; // returns the output string locally
+        return false;
     }
 }
+//******** 
