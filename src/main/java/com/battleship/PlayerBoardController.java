@@ -7,7 +7,6 @@ import com.battleship.Models.Boat;
 import com.battleship.Models.GameManager;
 import com.battleship.Models.GameState;
 import com.battleship.Models.GridType;
-import com.battleship.Models.HitAttempt;
 import com.battleship.Models.OpponentAttack;
 
 import javafx.animation.PauseTransition;
@@ -752,19 +751,7 @@ public class PlayerBoardController {
                     if (!hit.didHit) {
                         _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").Picture);
                     } else {
-                        for (int i = 0; i < boat.location.length; i++) {
-                            if (hit.location.equals(boat.location[i])) {
-                                String imgName = "boat";
-                                imgName += (i == 0 || i == boat.location.length - 1) ? "EndHit" : "MiddleHit";
-                                var img = GameManager.Sprites.get(imgName);
-                                var rotation = 0;
-                                _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0);
-                                if (i == boat.location.length - 1) {
-                                    _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
-                                }
-                                _board[boat.location[i].getIndex()].setImage(img.Picture);
-                            }
-                        }
+                        _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanHit").Picture);
                     }
                 }
             }
