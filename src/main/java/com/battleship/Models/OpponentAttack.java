@@ -1,6 +1,5 @@
 package com.battleship.Models;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,23 +15,9 @@ public class OpponentAttack extends Thread {
     public void run() {
         if (!GameManager.isSinglePlayer) {
             // Network play: use provided protocol.
-            try {
-                while (!GameManager.in.ready()) {
-                    // Wait for input
-                }
-                String output = "ping";
-                while (output.equals("ping")) {
-                    output = GameManager.in.readLine();
-                    if (output.equals("ping")) {
-                        GameManager.out.println("pong");
-                    }
-                }
-                this.location = BoardLocation.parseString(output);
-            } catch (IOException e) {
-                System.out.println(">> ERR 0x0002: " + e.getMessage());
-                this.out = null;
-                return;
-            }
+                while (GameManager.multiplayerInput.equals("")) {} // Wait for an input from client
+                this.location = BoardLocation.parseString(GameManager.multiplayerInput);
+                GameManager.multiplayerInput = "";
         } else {
             // Single-player: use the enhanced AI logic.
             this.location = getNextAttackLocation();
@@ -61,12 +46,15 @@ public class OpponentAttack extends Thread {
             output += (hitBoat.isSunk() ? "t" : "f");
         }
         if (!GameManager.isSinglePlayer) {
-            GameManager.out.println(output);
+            GameManager.multiplayerFeed.add(output); 
         }
         this.out = output;
     }
 
-    //*****Determines the next attack location using the hunt/target methods.
+    /**
+     * Determines the next attack location using the hunt/target methods.
+     * @return The location to be attacked
+     */
      
     private BoardLocation getNextAttackLocation() {
         // Target mode: if any previous hit exists, try its neighbors.

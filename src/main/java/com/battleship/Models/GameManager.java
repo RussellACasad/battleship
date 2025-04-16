@@ -12,7 +12,7 @@ import java.util.List;
 import javafx.scene.image.Image;
 
 public class GameManager {
-    public static final String VERSION = "Beta 1.1.0"; // game version
+    public static final String VERSION = "Beta 1.1.1"; // game version
     public static final int FIREPAUSE = 3; // the pause when the fire button is pressed
 
     public static GameMode gameMode = GameMode.classic; 
@@ -82,6 +82,5 @@ public class GameManager {
         Sprites.put("oceanHit", new Sprite(new Image("/com/battleship/Assets/ocean-hit.jpg"), ocean));
         Sprites.put("oceanMiss", new Sprite(new Image("/com/battleship/Assets/ocean-miss.jpg"), ocean));
         Sprites.put("oceanTarget", new Sprite(new Image("/com/battleship/Assets/ocean-target.jpg"), ocean));
-        Sprites.put("Test", new Sprite(new Image("/com/battleship/Assets/boatTEST.png"), new Image("/com/battleship/Assets/ocean-target.jpg"), true));
     }
 }

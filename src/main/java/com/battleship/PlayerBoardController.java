@@ -665,6 +665,7 @@ public class PlayerBoardController {
         String input;
         while (true) {
             if (GameManager.multiplayerFeed.isEmpty()) {
+                System.out.println(GameManager.multiplayerInput);
                 GameManager.out.println("ping");
                 try {
                     input = GameManager.in.readLine();
