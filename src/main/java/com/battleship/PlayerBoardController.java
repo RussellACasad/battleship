@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -225,6 +226,406 @@ public class PlayerBoardController {
     @FXML
     private ImageView J10;
     @FXML
+    private ImageView A1O;
+    @FXML
+    private ImageView A2O;
+    @FXML
+    private ImageView A3O;
+    @FXML
+    private ImageView A4O;
+    @FXML
+    private ImageView A5O;
+    @FXML
+    private ImageView A6O;
+    @FXML
+    private ImageView A7O;
+    @FXML
+    private ImageView A8O;
+    @FXML
+    private ImageView A9O;
+    @FXML
+    private ImageView A10O;
+    @FXML
+    private ImageView B1O;
+    @FXML
+    private ImageView B2O;
+    @FXML
+    private ImageView B3O;
+    @FXML
+    private ImageView B4O;
+    @FXML
+    private ImageView B5O;
+    @FXML
+    private ImageView B6O;
+    @FXML
+    private ImageView B7O;
+    @FXML
+    private ImageView B8O;
+    @FXML
+    private ImageView B9O;
+    @FXML
+    private ImageView B10O;
+    @FXML
+    private ImageView C1O;
+    @FXML
+    private ImageView C2O;
+    @FXML
+    private ImageView C3O;
+    @FXML
+    private ImageView C4O;
+    @FXML
+    private ImageView C5O;
+    @FXML
+    private ImageView C6O;
+    @FXML
+    private ImageView C7O;
+    @FXML
+    private ImageView C8O;
+    @FXML
+    private ImageView C9O;
+    @FXML
+    private ImageView C10O;
+    @FXML
+    private ImageView D1O;
+    @FXML
+    private ImageView D2O;
+    @FXML
+    private ImageView D3O;
+    @FXML
+    private ImageView D4O;
+    @FXML
+    private ImageView D5O;
+    @FXML
+    private ImageView D6O;
+    @FXML
+    private ImageView D7O;
+    @FXML
+    private ImageView D8O;
+    @FXML
+    private ImageView D9O;
+    @FXML
+    private ImageView D10O;
+    @FXML
+    private ImageView E1O;
+    @FXML
+    private ImageView E2O;
+    @FXML
+    private ImageView E3O;
+    @FXML
+    private ImageView E4O;
+    @FXML
+    private ImageView E5O;
+    @FXML
+    private ImageView E6O;
+    @FXML
+    private ImageView E7O;
+    @FXML
+    private ImageView E8O;
+    @FXML
+    private ImageView E9O;
+    @FXML
+    private ImageView E10O;
+    @FXML
+    private ImageView F1O;
+    @FXML
+    private ImageView F2O;
+    @FXML
+    private ImageView F3O;
+    @FXML
+    private ImageView F4O;
+    @FXML
+    private ImageView F5O;
+    @FXML
+    private ImageView F6O;
+    @FXML
+    private ImageView F7O;
+    @FXML
+    private ImageView F8O;
+    @FXML
+    private ImageView F9O;
+    @FXML
+    private ImageView F10O;
+    @FXML
+    private ImageView G1O;
+    @FXML
+    private ImageView G2O;
+    @FXML
+    private ImageView G3O;
+    @FXML
+    private ImageView G4O;
+    @FXML
+    private ImageView G5O;
+    @FXML
+    private ImageView G6O;
+    @FXML
+    private ImageView G7O;
+    @FXML
+    private ImageView G8O;
+    @FXML
+    private ImageView G9O;
+    @FXML
+    private ImageView G10O;
+    @FXML
+    private ImageView H1O;
+    @FXML
+    private ImageView H2O;
+    @FXML
+    private ImageView H3O;
+    @FXML
+    private ImageView H4O;
+    @FXML
+    private ImageView H5O;
+    @FXML
+    private ImageView H6O;
+    @FXML
+    private ImageView H7O;
+    @FXML
+    private ImageView H8O;
+    @FXML
+    private ImageView H9O;
+    @FXML
+    private ImageView H10O;
+    @FXML
+    private ImageView I1O;
+    @FXML
+    private ImageView I2O;
+    @FXML
+    private ImageView I3O;
+    @FXML
+    private ImageView I4O;
+    @FXML
+    private ImageView I5O;
+    @FXML
+    private ImageView I6O;
+    @FXML
+    private ImageView I7O;
+    @FXML
+    private ImageView I8O;
+    @FXML
+    private ImageView I9O;
+    @FXML
+    private ImageView I10O;
+    @FXML
+    private ImageView J1O;
+    @FXML
+    private ImageView J2O;
+    @FXML
+    private ImageView J3O;
+    @FXML
+    private ImageView J4O;
+    @FXML
+    private ImageView J5O;
+    @FXML
+    private ImageView J6O;
+    @FXML
+    private ImageView J7O;
+    @FXML
+    private ImageView J8O;
+    @FXML
+    private ImageView J9O;
+    @FXML
+    private ImageView J10O;
+    @FXML
+    private StackPane A1G;
+    @FXML
+    private StackPane A2G;
+    @FXML
+    private StackPane A3G;
+    @FXML
+    private StackPane A4G;
+    @FXML
+    private StackPane A5G;
+    @FXML
+    private StackPane A6G;
+    @FXML
+    private StackPane A7G;
+    @FXML
+    private StackPane A8G;
+    @FXML
+    private StackPane A9G;
+    @FXML
+    private StackPane A10G;
+    @FXML
+    private StackPane B1G;
+    @FXML
+    private StackPane B2G;
+    @FXML
+    private StackPane B3G;
+    @FXML
+    private StackPane B4G;
+    @FXML
+    private StackPane B5G;
+    @FXML
+    private StackPane B6G;
+    @FXML
+    private StackPane B7G;
+    @FXML
+    private StackPane B8G;
+    @FXML
+    private StackPane B9G;
+    @FXML
+    private StackPane B10G;
+    @FXML
+    private StackPane C1G;
+    @FXML
+    private StackPane C2G;
+    @FXML
+    private StackPane C3G;
+    @FXML
+    private StackPane C4G;
+    @FXML
+    private StackPane C5G;
+    @FXML
+    private StackPane C6G;
+    @FXML
+    private StackPane C7G;
+    @FXML
+    private StackPane C8G;
+    @FXML
+    private StackPane C9G;
+    @FXML
+    private StackPane C10G;
+    @FXML
+    private StackPane D1G;
+    @FXML
+    private StackPane D2G;
+    @FXML
+    private StackPane D3G;
+    @FXML
+    private StackPane D4G;
+    @FXML
+    private StackPane D5G;
+    @FXML
+    private StackPane D6G;
+    @FXML
+    private StackPane D7G;
+    @FXML
+    private StackPane D8G;
+    @FXML
+    private StackPane D9G;
+    @FXML
+    private StackPane D10G;
+    @FXML
+    private StackPane E1G;
+    @FXML
+    private StackPane E2G;
+    @FXML
+    private StackPane E3G;
+    @FXML
+    private StackPane E4G;
+    @FXML
+    private StackPane E5G;
+    @FXML
+    private StackPane E6G;
+    @FXML
+    private StackPane E7G;
+    @FXML
+    private StackPane E8G;
+    @FXML
+    private StackPane E9G;
+    @FXML
+    private StackPane E10G;
+    @FXML
+    private StackPane F1G;
+    @FXML
+    private StackPane F2G;
+    @FXML
+    private StackPane F3G;
+    @FXML
+    private StackPane F4G;
+    @FXML
+    private StackPane F5G;
+    @FXML
+    private StackPane F6G;
+    @FXML
+    private StackPane F7G;
+    @FXML
+    private StackPane F8G;
+    @FXML
+    private StackPane F9G;
+    @FXML
+    private StackPane F10G;
+    @FXML
+    private StackPane G1G;
+    @FXML
+    private StackPane G2G;
+    @FXML
+    private StackPane G3G;
+    @FXML
+    private StackPane G4G;
+    @FXML
+    private StackPane G5G;
+    @FXML
+    private StackPane G6G;
+    @FXML
+    private StackPane G7G;
+    @FXML
+    private StackPane G8G;
+    @FXML
+    private StackPane G9G;
+    @FXML
+    private StackPane G10G;
+    @FXML
+    private StackPane H1G;
+    @FXML
+    private StackPane H2G;
+    @FXML
+    private StackPane H3G;
+    @FXML
+    private StackPane H4G;
+    @FXML
+    private StackPane H5G;
+    @FXML
+    private StackPane H6G;
+    @FXML
+    private StackPane H7G;
+    @FXML
+    private StackPane H8G;
+    @FXML
+    private StackPane H9G;
+    @FXML
+    private StackPane H10G;
+    @FXML
+    private StackPane I1G;
+    @FXML
+    private StackPane I2G;
+    @FXML
+    private StackPane I3G;
+    @FXML
+    private StackPane I4G;
+    @FXML
+    private StackPane I5G;
+    @FXML
+    private StackPane I6G;
+    @FXML
+    private StackPane I7G;
+    @FXML
+    private StackPane I8G;
+    @FXML
+    private StackPane I9G;
+    @FXML
+    private StackPane I10G;
+    @FXML
+    private StackPane J1G;
+    @FXML
+    private StackPane J2G;
+    @FXML
+    private StackPane J3G;
+    @FXML
+    private StackPane J4G;
+    @FXML
+    private StackPane J5G;
+    @FXML
+    private StackPane J6G;
+    @FXML
+    private StackPane J7G;
+    @FXML
+    private StackPane J8G;
+    @FXML
+    private StackPane J9G;
+    @FXML
+    private StackPane J10G;
+    @FXML
     private RadioButton horizontalShipRadio;
     @FXML
     private RadioButton verticalShipRadio;
@@ -253,7 +654,9 @@ public class PlayerBoardController {
     @FXML
     private Button fireButton;
 
-    private ImageView[] _board;
+    private ImageView[] _overlayBoard;
+    private ImageView[] _oceanBoard;
+    private StackPane[] _gridBoard;
     private int _selectedShip = 0;
     private transient BoardLocation _toHit = null;
     private final Alert alert = new Alert(AlertType.INFORMATION);
@@ -300,7 +703,19 @@ public class PlayerBoardController {
     @FXML
     public void initialize() {
         GameManager.LoadSprites();
-        _board = new ImageView[] { // Creates the board grid
+        _oceanBoard = new ImageView[] { // Creates the grid for the Ocean
+                A1O, A2O, A3O, A4O, A5O, A6O, A7O, A8O, A9O, A10O,
+                B1O, B2O, B3O, B4O, B5O, B6O, B7O, B8O, B9O, B10O,
+                C1O, C2O, C3O, C4O, C5O, C6O, C7O, C8O, C9O, C10O,
+                D1O, D2O, D3O, D4O, D5O, D6O, D7O, D8O, D9O, D10O,
+                E1O, E2O, E3O, E4O, E5O, E6O, E7O, E8O, E9O, E10O,
+                F1O, F2O, F3O, F4O, F5O, F6O, F7O, F8O, F9O, F10O,
+                G1O, G2O, G3O, G4O, G5O, G6O, G7O, G8O, G9O, G10O,
+                H1O, H2O, H3O, H4O, H5O, H6O, H7O, H8O, H9O, H10O,
+                I1O, I2O, I3O, I4O, I5O, I6O, I7O, I8O, I9O, I10O,
+                J1O, J2O, J3O, J4O, J5O, J6O, J7O, J8O, J9O, J10O
+        };
+        _overlayBoard = new ImageView[] { // Creates the grid for the Overlay
                 A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                 B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                 C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
@@ -311,6 +726,18 @@ public class PlayerBoardController {
                 H1, H2, H3, H4, H5, H6, H7, H8, H9, H10,
                 I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
                 J1, J2, J3, J4, J5, J6, J7, J8, J9, J10
+        };
+        _gridBoard = new StackPane[] { // Creates the grid of StackPanes
+                A1G, A2G, A3G, A4G, A5G, A6G, A7G, A8G, A9G, A10G,
+                B1G, B2G, B3G, B4G, B5G, B6G, B7G, B8G, B9G, B10G,
+                C1G, C2G, C3G, C4G, C5G, C6G, C7G, C8G, C9G, C10G,
+                D1G, D2G, D3G, D4G, D5G, D6G, D7G, D8G, D9G, D10G,
+                E1G, E2G, E3G, E4G, E5G, E6G, E7G, E8G, E9G, E10G,
+                F1G, F2G, F3G, F4G, F5G, F6G, F7G, F8G, F9G, F10G,
+                G1G, G2G, G3G, G4G, G5G, G6G, G7G, G8G, G9G, G10G,
+                H1G, H2G, H3G, H4G, H5G, H6G, H7G, H8G, H9G, H10G,
+                I1G, I2G, I3G, I4G, I5G, I6G, I7G, I8G, I9G, I10G,
+                J1G, J2G, J3G, J4G, J5G, J6G, J7G, J8G, J9G, J10G
         };
         carrierRadio.setTextFill(Color.RED); // sets the radio colors to red
         battleshipRadio.setTextFill(Color.RED);
@@ -338,8 +765,8 @@ public class PlayerBoardController {
     @FXML
     void squareClicked() { // when a square is clicked
         BoardLocation selectedLocation = null;
-        for (var i = 0; i < _board.length; i++) { // scans through the board
-            if (_board[i].isHover()) { // returns the square the user is hovering over
+        for (var i = 0; i < _gridBoard.length; i++) { // scans through the board
+            if (_gridBoard[i].isHover()) { // returns the square the user is hovering over
                 selectedLocation = BoardLocation.parseInt(i);
                 break;
             }
@@ -354,10 +781,12 @@ public class PlayerBoardController {
             }
         }
 
-        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and ships
+        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and
+                                         // ships
             case PlaceShips -> {
 
-                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship horizontally
+                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship
+                                                                     // horizontally
                 var didSet = GameManager.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
                         GameManager.player); // attempts to set the boat
                 if (didSet) { // if the boat is set, upsates the UI and marks the boat as placed
@@ -401,13 +830,15 @@ public class PlayerBoardController {
         for (var boat : GameManager.player.boats) { // for each boat
             var isHorizontal = Math.random() < 0.5; // 50% chance of being horizontal
             var loc = BoardLocation.randomLocation(); // picks a random location
-            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat sets
+            while (!boat.SetLocation(loc, isHorizontal, GameManager.player)) { // reassigns the location until the boat
+                                                                               // sets
                 loc = BoardLocation.randomLocation();
             }
             boat.isPlaced = true;
         }
 
-        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of the radios
+        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of
+                                                                                                  // the radios
         battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
         destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
         submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
@@ -436,7 +867,8 @@ public class PlayerBoardController {
             }
             GameManager.gameState = GameState.Wait; // waits for the opponents to place their boats
             SetUI();
-            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in singleplayer, will not wait
+            new Thread(() -> { // waits for all the opponent boats to be placed, if 2nd to place all or in
+                               // singleplayer, will not wait
                 while (!GameManager.opponent.shipsSet) {
                     TitleText.setText("Waiting for opponent to set their ships...");
                 }
@@ -686,26 +1118,25 @@ public class PlayerBoardController {
      *             represents the opponent's grid.
      */
     private void Draw(GridType grid) {
-        for (var square : _board) {
-            square.setImage(GameManager.Sprites.get("ocean").Picture); // Set all squares to ocean initially
-            square.setRotate(0);
+        for (var i = 0; i < _overlayBoard.length; i++) {
+            _oceanBoard[i].setImage(GameManager.Sprites.get("ocean").BottomImage); // Set all squares to ocean initially
+            _overlayBoard[i].setImage(null);
+            _overlayBoard[i].setRotate(0);
+            _oceanBoard[i].setRotate(0);
         }
         if (grid == GridType.Ocean) {
             for (var boat : GameManager.player.boats) {
-                boolean isHorizontal; 
-                if(boat.location[0] == null)
-                {
+                boolean isHorizontal;
+                if (boat.location[0] == null) {
                     continue;
                 }
-                if (boat.location.length == 1)
-                {
-                    isHorizontal = true; 
+                if (boat.location.length == 1) {
+                    isHorizontal = true;
                 } else {
                     isHorizontal = boat.location[0].getLetter() != boat.location[1].getLetter();
                 }
                 for (var i = 0; i < boat.location.length; i++) {
                     if (boat.location != null) {
-                        // TODO: Find what ship image needs to be displayed, rotation, and set it to the image
                         var imgName = "boat";
                         imgName += (i == 0 || i == boat.location.length - 1) ? "End" : "Middle";
                         if (grid == GridType.Ocean) {
@@ -718,87 +1149,41 @@ public class PlayerBoardController {
                         }
                         var img = GameManager.Sprites.get(imgName);
                         var rotation = 0;
-                        _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set rotate
+                        _overlayBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set Overlay Rotate
+                        _oceanBoard[boat.location[i].getIndex()].setRotate((isHorizontal && img.RotateBottomWithTop) ? 90 : 0); // Rotate bottom with top if needed
                         if (i == boat.location.length - 1) {
-                            _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+                            _overlayBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+                            if(img.RotateBottomWithTop)
+                            {
+                                _oceanBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
+                            }
                         }
-                        _board[boat.location[i].getIndex()].setImage(img.Picture);
+                        _overlayBoard[boat.location[i].getIndex()].setImage(img.TopImage);
+                        _oceanBoard[boat.location[i].getIndex()].setImage(img.BottomImage);
                     }
                 }
                 for (var hit : GameManager.opponent.hitAttempts) {
                     if (!hit.didHit) {
-                        _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").Picture);
+                        _overlayBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").TopImage);
+                        _oceanBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
                     }
                 }
             }
         } else if (grid == GridType.Target) {
             if (GameManager.gameState == GameState.PlayerTurn && _toHit != null) {
-                _board[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").Picture);
+                _overlayBoard[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").TopImage);
             }
             for (var boat : GameManager.opponent.boats) {
                 for (var hit : GameManager.player.hitAttempts) {
                     if (!hit.didHit) {
-                        _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").Picture);
+                        _overlayBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").TopImage);
+                        _oceanBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
                     } else {
-                        _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanHit").Picture);
+                        _overlayBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanHit").TopImage);
+                        _oceanBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
                     }
                 }
             }
         }
     }
 }
-// JORDAN'S BLOOD, SWEAT, AND TEARS
-
-// for (var i = 0; i < boat.location.length; i++) {
-//     if (boat.location != null) {
-//         // TODO: Find what ship image needs to be displayed, rotation, and set it to the image
-//         var imgName = "boat";
-//         imgName += (i == 0 || i == boat.location.length - 1) ? "End" : "Middle";
-//         if (grid == GridType.Ocean) {
-//             for (var hit : GameManager.player.hitAttempts) {
-//                 if (hit.didHit) {
-//                     System.out.println("SUCCESSFUL HIT");
-//                 }
-//                 System.out.println("REACHED:\t2");
-//                 if (hit.location.equals(boat.location[i])) {
-//                     System.out.println("REACHED:\t3");
-//                     imgName += "Hit";
-//                     System.out.println(imgName);
-//                     var img = GameManager.Sprites.get(imgName);
-//                     var rotation = 0;
-//                     _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set rotate
-//                     if (i == boat.location.length - 1) {
-//                         _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
-//                     }
-//                     _board[boat.location[i].getIndex()].setImage(img.Picture);
-//                     break;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// if (GameManager.gameState == GameState.PlayerTurn && _toHit != null) {
-//     _board[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").Picture);
-// }
-// for (var hit : GameManager.player.hitAttempts) {
-//     _board[hit.location.getIndex()].setImage((hit.didHit ? GameManager.Sprites.get("oceanHit") : GameManager.Sprites.get("oceanMiss")).Picture);
-// }
-
-// var img = GameManager.Sprites.get(imgName);
-// var rotation = 0;
-// _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set rotate
-// if (i == boat.location.length - 1) {
-//     _board[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
-// }
-// _board[boat.location[i].getIndex()].setImage(img.Picture);
-
-// for (var i = 0; i < boat.location.length; i++) {
-//     for (var hit : GameManager.player.hitAttempts) {
-//         if (i == 0 || i == boat.location.length - 1) {
-//             _board[hit.location.getIndex()].setImage((hit.didHit ? GameManager.Sprites.get("boatEndHit") : GameManager.Sprites.get("oceanMiss")).Picture);
-//         } else {
-//             _board[hit.location.getIndex()].setImage((hit.didHit ? GameManager.Sprites.get("boatMiddleHit") : GameManager.Sprites.get("oceanMiss")).Picture);
-//         }
-//     }
-// }

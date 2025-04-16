@@ -20,7 +20,7 @@ public class MainMenuController {
 
     @FXML
     private void play() throws IOException {
-        App.setRoot("GameProperties");
+        App.setRoot("PlayerBoard");
     }
 
     @FXML

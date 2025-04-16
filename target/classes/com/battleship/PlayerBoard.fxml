@@ -57,206 +57,406 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <!-- <Rectangle fx:id="A1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="B1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="C1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="D1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="E1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="F1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="G1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="H1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="I1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="J1" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="A2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="J2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="I2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="B2" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="D3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="E3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="F3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="G3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="H3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="I3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="J3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="C3" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="A4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="J4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="I4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="B4" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="I5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="J5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B5" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="I6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="J6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B6" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="I7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="J7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B7" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="I8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="J8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B8" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="I9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="J9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B9" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-                  <Rectangle fx:id="A10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-                  <Rectangle fx:id="I10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="9" />
-                  <Rectangle fx:id="H10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
-                  <Rectangle fx:id="G10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="7" />
-                  <Rectangle fx:id="F10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="6" />
-                  <Rectangle fx:id="E10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-                  <Rectangle fx:id="D10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
-                  <Rectangle fx:id="C10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
-                  <Rectangle fx:id="J10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
-                  <Rectangle fx:id="B10" arcWidth="5.0" fill="CORNFLOWERBLUE" height="50.0" onMouseClicked="#squareClicked" stroke="#ffffff00" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeWidth="0.0" width="50.0" GridPane.columnIndex="10" GridPane.rowIndex="2" /> -->
-                  <ImageView fx:id="A1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ImageView fx:id="B1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ImageView fx:id="C1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <ImageView fx:id="D1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <ImageView fx:id="E1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <ImageView fx:id="F1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <ImageView fx:id="G1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <ImageView fx:id="H1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <ImageView fx:id="I1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <ImageView fx:id="J1"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                  <ImageView fx:id="A2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <ImageView fx:id="J2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                  <ImageView fx:id="I2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <ImageView fx:id="B2"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <ImageView fx:id="D3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <ImageView fx:id="E3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <ImageView fx:id="F3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <ImageView fx:id="G3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                  <ImageView fx:id="H3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                  <ImageView fx:id="I3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                  <ImageView fx:id="J3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <ImageView fx:id="C3"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <ImageView fx:id="A4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <ImageView fx:id="J4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-                  <ImageView fx:id="I4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                  <ImageView fx:id="B4"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <ImageView fx:id="I5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <ImageView fx:id="J5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B5"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <ImageView fx:id="I6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                  <ImageView fx:id="J6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B6"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                  <ImageView fx:id="I7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                  <ImageView fx:id="J7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B7"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-                  <ImageView fx:id="I8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-                  <ImageView fx:id="J8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B8"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-                  <ImageView fx:id="I9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-                  <ImageView fx:id="J9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B9"  fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-                  <ImageView fx:id="A10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-                  <ImageView fx:id="I10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="9" />
-                  <ImageView fx:id="H10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
-                  <ImageView fx:id="G10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="7" />
-                  <ImageView fx:id="F10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="6" />
-                  <ImageView fx:id="E10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-                  <ImageView fx:id="D10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
-                  <ImageView fx:id="C10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
-                  <ImageView fx:id="J10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
-                  <ImageView fx:id="B10" fitHeight="50.0" onMouseClicked="#squareClicked" fitWidth="50.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A1G"  GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B1G"  GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C1G"  GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D1G"  GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E1G"  GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F1G"  GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G1G"  GridPane.columnIndex="1" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H1G"  GridPane.columnIndex="1" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I1G"  GridPane.columnIndex="1" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J1G"  GridPane.columnIndex="1" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J1O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J1"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A2G"  GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J2G"  GridPane.columnIndex="2" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I2G"  GridPane.columnIndex="2" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H2G"  GridPane.columnIndex="2" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G2G"  GridPane.columnIndex="2" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F2G"  GridPane.columnIndex="2" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E2G"  GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D2G"  GridPane.columnIndex="2" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C2G"  GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B2G"  GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B2O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B2"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A3G"  GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D3G"  GridPane.columnIndex="3" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E3G"  GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F3G"  GridPane.columnIndex="3" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G3G"  GridPane.columnIndex="3" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H3G"  GridPane.columnIndex="3" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I3G"  GridPane.columnIndex="3" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J3G"  GridPane.columnIndex="3" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B3G"  GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C3G"  GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C3O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C3"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A4G"  GridPane.columnIndex="4" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J4G"  GridPane.columnIndex="4" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I4G"  GridPane.columnIndex="4" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H4G"  GridPane.columnIndex="4" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G4G"  GridPane.columnIndex="4" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F4G"  GridPane.columnIndex="4" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E4G"  GridPane.columnIndex="4" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D4G"  GridPane.columnIndex="4" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C4G"  GridPane.columnIndex="4" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B4G"  GridPane.columnIndex="4" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B4O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B4"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A5G"  GridPane.columnIndex="5" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I5G"  GridPane.columnIndex="5" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H5G"  GridPane.columnIndex="5" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G5G"  GridPane.columnIndex="5" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F5G"  GridPane.columnIndex="5" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E5G"  GridPane.columnIndex="5" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D5G"  GridPane.columnIndex="5" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C5G"  GridPane.columnIndex="5" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J5G"  GridPane.columnIndex="5" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B5G"  GridPane.columnIndex="5" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B5O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B5"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A6G"  GridPane.columnIndex="6" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I6G"  GridPane.columnIndex="6" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H6G"  GridPane.columnIndex="6" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G6G"  GridPane.columnIndex="6" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F6G"  GridPane.columnIndex="6" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E6G"  GridPane.columnIndex="6" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D6G"  GridPane.columnIndex="6" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C6G"  GridPane.columnIndex="6" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J6G"  GridPane.columnIndex="6" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B6G"  GridPane.columnIndex="6" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B6O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B6"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A7G"  GridPane.columnIndex="7" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I7G"  GridPane.columnIndex="7" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H7G"  GridPane.columnIndex="7" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G7G"  GridPane.columnIndex="7" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F7G"  GridPane.columnIndex="7" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E7G"  GridPane.columnIndex="7" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D7G"  GridPane.columnIndex="7" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C7G"  GridPane.columnIndex="7" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J7G"  GridPane.columnIndex="7" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B7G"  GridPane.columnIndex="7" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B7O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B7"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A8G"  GridPane.columnIndex="8" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I8G"  GridPane.columnIndex="8" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H8G"  GridPane.columnIndex="8" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G8G"  GridPane.columnIndex="8" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F8G"  GridPane.columnIndex="8" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E8G"  GridPane.columnIndex="8" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D8G"  GridPane.columnIndex="8" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C8G"  GridPane.columnIndex="8" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J8G"  GridPane.columnIndex="8" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B8G"  GridPane.columnIndex="8" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B8O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B8"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A9G"  GridPane.columnIndex="9" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I9G"  GridPane.columnIndex="9" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H9G"  GridPane.columnIndex="9" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G9G"  GridPane.columnIndex="9" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F9G"  GridPane.columnIndex="9" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E9G"  GridPane.columnIndex="9" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D9G"  GridPane.columnIndex="9" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C9G"  GridPane.columnIndex="9" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J9G"  GridPane.columnIndex="9" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B9G"  GridPane.columnIndex="9" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B9O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B9"  fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="A10G" GridPane.columnIndex="10" GridPane.rowIndex="1" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="A10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="A10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="I10G" GridPane.columnIndex="10" GridPane.rowIndex="9" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="I10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="I10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="H10G" GridPane.columnIndex="10" GridPane.rowIndex="8" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="H10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="H10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="G10G" GridPane.columnIndex="10" GridPane.rowIndex="7" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="G10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="G10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="F10G" GridPane.columnIndex="10" GridPane.rowIndex="6" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="F10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="F10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="E10G" GridPane.columnIndex="10" GridPane.rowIndex="5" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="E10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="E10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="D10G" GridPane.columnIndex="10" GridPane.rowIndex="4" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="D10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="D10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="C10G" GridPane.columnIndex="10" GridPane.rowIndex="3" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="C10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="C10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="J10G" GridPane.columnIndex="10" GridPane.rowIndex="10" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="J10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="J10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
+                  <StackPane onMouseClicked="#squareClicked" fx:id="B10G" GridPane.columnIndex="10" GridPane.rowIndex="2" prefWidth="50.0" prefHeight="50.0" >
+                     <ImageView fx:id="B10O" fitHeight="50.0" fitWidth="50.0"  />
+                     <ImageView fx:id="B10" fitHeight="50.0"  fitWidth="50.0" />
+                  </StackPane>
                   <Label text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="40.0" />

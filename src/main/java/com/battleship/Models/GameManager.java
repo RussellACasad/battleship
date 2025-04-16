@@ -71,15 +71,17 @@ public class GameManager {
 
     public static void LoadSprites()
     {
-        Sprites.put("boatEnd", new Sprite(new Image("/com/battleship/Assets/boat-end.jpg")));
-        Sprites.put("boatEndHit", new Sprite(new Image("/com/battleship/Assets/boat-end-hit.jpg")));
-        Sprites.put("boatMiddle", new Sprite(new Image("/com/battleship/Assets/boat-middle.jpg")));
-        Sprites.put("boatMiddleHit", new Sprite(new Image("/com/battleship/Assets/boat-middle-hit.jpg")));
-        Sprites.put("boatTile", new Sprite(new Image("/com/battleship/Assets/boat-tile.jpg")));
-        Sprites.put("ocean", new Sprite(new Image("/com/battleship/Assets/ocean.jpg")));
-        Sprites.put("oceanHit", new Sprite(new Image("/com/battleship/Assets/ocean-hit.jpg")));
-        Sprites.put("oceanMiss", new Sprite(new Image("/com/battleship/Assets/ocean-miss.jpg")));
-        Sprites.put("oceanTarget", new Sprite(new Image("/com/battleship/Assets/ocean-target.jpg")));
-        Sprites.put("cat", new Sprite(new Image("/com/battleship/Assets/cat.gif")));
+        var ocean = new Image("/com/battleship/Assets/ocean.gif"); 
+
+        Sprites.put("boatEnd", new Sprite(new Image("/com/battleship/Assets/boat-end.jpg"), ocean));
+        Sprites.put("boatEndHit", new Sprite(new Image("/com/battleship/Assets/boat-end-hit.jpg"), ocean));
+        Sprites.put("boatMiddle", new Sprite(new Image("/com/battleship/Assets/boat-middle.jpg"), ocean));
+        Sprites.put("boatMiddleHit", new Sprite(new Image("/com/battleship/Assets/boat-middle-hit.jpg"), ocean));
+        Sprites.put("boatTile", new Sprite(new Image("/com/battleship/Assets/boat-tile.jpg"), ocean));
+        Sprites.put("ocean", new Sprite(null, ocean));
+        Sprites.put("oceanHit", new Sprite(new Image("/com/battleship/Assets/ocean-hit.jpg"), ocean));
+        Sprites.put("oceanMiss", new Sprite(new Image("/com/battleship/Assets/ocean-miss.jpg"), ocean));
+        Sprites.put("oceanTarget", new Sprite(new Image("/com/battleship/Assets/ocean-target.jpg"), ocean));
+        Sprites.put("Test", new Sprite(new Image("/com/battleship/Assets/boatTEST.png"), new Image("/com/battleship/Assets/ocean-target.jpg"), true));
     }
 }

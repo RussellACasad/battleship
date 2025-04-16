@@ -20,7 +20,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.text.Text;
 
 @SuppressWarnings("unused")
-public class MultiplayerController { // TODO: Revamp multiplayer screen to list available games on LAN + allow for port forwarding
+public class MultiplayerController {
     @FXML
     private TextField hostPortText;
     @FXML
