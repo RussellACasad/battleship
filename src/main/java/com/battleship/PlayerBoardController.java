@@ -736,17 +736,6 @@ public class PlayerBoardController {
                 _board[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").Picture);
             }
             for (var boat : GameManager.opponent.boats) {
-                boolean isHorizontal; 
-                if(boat.location[0] == null)
-                {
-                    continue;
-                }
-                if (boat.location.length == 1)
-                {
-                    isHorizontal = true; 
-                } else {
-                    isHorizontal = boat.location[0].getLetter() != boat.location[1].getLetter();
-                }
                 for (var hit : GameManager.player.hitAttempts) {
                     if (!hit.didHit) {
                         _board[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").Picture);
