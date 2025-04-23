@@ -896,12 +896,12 @@ public class PlayerBoardController {
                         Platform.runLater(() -> closeGame(true));
                         break;
                     }
-                    if (!input.equals("ping")) {
-                        GameManager.multiplayerInput = input;
-                    }
                     if (input.equals("win")) {
                         Platform.runLater(() -> endMessage(true));
                         break;
+                    }
+                    else if (!input.equals("ping")) {
+                        GameManager.multiplayerInput = input;
                     }
                 } catch (IOException ex) {
                     Platform.runLater(() -> closeGame(true));
@@ -1031,6 +1031,7 @@ public class PlayerBoardController {
         shipRadios[3] = submarineRadio;
         shipRadios[4] = patrolRadio;
         shipRadios[5] = yachtRadio;
+        
         Draw(GridType.Ocean);
         SetUI();
 
@@ -1124,8 +1125,6 @@ public class PlayerBoardController {
         if (BlockInput) {
             return;
         }
-
-        
 
         switch (GameManager.gameState) {
             case PlaceShips -> {
@@ -1328,13 +1327,13 @@ public class PlayerBoardController {
 
     @FXML
     private void fire() throws InterruptedException {
+        // when fire is hit (player's turn)
         if (_toHit == null) {
             return;
         }
         BlockInput = true; 
         attackingLabel.setText("None");
         MessageText.setText("Firing...");
-        // when fire is hit (player's turn)
         PlayerTurn(); // send the player's turn to the oppoent
         PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // wait
         opponentTurnPause.setOnFinished(x -> OpponentTurn()); // when wait done, wait for opponent to fire back
