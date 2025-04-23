@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    public Boat[] boats;
-    public List<HitAttempt> hitAttempts = new ArrayList<>();
+    public final Boat[] boats;
+    public volatile List<HitAttempt> hitAttempts = new ArrayList<>();
     public volatile boolean shipsSet;
 
     public Player() {
-        boats = new Boat[5];
+        boats = new Boat[6];
         boats[0] = new Boat(BoatType.carrier);
         boats[1] = new Boat(BoatType.battleship);
         boats[2] = new Boat(BoatType.destroyer);
         boats[3] = new Boat(BoatType.submarine);
         boats[4] = new Boat(BoatType.patrolBoat);
+        boats[5] = new Boat(BoatType.yacht);
         shipsSet = false;
         hitAttempts = new ArrayList<>();
     }

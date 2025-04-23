@@ -5,7 +5,8 @@ public enum BoatType {
     battleship(4, "Battleship"),
     destroyer(3, "Destroyer"),
     submarine(3, "Submarine"),
-    patrolBoat(2, "Patrol Boat");
+    patrolBoat(2, "Patrol Boat"),
+    yacht(1, "Transfer Boat");
 
     private final int size;
     private final String name; 

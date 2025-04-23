@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "Nunito", sans-serif;
+    src: url("../fonts/Nunito-Regular.ttf");
+}
+
+.root {
+    -fx-background-color: rgb(30, 76, 114);
+}
+
+.text-white {
+    -fx-fill: white;
+    -fx-text-fill: white;
+    -fx-font-family: "Nunito Regular";
+}
+
+.button {
+    -fx-background-color: rgb(66, 77, 96);
+    -fx-text-fill: white;
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-font-family: "Nunito Regular";
+    -fx-font-size: 12px;
+}
+
+.button:hover
+{
+    -fx-background-color: rgb(47, 55, 68);
+    -fx-font-size: 12px;
+}
+
+.red-button {
+    -fx-background-color: #CC2936;
+    -fx-text-fill: white;
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-font-family: "Nunito Regular";
+    -fx-font-size: 12px;
+}
+
+.red-button:hover
+{
+    -fx-background-color: #981e28;
+    -fx-font-size: 12px;
+}
+
+.test-border {
+    -fx-border-color: rgb(66, 77, 96);
+    -fx-border-width: 2;
+    -fx-background-color: rgb(96, 111, 138);
+    -fx-background-radius: 11;
+    -fx-border-radius: 10;
+}
+
+.titled-pane > .title
+{
+    -fx-background-color: rgb(66, 77, 96);
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.titled-pane > .title > .text
+{
+    -fx-fill: white;
+    -fx-font-family: "Nunito Regular";
+    -fx-font-size: 16;
+}
+
+.titled-pane > .content
+{
+    -fx-background-color: rgb(96, 111, 138);
+    -fx-border-color: rgb(66, 77, 96);
+    -fx-border-width: 2;
+    -fx-border-radius: 0 0 10 10;
+    -fx-background-radius: 0 0 12 12;
+}

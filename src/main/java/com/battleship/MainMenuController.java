@@ -29,6 +29,11 @@ public class MainMenuController {
     }
 
     @FXML
+    private void credits() throws IOException {
+        App.setRoot("Credits");
+    }
+
+    @FXML
     private void exit() {
         System.exit(0);
     }

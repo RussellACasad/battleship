@@ -11,57 +11,72 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.MultiplayerController">
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" stylesheets="@css/Multiplayer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.MultiplayerController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplayer">
-         <font>
-            <Font size="18.0" />
-         </font></Text>
-      <Text fx:id="localIPText" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Local IP:  xxx.xxx.x.xxx" />
-      <Text fx:id="statusMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an option..." />
-      <TitledPane fx:id="joinPane" animated="false" expanded="false" maxWidth="-Infinity" text="Join">
-         <content>
-            <VBox alignment="CENTER" spacing="10.0">
-               <children>
-                  <HBox alignment="CENTER" spacing="10.0">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="250.0" styleClass="test-border">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Multiplayer">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </VBox>
+      <Text fx:id="localIPText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Your Local IP:  xxx.xxx.x.xxx" />
+      <Text fx:id="statusMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Select an option..." />
+      <HBox alignment="CENTER" spacing="15.0">
+         <children>
+            <TitledPane fx:id="hostPane" alignment="CENTER" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" text="Host">
+               <content>
+                  <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" prefWidth="25.0" text="IP" />
-                        <TextField fx:id="joinIPText" maxWidth="150.0" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label styleClass="text-white" text="Port" />
+                              <TextField fx:id="hostPortText" maxWidth="150.0" promptText="(auto assign)" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#host" text="Host" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#copyIP" text="Copy IP" />
+                              <Button mnemonicParsing="false" onAction="#copyPort" text="Copy Port" />
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER" spacing="10.0">
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="joinPane" alignment="CENTER" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" text="Join">
+               <content>
+                  <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" prefWidth="25.0" text="Port" />
-                        <TextField fx:id="joinPortText" maxWidth="150.0" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefWidth="25.0" styleClass="text-white" text="IP" />
+                              <TextField fx:id="joinIPText" maxWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefWidth="25.0" styleClass="text-white" text="Port" />
+                              <TextField fx:id="joinPortText" maxWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#join" text="Join" />
                      </children>
-                  </HBox>
-                  <Button mnemonicParsing="false" onAction="#join" text="Join" />
-               </children>
-            </VBox>
-         </content>
-      </TitledPane>
-      <TitledPane fx:id="hostPane" animated="false" expanded="false" maxWidth="-Infinity" text="Host">
-         <content>
-            <VBox alignment="CENTER" spacing="10.0">
-               <children>
-                  <HBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Label text="Port" />
-                        <TextField fx:id="hostPortText" maxWidth="150.0" promptText="(auto assign)" />
-                     </children>
-                  </HBox>
-                  <Button mnemonicParsing="false" onAction="#host" text="Host" />
-                  <HBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#copyIP" text="Copy IP" />
-                        <Button mnemonicParsing="false" onAction="#copyPort" text="Copy Port" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </content>
-      </TitledPane>
-      <Button mnemonicParsing="false" onAction="#back" text="Back" />
+                  </VBox>
+               </content>
+            </TitledPane>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#back" prefWidth="100.0" styleClass="red-button" text="Back" />
       <Accordion />
       <HBox alignment="CENTER" />
       <HBox alignment="CENTER" spacing="10.0">

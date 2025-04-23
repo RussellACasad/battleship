@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Nunito", sans-serif;
+    src: url("../fonts/Nunito-Regular.ttf");
+}
+
+.root {
+    -fx-background-color: rgb(30, 76, 114);
+}
+
+.button {
+    -fx-background-color: #CC2936;
+    -fx-text-fill: white;
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-font-family: "Nunito Regular";
+}
+
+.button:hover {
+    -fx-background-color: #981e28;
+}
+
+.fireButton {
+    -fx-background-color: #CC2936;
+    -fx-text-fill: white;
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-font-family: "Nunito Regular";
+    -fx-font-size: 33;
+}
+
+.fireButton:hover {
+    -fx-background-color: #981e28;
+}
+
+.displayGrid {
+    -fx-background-color: rgb(69, 127, 158);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-border-color: white;
+}
+
+.text-white {
+    -fx-fill: white;
+    -fx-text-fill: white;
+    -fx-font-family: "Nunito Regular";
+}
+
+.border-dash {
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 0 2 2 0;
+    -fx-border-style: dashed;
+    -fx-border-insets: 0;
+}
+
+.border-dash-bot {
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 0 2 0 0;
+    -fx-border-style: dashed;
+}
+
+.border-dash-side {
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 0 0 2 0;
+    -fx-border-style: dashed;
+}
+
+.border-bot {
+    -fx-border-color: white;
+    -fx-border-width: 0 0 2 0;
+}
+
+.border-right {
+    -fx-border-color: white;
+    -fx-border-width: 0 2 0 0;
+}
+
+.border-bot-right {
+    -fx-border-color: white;
+    -fx-border-width: 0 2 2 0;
+}
+
+.test-border {
+    -fx-border-color: rgb(66, 77, 96);
+    -fx-border-width: 2;
+    -fx-background-color: rgb(96, 111, 138);
+    -fx-background-radius: 11;
+    -fx-border-radius: 10;
+}
+
+.radio-button {
+    -fx-font-family: "Nunito";
+    -fx-font-size: 14;
+    -fx-text-fill: #FFF;
+    -fx-padding: 5 10;
+}
+
+.bad {
+    -fx-font-family: "Nunito";
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 0, 0, 0.25);
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+/* The circle indicator */
+.radio-button .radio {
+    -fx-padding: 3;
+    -fx-background-color: rgb(66, 77, 96);
+}
+
+/* When selected, light up the red */
+.radio-button:selected .radio {
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.titled-pane > .title
+{
+    -fx-background-color: rgb(30, 76, 114);
+}
+
+.titled-pane > .title > .text
+{
+    -fx-fill: white;
+    -fx-font-family: "Nunito Regular";
+    -fx-font-size: 16;
+}
+
+.titled-pane > .title > .arrow-button
+{
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+}
+
+.titled-pane > .content
+{
+    -fx-background-color: rgb(96, 111, 138);
+    -fx-border-color: rgb(66, 77, 96);
+    -fx-border-width: 2;
+    -fx-border-radius: 10 10;
+    -fx-background-radius: 12 12;
+}
+
+.radio-sm {
+    -fx-font-size: 10;
+}

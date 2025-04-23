@@ -4,10 +4,12 @@ import java.io.IOException;
 
 import com.battleship.Models.BoardLocation;
 import com.battleship.Models.Boat;
+import com.battleship.Models.BoatType;
 import com.battleship.Models.GameManager;
 import com.battleship.Models.GameState;
 import com.battleship.Models.GridType;
 import com.battleship.Models.OpponentAttack;
+import com.battleship.Models.Sprite;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -15,11 +17,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.ArcTo;
+import javafx.scene.shape.ClosePath;
+import javafx.scene.shape.LineTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -426,6 +436,206 @@ public class PlayerBoardController {
     @FXML
     private ImageView J10O;
     @FXML
+    private ImageView A1T;
+    @FXML
+    private ImageView A2T;
+    @FXML
+    private ImageView A3T;
+    @FXML
+    private ImageView A4T;
+    @FXML
+    private ImageView A5T;
+    @FXML
+    private ImageView A6T;
+    @FXML
+    private ImageView A7T;
+    @FXML
+    private ImageView A8T;
+    @FXML
+    private ImageView A9T;
+    @FXML
+    private ImageView A10T;
+    @FXML
+    private ImageView B1T;
+    @FXML
+    private ImageView B2T;
+    @FXML
+    private ImageView B3T;
+    @FXML
+    private ImageView B4T;
+    @FXML
+    private ImageView B5T;
+    @FXML
+    private ImageView B6T;
+    @FXML
+    private ImageView B7T;
+    @FXML
+    private ImageView B8T;
+    @FXML
+    private ImageView B9T;
+    @FXML
+    private ImageView B10T;
+    @FXML
+    private ImageView C1T;
+    @FXML
+    private ImageView C2T;
+    @FXML
+    private ImageView C3T;
+    @FXML
+    private ImageView C4T;
+    @FXML
+    private ImageView C5T;
+    @FXML
+    private ImageView C6T;
+    @FXML
+    private ImageView C7T;
+    @FXML
+    private ImageView C8T;
+    @FXML
+    private ImageView C9T;
+    @FXML
+    private ImageView C10T;
+    @FXML
+    private ImageView D1T;
+    @FXML
+    private ImageView D2T;
+    @FXML
+    private ImageView D3T;
+    @FXML
+    private ImageView D4T;
+    @FXML
+    private ImageView D5T;
+    @FXML
+    private ImageView D6T;
+    @FXML
+    private ImageView D7T;
+    @FXML
+    private ImageView D8T;
+    @FXML
+    private ImageView D9T;
+    @FXML
+    private ImageView D10T;
+    @FXML
+    private ImageView E1T;
+    @FXML
+    private ImageView E2T;
+    @FXML
+    private ImageView E3T;
+    @FXML
+    private ImageView E4T;
+    @FXML
+    private ImageView E5T;
+    @FXML
+    private ImageView E6T;
+    @FXML
+    private ImageView E7T;
+    @FXML
+    private ImageView E8T;
+    @FXML
+    private ImageView E9T;
+    @FXML
+    private ImageView E10T;
+    @FXML
+    private ImageView F1T;
+    @FXML
+    private ImageView F2T;
+    @FXML
+    private ImageView F3T;
+    @FXML
+    private ImageView F4T;
+    @FXML
+    private ImageView F5T;
+    @FXML
+    private ImageView F6T;
+    @FXML
+    private ImageView F7T;
+    @FXML
+    private ImageView F8T;
+    @FXML
+    private ImageView F9T;
+    @FXML
+    private ImageView F10T;
+    @FXML
+    private ImageView G1T;
+    @FXML
+    private ImageView G2T;
+    @FXML
+    private ImageView G3T;
+    @FXML
+    private ImageView G4T;
+    @FXML
+    private ImageView G5T;
+    @FXML
+    private ImageView G6T;
+    @FXML
+    private ImageView G7T;
+    @FXML
+    private ImageView G8T;
+    @FXML
+    private ImageView G9T;
+    @FXML
+    private ImageView G10T;
+    @FXML
+    private ImageView H1T;
+    @FXML
+    private ImageView H2T;
+    @FXML
+    private ImageView H3T;
+    @FXML
+    private ImageView H4T;
+    @FXML
+    private ImageView H5T;
+    @FXML
+    private ImageView H6T;
+    @FXML
+    private ImageView H7T;
+    @FXML
+    private ImageView H8T;
+    @FXML
+    private ImageView H9T;
+    @FXML
+    private ImageView H10T;
+    @FXML
+    private ImageView I1T;
+    @FXML
+    private ImageView I2T;
+    @FXML
+    private ImageView I3T;
+    @FXML
+    private ImageView I4T;
+    @FXML
+    private ImageView I5T;
+    @FXML
+    private ImageView I6T;
+    @FXML
+    private ImageView I7T;
+    @FXML
+    private ImageView I8T;
+    @FXML
+    private ImageView I9T;
+    @FXML
+    private ImageView I10T;
+    @FXML
+    private ImageView J1T;
+    @FXML
+    private ImageView J2T;
+    @FXML
+    private ImageView J3T;
+    @FXML
+    private ImageView J4T;
+    @FXML
+    private ImageView J5T;
+    @FXML
+    private ImageView J6T;
+    @FXML
+    private ImageView J7T;
+    @FXML
+    private ImageView J8T;
+    @FXML
+    private ImageView J9T;
+    @FXML
+    private ImageView J10T;
+    @FXML
     private StackPane A1G;
     @FXML
     private StackPane A2G;
@@ -640,11 +850,13 @@ public class PlayerBoardController {
     @FXML
     private RadioButton patrolRadio;
     @FXML
+    private RadioButton yachtRadio;
+    @FXML
     private RadioButton oceanGridRadio;
     @FXML
     private RadioButton targetGridRadio;
     @FXML
-    private HBox SelectBox;
+    private VBox SelectBox;
     @FXML
     private HBox PlayBox;
     @FXML
@@ -653,13 +865,24 @@ public class PlayerBoardController {
     private Text MessageText;
     @FXML
     private Button fireButton;
+    @FXML
+    private Label attackingLabel;
+    @FXML
+    private Label hoverLabel; 
+    @FXML
+    private StackPane root;
 
-    private ImageView[] _overlayBoard;
-    private ImageView[] _oceanBoard;
+    private ImageView[] _middleBoard;
+    private ImageView[] _bottomBoard;
+    private ImageView[] _topBoard;
     private StackPane[] _gridBoard;
     private int _selectedShip = 0;
     private transient BoardLocation _toHit = null;
     private final Alert alert = new Alert(AlertType.INFORMATION);
+    private Boat ghost = null;
+    private BoardLocation attackHoverLocation = null;
+    RadioButton[] shipRadios = new RadioButton[6];
+    private boolean BlockInput = false; 
 
     private final Thread FeedManager = new Thread(() -> {
         String input;
@@ -704,7 +927,7 @@ public class PlayerBoardController {
     @FXML
     public void initialize() {
         GameManager.LoadSprites();
-        _oceanBoard = new ImageView[] { // Creates the grid for the Ocean
+        _bottomBoard = new ImageView[] { // Creates the grid for the Ocean
                 A1O, A2O, A3O, A4O, A5O, A6O, A7O, A8O, A9O, A10O,
                 B1O, B2O, B3O, B4O, B5O, B6O, B7O, B8O, B9O, B10O,
                 C1O, C2O, C3O, C4O, C5O, C6O, C7O, C8O, C9O, C10O,
@@ -716,7 +939,7 @@ public class PlayerBoardController {
                 I1O, I2O, I3O, I4O, I5O, I6O, I7O, I8O, I9O, I10O,
                 J1O, J2O, J3O, J4O, J5O, J6O, J7O, J8O, J9O, J10O
         };
-        _overlayBoard = new ImageView[] { // Creates the grid for the Overlay
+        _middleBoard = new ImageView[] { // Creates the grid for the boats / flags
                 A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                 B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                 C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
@@ -727,6 +950,18 @@ public class PlayerBoardController {
                 H1, H2, H3, H4, H5, H6, H7, H8, H9, H10,
                 I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
                 J1, J2, J3, J4, J5, J6, J7, J8, J9, J10
+        };
+        _topBoard = new ImageView[] { // Creates the grid for the ghost / explosion
+                A1T, A2T, A3T, A4T, A5T, A6T, A7T, A8T, A9T, A10T,
+                B1T, B2T, B3T, B4T, B5T, B6T, B7T, B8T, B9T, B10T,
+                C1T, C2T, C3T, C4T, C5T, C6T, C7T, C8T, C9T, C10T,
+                D1T, D2T, D3T, D4T, D5T, D6T, D7T, D8T, D9T, D10T,
+                E1T, E2T, E3T, E4T, E5T, E6T, E7T, E8T, E9T, E10T,
+                F1T, F2T, F3T, F4T, F5T, F6T, F7T, F8T, F9T, F10T,
+                G1T, G2T, G3T, G4T, G5T, G6T, G7T, G8T, G9T, G10T,
+                H1T, H2T, H3T, H4T, H5T, H6T, H7T, H8T, H9T, H10T,
+                I1T, I2T, I3T, I4T, I5T, I6T, I7T, I8T, I9T, I10T,
+                J1T, J2T, J3T, J4T, J5T, J6T, J7T, J8T, J9T, J10T
         };
         _gridBoard = new StackPane[] { // Creates the grid of StackPanes
                 A1G, A2G, A3G, A4G, A5G, A6G, A7G, A8G, A9G, A10G,
@@ -740,11 +975,62 @@ public class PlayerBoardController {
                 I1G, I2G, I3G, I4G, I5G, I6G, I7G, I8G, I9G, I10G,
                 J1G, J2G, J3G, J4G, J5G, J6G, J7G, J8G, J9G, J10G
         };
-        carrierRadio.setTextFill(Color.RED); // sets the radio colors to red
-        battleshipRadio.setTextFill(Color.RED);
-        destroyerRadio.setTextFill(Color.RED);
-        submarineRadio.setTextFill(Color.RED);
-        patrolRadio.setTextFill(Color.RED);
+
+        var radius = 10;
+
+        Path bottomClipPath = new Path(
+                new MoveTo(0, 0),
+                new LineTo(50, 0),
+                new LineTo(50, 50 - radius),
+                new ArcTo(10, 10, 0, 50 - radius, 50, false, true),
+                new LineTo(0, 50),
+                new LineTo(0, 0),
+                new ClosePath());
+
+        bottomClipPath.setFill(Color.BLACK);
+        bottomClipPath.setStroke(null);
+
+        Path middleClipPath = new Path(
+                new MoveTo(0, 0),
+                new LineTo(50, 0),
+                new LineTo(50, 50 - radius),
+                new ArcTo(10, 10, 0, 50 - radius, 50, false, true),
+                new LineTo(0, 50),
+                new LineTo(0, 0),
+                new ClosePath());
+
+        middleClipPath.setFill(Color.BLACK);
+        middleClipPath.setStroke(null);
+
+        Path topClipPath = new Path(
+                new MoveTo(0, 0),
+                new LineTo(50, 0),
+                new LineTo(50, 50 - radius),
+                new ArcTo(10, 10, 0, 50 - radius, 50, false, true),
+                new LineTo(0, 50),
+                new LineTo(0, 0),
+                new ClosePath());
+
+        topClipPath.setFill(Color.BLACK);
+        topClipPath.setStroke(null);
+
+        _bottomBoard[BoardLocation.J10.getIndex()].setClip(bottomClipPath);
+        _middleBoard[BoardLocation.J10.getIndex()].setClip(middleClipPath);
+        _topBoard[BoardLocation.J10.getIndex()].setClip(topClipPath);
+
+        carrierRadio.getStyleClass().add("bad"); // sets the radio colors to red
+        battleshipRadio.getStyleClass().add("bad");
+        destroyerRadio.getStyleClass().add("bad");
+        submarineRadio.getStyleClass().add("bad");
+        patrolRadio.getStyleClass().add("bad");
+        yachtRadio.getStyleClass().add("bad");
+
+        shipRadios[0] = carrierRadio;
+        shipRadios[1] = battleshipRadio;
+        shipRadios[2] = destroyerRadio;
+        shipRadios[3] = submarineRadio;
+        shipRadios[4] = patrolRadio;
+        shipRadios[5] = yachtRadio;
         Draw(GridType.Ocean);
         SetUI();
 
@@ -761,10 +1047,110 @@ public class PlayerBoardController {
                 }
             }).start();
         }
+
+        root.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.R) {
+                if (GameManager.gameState == GameState.PlaceShips) {
+                    if (verticalShipRadio.isSelected()) {
+                        horizontalShipRadio.setSelected(true);
+                    } else {
+                        verticalShipRadio.setSelected(true);
+                    }
+                    squareHover();
+                    Draw(GridType.Ocean);
+                }
+            }
+        });
+    }
+
+    @FXML
+    void squareHover() {
+
+        if (BlockInput) {
+            ghost = null;
+            attackHoverLocation = null;
+            hoverLabel.setText("None");
+            return;
+        }
+
+        BoardLocation hoveredLocation = null;
+        for (var i = 0; i < _gridBoard.length; i++) { // scans through the board
+            if (_gridBoard[i].isHover()) { // returns the square the user is hovering over
+                hoveredLocation = BoardLocation.parseInt(i);
+                break;
+            }
+        }
+
+        if(hoveredLocation != null)
+        {
+            hoverLabel.setText(hoveredLocation.toString());
+        }
+        else
+        {
+            hoverLabel.setText("None");
+        }
+
+        switch (GameManager.gameState) {
+            case GameState.PlaceShips -> {
+
+                if (ghost == null || GameManager.player.boats[_selectedShip].name != ghost.name) {
+                    ghost = new Boat(GameManager.player.boats[_selectedShip].name);
+                }
+
+                var isHorizontal = horizontalShipRadio.isSelected();
+
+                var didSetGhost = ghost.SetLocation(hoveredLocation, isHorizontal, GameManager.player);
+
+                if (!didSetGhost) {
+                    ghost = null;
+                }
+
+                Draw(GridType.Ocean);
+            }
+            case GameState.PlayerTurn -> {
+                if (targetGridRadio.isSelected()) {
+                    attackHoverLocation = hoveredLocation;
+                    Draw(GridType.Target);
+                }
+            }
+            default -> {
+            } // do nothing normally
+        }
+    }
+
+    @FXML
+    void gridMouseExit() {
+
+        if (BlockInput) {
+            return;
+        }
+
+        
+
+        switch (GameManager.gameState) {
+            case PlaceShips -> {
+                ghost = null;
+                Draw(GridType.Ocean);
+            }
+            case PlayerTurn -> {
+                if (targetGridRadio.isSelected()) {
+                    attackHoverLocation = null;
+                    hoverLabel.setText("None");
+                    Draw(GridType.Target);
+                }
+            }
+            default -> {
+            } // do nothing normally
+        }
     }
 
     @FXML
     void squareClicked() { // when a square is clicked
+
+        if (BlockInput) {
+            return;
+        }
+
         BoardLocation selectedLocation = null;
         for (var i = 0; i < _gridBoard.length; i++) { // scans through the board
             if (_gridBoard[i].isHover()) { // returns the square the user is hovering over
@@ -788,18 +1174,21 @@ public class PlayerBoardController {
 
                 var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship
                                                                      // horizontally
+                var wasSet = GameManager.player.boats[_selectedShip].isPlaced;
                 var didSet = GameManager.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
                         GameManager.player); // attempts to set the boat
                 if (didSet) { // if the boat is set, upsates the UI and marks the boat as placed
                     GameManager.player.boats[_selectedShip].isPlaced = true;
 
-                    carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED);
-                    battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
-                    destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
-                    submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
-                    patrolRadio.setTextFill(GameManager.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
+                    shipRadios[_selectedShip].getStyleClass().removeIf(style -> style.equals("bad"));
 
-                    setGrid(GridType.Ocean); // redraws the ocean to show the new boat
+                    if (!wasSet && _selectedShip != 5) {
+                        selectShip(GameManager.player.boats[_selectedShip + 1].name);
+                    }
+
+                    ghost = null;
+
+                    Draw(GridType.Ocean); // redraws the ocean to show the new boat
                 }
             }
             case PlayerTurn -> { // if the player turn
@@ -809,6 +1198,12 @@ public class PlayerBoardController {
             default -> { // does nothing normally
             }
         }
+    }
+
+    @FXML
+    private void back() throws IOException {
+        GameManager.Reset();
+        App.setRoot("MainMenu");
     }
 
     @FXML
@@ -823,6 +1218,37 @@ public class PlayerBoardController {
             _selectedShip = 3;
         } else if (patrolRadio.isSelected()) {
             _selectedShip = 4;
+        } else if (yachtRadio.isSelected()) {
+            _selectedShip = 5;
+        }
+    }
+
+    void selectShip(BoatType type) {
+        switch (type) {
+            case battleship -> {
+                battleshipRadio.setSelected(true);
+                _selectedShip = 1;
+            }
+            case carrier -> {
+                carrierRadio.setSelected(true);
+                _selectedShip = 0;
+            }
+            case destroyer -> {
+                destroyerRadio.setSelected(true);
+                _selectedShip = 2;
+            }
+            case patrolBoat -> {
+                patrolRadio.setSelected(true);
+                _selectedShip = 4;
+            }
+            case submarine -> {
+                submarineRadio.setSelected(true);
+                _selectedShip = 3;
+            }
+            case yacht -> {
+                yachtRadio.setSelected(true);
+                _selectedShip = 5;
+            }
         }
     }
 
@@ -838,12 +1264,12 @@ public class PlayerBoardController {
             boat.isPlaced = true;
         }
 
-        carrierRadio.setTextFill(GameManager.player.boats[0].isPlaced ? Color.BLACK : Color.RED); // sets the color of
-                                                                                                  // the radios
-        battleshipRadio.setTextFill(GameManager.player.boats[1].isPlaced ? Color.BLACK : Color.RED);
-        destroyerRadio.setTextFill(GameManager.player.boats[2].isPlaced ? Color.BLACK : Color.RED);
-        submarineRadio.setTextFill(GameManager.player.boats[3].isPlaced ? Color.BLACK : Color.RED);
-        patrolRadio.setTextFill(GameManager.player.boats[4].isPlaced ? Color.BLACK : Color.RED);
+        for (int i = 0; i < shipRadios.length; i++) { // sets the radio buttons
+            shipRadios[i].getStyleClass().removeIf(style -> style.equals("bad"));
+            if (!GameManager.player.boats[i].isPlaced) {
+                shipRadios[i].getStyleClass().add("bad");
+            }
+        }
 
         setGrid(GridType.Ocean); // redraws the grid to show boats
     }
@@ -890,7 +1316,10 @@ public class PlayerBoardController {
                         MessageText.setText("Select a spot to attack.");
                         TitleText.setText("Your Turn...");
                     }
-                    FeedManager.start();
+
+                    if (!GameManager.isSinglePlayer) {
+                        FeedManager.start();
+                    }
 
                 });
             }).start();
@@ -899,23 +1328,33 @@ public class PlayerBoardController {
 
     @FXML
     private void fire() throws InterruptedException {
-        if (_toHit == null)
+        if (_toHit == null) {
             return;
+        }
+        BlockInput = true; 
+        attackingLabel.setText("None");
         MessageText.setText("Firing...");
         // when fire is hit (player's turn)
         PlayerTurn(); // send the player's turn to the oppoent
         PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // wait
         opponentTurnPause.setOnFinished(x -> OpponentTurn()); // when wait done, wait for opponent to fire back
         opponentTurnPause.play();
+        checkWin();
     }
 
     private void checkWin() {
         // Check all boats to see if sunk
         if (GameManager.isSinglePlayer) { // Singleplayer
             var allPlayerBoatsSunk = true;
-            for (Boat boat : GameManager.player.boats) {
-                if (!boat.isSunk()) {
-                    allPlayerBoatsSunk = false;
+            for (var boat : GameManager.player.boats) {
+                for (var att : boat.isHit) {
+                    if (!att) {
+                        allPlayerBoatsSunk = false;
+                        System.out.println("OPPONENT WIN FAIL: " + boat.name);
+                        break;
+                    }
+                }
+                if (!allPlayerBoatsSunk) {
                     break;
                 }
             }
@@ -924,9 +1363,15 @@ public class PlayerBoardController {
             }
 
             var allOpponentBoatsSunk = true;
-            for (Boat boat : GameManager.player.boats) {
-                if (!boat.isSunk()) {
-                    allOpponentBoatsSunk = false;
+            for (var boat : GameManager.opponent.boats) {
+                for (var att : boat.isHit) {
+                    if (!att) {
+                        allOpponentBoatsSunk = false;
+                        System.out.println("PLAYER WIN FAIL: " + boat.name);
+                        return;
+                    }
+                }
+                if (!allOpponentBoatsSunk) {
                     break;
                 }
             }
@@ -957,8 +1402,6 @@ public class PlayerBoardController {
             Platform.runLater(() -> {
                 setGrid(GridType.Target);
                 TitleText.setText(GetMessage(playerAttack, true));
-                TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
-                checkWin();
                 _toHit = null;
             });
         });
@@ -983,14 +1426,15 @@ public class PlayerBoardController {
                 GameManager.gameState = GameState.PlayerTurn; // sets the state back to the player turn
                 TitleText.setText(GetMessage(opponentAttack.out, false)); // sets the message text for the attack
                 MessageText.setText(opponentAttack.out.length() > 3 ? "Hit!" : "Miss!");
-                TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); // Force layout update
+                // TitleText.getScene().getWindow().getScene().getRoot().requestLayout(); //
+                // Force layout update
                 PauseTransition attackPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE));
                 attackPause.setOnFinished(x -> { // when pause finished
                     setGrid(GridType.Target); // show the target grid...
                     MessageText.setText("Select a spot to attack.");// ... and prompts to attack
+                    BlockInput = false;
                 });
                 attackPause.play();
-                checkWin();
             });
         }).start();
     }
@@ -1052,9 +1496,7 @@ public class PlayerBoardController {
      */
     private void endMessage(boolean win) {
         try {
-            App.setRoot("MainMenu");
-            GameManager.Reset();
-            alert.setAlertType(AlertType.NONE);
+            alert.setAlertType(AlertType.INFORMATION);
             if (win) {
                 alert.setTitle("You win!");
                 alert.setContentText("You sunk all of their ships!");
@@ -1063,6 +1505,8 @@ public class PlayerBoardController {
                 alert.setContentText("They sunk all of your ships.");
             }
             alert.show();
+            App.setRoot("MainMenu");
+            GameManager.Reset();
         } catch (IOException ex) {
             System.out.println(">> ERR 0x0001: " + ex.getMessage());
         }
@@ -1119,71 +1563,144 @@ public class PlayerBoardController {
      *             represents the opponent's grid.
      */
     private void Draw(GridType grid) {
-        for (var i = 0; i < _overlayBoard.length; i++) {
-            _oceanBoard[i].setImage(GameManager.Sprites.get("ocean").BottomImage); // Set all squares to ocean initially
-            _overlayBoard[i].setImage(null);
-            _overlayBoard[i].setRotate(0);
-            _oceanBoard[i].setRotate(0);
+        attackingLabel.setText((_toHit == null || BlockInput) ? "None" : _toHit.toString());
+        for (var i = 0; i < _middleBoard.length; i++) {
+            _bottomBoard[i].setImage(GameManager.Sprites.get("ocean").BottomImage); // Set all squares to ocean
+                                                                                    // initially
+            _middleBoard[i].setImage(null);
+            _topBoard[i].setImage(null);
+
+            _topBoard[i].setRotate(0);
+            _middleBoard[i].setRotate(0);
+            _bottomBoard[i].setRotate(0);
+
+            if ((grid == GridType.Target) && (GameManager.gameState == GameState.PlayerTurn)
+                    && (attackHoverLocation != null || _toHit != null) && !BlockInput) {
+                var imgName = "ind";
+                var loc = BoardLocation.parseInt(i);
+                if(_toHit != null)
+                {
+                    imgName += GameManager.LockColor; 
+                    if (_toHit == loc)
+                    {
+                        imgName += "Mid"; 
+                    } 
+
+                    var img = GameManager.Sprites.get(imgName);
+                    if (loc.getLetter() == _toHit.getLetter() || loc.getNumber() == _toHit.getNumber()) {
+                        if(loc.getLetter() == _toHit.getLetter())
+                        {
+                            _topBoard[i].setRotate(90);
+                        }
+                        _topBoard[i].setImage(img.TopImage);
+                    }
+                }
+                else
+                {
+                    imgName += GameManager.SeekColor; 
+                    if (attackHoverLocation == loc)
+                    {
+                        imgName += "Mid"; 
+                    } 
+                    var img = GameManager.Sprites.get(imgName);
+                    if (loc.getLetter() == attackHoverLocation.getLetter() || loc.getNumber() == attackHoverLocation.getNumber()) {
+                        if(loc.getLetter() == attackHoverLocation.getLetter() && (attackHoverLocation != loc))
+                        {
+                            _topBoard[i].setRotate(90);
+                        }
+                        _topBoard[i].setImage(img.TopImage);
+                    }
+                }
+
+            }
+
         }
+
         if (grid == GridType.Ocean) {
+
+            if (ghost != null) {
+                for (var loc : ghost.location) {
+                    var img = GameManager.Sprites.get("select");
+                    _topBoard[loc.getIndex()].setImage(img.TopImage);
+                }
+            }
+
             for (var boat : GameManager.player.boats) {
-                boolean isHorizontal;
                 if (boat.location[0] == null) {
                     continue;
                 }
+
+                boolean isHorizontal;
                 if (boat.location.length == 1) {
                     isHorizontal = true;
                 } else {
                     isHorizontal = boat.location[0].getLetter() != boat.location[1].getLetter();
                 }
+
                 for (var i = 0; i < boat.location.length; i++) {
                     if (boat.location != null) {
-                        var imgName = "boat";
-                        imgName += (i == 0 || i == boat.location.length - 1) ? "End" : "Middle";
+                        Sprite img;
+                        var imgName = boat.name.toString();
+                        imgName += String.valueOf(i);
                         if (grid == GridType.Ocean) {
                             for (var hit : GameManager.opponent.hitAttempts) {
                                 if (hit.location.equals(boat.location[i])) {
-                                    imgName += "Hit";
+                                    _topBoard[boat.location[i].getIndex()]
+                                            .setImage(GameManager.Sprites.get("hit").TopImage);
                                     break;
                                 }
                             }
                         }
-                        var img = GameManager.Sprites.get(imgName);
-                        var rotation = 0;
-                        _overlayBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 90 : 0); // set Overlay Rotate
-                        _oceanBoard[boat.location[i].getIndex()].setRotate((isHorizontal && img.RotateBottomWithTop) ? 90 : 0); // Rotate bottom with top if needed
-                        if (i == boat.location.length - 1) {
-                            _overlayBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
-                            if(img.RotateBottomWithTop)
-                            {
-                                _oceanBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 270 : 180);
-                            }
+
+                        img = GameManager.Sprites.get(imgName);
+                        if (img == null) {
+                            img = GameManager.Sprites.get("error");
                         }
-                        _overlayBoard[boat.location[i].getIndex()].setImage(img.TopImage);
-                        _oceanBoard[boat.location[i].getIndex()].setImage(img.BottomImage);
+
+                        var rotation = 0;
+                        _middleBoard[boat.location[i].getIndex()].setRotate(isHorizontal ? 0 : 270); // set Overlay
+
+                        _middleBoard[boat.location[i].getIndex()].setImage(img.MiddleImage);
+                        _bottomBoard[boat.location[i].getIndex()].setImage(img.BottomImage);
                     }
                 }
+
                 for (var hit : GameManager.opponent.hitAttempts) {
                     if (!hit.didHit) {
-                        _overlayBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").TopImage);
-                        _oceanBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
+                        _middleBoard[hit.location.getIndex()]
+                                .setImage(GameManager.Sprites.get("oceanMiss").MiddleImage);
+                        _bottomBoard[hit.location.getIndex()]
+                                .setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
                     }
                 }
             }
         } else if (grid == GridType.Target) {
-            if (GameManager.gameState == GameState.PlayerTurn && _toHit != null) {
-                _overlayBoard[_toHit.getIndex()].setImage(GameManager.Sprites.get("oceanTarget").TopImage);
+            for (var hit : GameManager.player.hitAttempts) {
+                if (!hit.didHit) {
+                    _middleBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").MiddleImage);
+                    _bottomBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
+                } else {
+                    _middleBoard[hit.location.getIndex()]
+                            .setImage(GameManager.Sprites.get("oceanHit").MiddleImage);
+                    _bottomBoard[hit.location.getIndex()]
+                            .setImage(GameManager.Sprites.get("oceanHit").BottomImage);
+                }
             }
             for (var boat : GameManager.opponent.boats) {
-                for (var hit : GameManager.player.hitAttempts) {
-                    if (!hit.didHit) {
-                        _overlayBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").TopImage);
-                        _oceanBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
-                    } else {
-                        _overlayBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanHit").TopImage);
-                        _oceanBoard[hit.location.getIndex()].setImage(GameManager.Sprites.get("oceanMiss").BottomImage);
+                if (boat.isSunk()) {
+                    for (var hitLoc : boat.location) {
+                        _middleBoard[hitLoc.getIndex()]
+                                .setImage(GameManager.Sprites.get("flagSunk").MiddleImage);
+                        _bottomBoard[hitLoc.getIndex()]
+                                .setImage(GameManager.Sprites.get("flagSunk").BottomImage);
                     }
                 }
+                // else {
+                // for (var x : boat.location) {
+                // if(x == null) continue;
+                // _bottomBoard[x.getIndex()].setImage(GameManager.Sprites.get("error").MiddleImage);
+                // }
+                // }
             }
         }
     }

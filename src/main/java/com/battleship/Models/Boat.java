@@ -91,8 +91,8 @@ public class Boat
 
     public boolean isSunk()
     {
-        for (var hitCheck : isHit) {
-            if (hitCheck == false)
+        for (var didHit : isHit) {
+            if (!didHit)
             {
                 return false; 
             }

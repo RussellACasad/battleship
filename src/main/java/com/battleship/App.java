@@ -20,8 +20,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("MainMenu"), 700, 700);
+        scene = new Scene(loadFXML("MainMenu"), 700, 800);
         stage.setScene(scene);
+        stage.setTitle("Battleship");
         stage.setOnCloseRequest((WindowEvent x) -> {
             if (!GameManager.isSinglePlayer) {
                 if(GameManager.clientSocket != null)
