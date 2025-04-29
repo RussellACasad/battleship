@@ -1,3 +1,7 @@
+/**
+ * The class for a boat. Stores the location, which segments are hit, and whether the boat is placed or not. 
+ */
+
 package com.battleship.Models;
 
 public class Boat 

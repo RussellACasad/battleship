@@ -12,28 +12,13 @@ import javafx.scene.layout.HBox;
 public class CreditsController {
 
     @FXML
-    private RadioButton SeekWhite;
-    @FXML
-    private RadioButton SeekBlack;
-    @FXML
-    private RadioButton SeekRed;
-    @FXML
-    private RadioButton SeekOrange;
-    @FXML
-    private RadioButton SeekGreen;
-    @FXML
-    private RadioButton LockWhite;
-    @FXML
-    private RadioButton LockBlack;
-    @FXML
-    private RadioButton LockRed;
-    @FXML
-    private RadioButton LockOrange;
-    @FXML
-    private RadioButton LockGreen;
+    private RadioButton SeekWhite, SeekBlack, SeekRed, SeekOrange, SeekGreen, LockWhite, LockBlack, LockRed, LockOrange, LockGreen;
     @FXML
     private HBox SecretBox; 
 
+    /**
+     * Sets the easter egg overlay to show the correct data
+     */
     @FXML
     private void initialize() {
         switch (GameManager.SeekColor) {
@@ -77,6 +62,9 @@ public class CreditsController {
         }
     }
 
+    /**
+     * Sets the lock overlay color, easter egg
+     */
     @FXML
     private void lock() {
         if (LockWhite.isSelected()) {
@@ -96,6 +84,9 @@ public class CreditsController {
         }
     }
 
+    /**
+     * Sets the seek color, easter egg
+     */
     @FXML
     private void seek() {
         if (SeekWhite.isSelected()) {
@@ -115,6 +106,9 @@ public class CreditsController {
         }
     }
 
+    /**
+     * Sets the easter egg overlay to visible or not
+     */
     @FXML
     private void secret()
     {

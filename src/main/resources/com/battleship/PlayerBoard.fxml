@@ -887,7 +887,7 @@
                                  <children>
                                     <Text fx:id="MessageText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Select a spot to attack.">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Text>
                                  </children>

@@ -1,3 +1,10 @@
+/**
+ * The gamemanager class. 
+ * This holds all needed global variables, all statically.
+ * 
+ * It also handles the loading of sprites. 
+ */
+
 package com.battleship.Models;
 
 import java.io.BufferedReader;
@@ -12,7 +19,7 @@ import java.util.List;
 import javafx.scene.image.Image;
 
 public class GameManager {
-    public static final String VERSION = "1.0.1-RC"; // game version
+    public static final String VERSION = "1.0.0"; // game version
     public static final int FIREPAUSE = 3; // the pause when the fire button is pressed
 
     public static GameMode gameMode = GameMode.classic; 

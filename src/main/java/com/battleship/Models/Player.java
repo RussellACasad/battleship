@@ -1,3 +1,9 @@
+/**
+ * The player class. This stores all the player's data, including their boats and hit attempts. 
+ * 
+ * Can be used as the PLAYER or OPPONENT.
+ */
+
 package com.battleship.Models;
 
 import java.util.ArrayList;

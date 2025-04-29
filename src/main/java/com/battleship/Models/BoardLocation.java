@@ -1,3 +1,8 @@
+/**
+ * An enum for each boat location, allows for easy referencing of location programatically, 
+ * also allows for easy communication of a location to the user. 
+ */
+
 package com.battleship.Models;
 
 import java.util.ArrayList;

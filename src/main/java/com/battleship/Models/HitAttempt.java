@@ -1,3 +1,7 @@
+/*
+ * A location, and whether the attempt was a hit or miss. 
+ */
+
 package com.battleship.Models;
 
 public class HitAttempt {

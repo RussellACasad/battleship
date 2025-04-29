@@ -1,3 +1,6 @@
+/**
+ * Each type of boat, alongside a size for them, and a human readable name. 
+ */
 package com.battleship.Models;
 
 public enum BoatType {

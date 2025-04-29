@@ -20,17 +20,17 @@ public class MainMenuController {
 
     @FXML
     private void play() throws IOException {
-        App.setRoot("PlayerBoard");
+        App.setRoot("PlayerBoard"); // to playerboard
     }
 
     @FXML
     private void multiplayer() throws IOException {
-        App.setRoot("Multiplayer");
+        App.setRoot("Multiplayer"); // to multiplayer settings
     }
 
     @FXML
     private void credits() throws IOException {
-        App.setRoot("Credits");
+        App.setRoot("Credits"); // to credits
     }
 
     @FXML

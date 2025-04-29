@@ -35,826 +35,98 @@ import javafx.util.Duration;
 
 @SuppressWarnings("unused")
 public class PlayerBoardController {
+
+    // Middle Grid
     @FXML
-    private ImageView A1;
+    private ImageView A1, A2, A3, A4, A5, A6, A7, A8, A9, A10;
     @FXML
-    private ImageView A2;
+    private ImageView B1, B2, B3, B4, B5, B6, B7, B8, B9, B10;
     @FXML
-    private ImageView A3;
+    private ImageView C1, C2, C3, C4, C5, C6, C7, C8, C9, C10;
     @FXML
-    private ImageView A4;
+    private ImageView D1, D2, D3, D4, D5, D6, D7, D8, D9, D10;
     @FXML
-    private ImageView A5;
+    private ImageView E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
     @FXML
-    private ImageView A6;
+    private ImageView F1, F2, F3, F4, F5, F6, F7, F8, F9, F10;
     @FXML
-    private ImageView A7;
+    private ImageView G1, G2, G3, G4, G5, G6, G7, G8, G9, G10;
     @FXML
-    private ImageView A8;
+    private ImageView H1, H2, H3, H4, H5, H6, H7, H8, H9, H10;
     @FXML
-    private ImageView A9;
+    private ImageView I1, I2, I3, I4, I5, I6, I7, I8, I9, I10;
     @FXML
-    private ImageView A10;
+    private ImageView J1, J2, J3, J4, J5, J6, J7, J8, J9, J10;
+
+    // Bottom grid ("O"cean grid)
     @FXML
-    private ImageView B1;
+    private ImageView A1O, A2O, A3O, A4O, A5O, A6O, A7O, A8O, A9O, A10O;
     @FXML
-    private ImageView B2;
+    private ImageView B1O, B2O, B3O, B4O, B5O, B6O, B7O, B8O, B9O, B10O;
     @FXML
-    private ImageView B3;
+    private ImageView C1O, C2O, C3O, C4O, C5O, C6O, C7O, C8O, C9O, C10O;
     @FXML
-    private ImageView B4;
+    private ImageView D1O, D2O, D3O, D4O, D5O, D6O, D7O, D8O, D9O, D10O;
     @FXML
-    private ImageView B5;
+    private ImageView E1O, E2O, E3O, E4O, E5O, E6O, E7O, E8O, E9O, E10O;
     @FXML
-    private ImageView B6;
+    private ImageView F1O, F2O, F3O, F4O, F5O, F6O, F7O, F8O, F9O, F10O;
     @FXML
-    private ImageView B7;
+    private ImageView G1O, G2O, G3O, G4O, G5O, G6O, G7O, G8O, G9O, G10O;
     @FXML
-    private ImageView B8;
+    private ImageView H1O, H2O, H3O, H4O, H5O, H6O, H7O, H8O, H9O, H10O;
     @FXML
-    private ImageView B9;
+    private ImageView I1O, I2O, I3O, I4O, I5O, I6O, I7O, I8O, I9O, I10O;
     @FXML
-    private ImageView B10;
+    private ImageView J1O, J2O, J3O, J4O, J5O, J6O, J7O, J8O, J9O, J10O;
+
+    // Top grid
     @FXML
-    private ImageView C1;
+    private ImageView A1T, A2T, A3T, A4T, A5T, A6T, A7T, A8T, A9T, A10T;
     @FXML
-    private ImageView C2;
+    private ImageView B1T, B2T, B3T, B4T, B5T, B6T, B7T, B8T, B9T, B10T;
     @FXML
-    private ImageView C3;
+    private ImageView C1T, C2T, C3T, C4T, C5T, C6T, C7T, C8T, C9T, C10T;
     @FXML
-    private ImageView C4;
+    private ImageView D1T, D2T, D3T, D4T, D5T, D6T, D7T, D8T, D9T, D10T;
     @FXML
-    private ImageView C5;
+    private ImageView E1T, E2T, E3T, E4T, E5T, E6T, E7T, E8T, E9T, E10T;
     @FXML
-    private ImageView C6;
+    private ImageView F1T, F2T, F3T, F4T, F5T, F6T, F7T, F8T, F9T, F10T;
     @FXML
-    private ImageView C7;
+    private ImageView G1T, G2T, G3T, G4T, G5T, G6T, G7T, G8T, G9T, G10T;
     @FXML
-    private ImageView C8;
+    private ImageView H1T, H2T, H3T, H4T, H5T, H6T, H7T, H8T, H9T, H10T;
     @FXML
-    private ImageView C9;
+    private ImageView I1T, I2T, I3T, I4T, I5T, I6T, I7T, I8T, I9T, I10T;
     @FXML
-    private ImageView C10;
+    private ImageView J1T, J2T, J3T, J4T, J5T, J6T, J7T, J8T, J9T, J10T;
+
+    // Stackpane Grid
     @FXML
-    private ImageView D1;
+    private StackPane A1G, A2G, A3G, A4G, A5G, A6G, A7G, A8G, A9G, A10G;
     @FXML
-    private ImageView D2;
+    private StackPane B1G, B2G, B3G, B4G, B5G, B6G, B7G, B8G, B9G, B10G;
     @FXML
-    private ImageView D3;
+    private StackPane C1G, C2G, C3G, C4G, C5G, C6G, C7G, C8G, C9G, C10G;
     @FXML
-    private ImageView D4;
+    private StackPane D1G, D2G, D3G, D4G, D5G, D6G, D7G, D8G, D9G, D10G;
     @FXML
-    private ImageView D5;
+    private StackPane E1G, E2G, E3G, E4G, E5G, E6G, E7G, E8G, E9G, E10G;
     @FXML
-    private ImageView D6;
+    private StackPane F1G, F2G, F3G, F4G, F5G, F6G, F7G, F8G, F9G, F10G;
     @FXML
-    private ImageView D7;
+    private StackPane G1G, G2G, G3G, G4G, G5G, G6G, G7G, G8G, G9G, G10G;
     @FXML
-    private ImageView D8;
+    private StackPane H1G, H2G, H3G, H4G, H5G, H6G, H7G, H8G, H9G, H10G;
     @FXML
-    private ImageView D9;
+    private StackPane I1G, I2G, I3G, I4G, I5G, I6G, I7G, I8G, I9G, I10G;
     @FXML
-    private ImageView D10;
+    private StackPane J1G, J2G, J3G, J4G, J5G, J6G, J7G, J8G, J9G, J10G;
     @FXML
-    private ImageView E1;
-    @FXML
-    private ImageView E2;
-    @FXML
-    private ImageView E3;
-    @FXML
-    private ImageView E4;
-    @FXML
-    private ImageView E5;
-    @FXML
-    private ImageView E6;
-    @FXML
-    private ImageView E7;
-    @FXML
-    private ImageView E8;
-    @FXML
-    private ImageView E9;
-    @FXML
-    private ImageView E10;
-    @FXML
-    private ImageView F1;
-    @FXML
-    private ImageView F2;
-    @FXML
-    private ImageView F3;
-    @FXML
-    private ImageView F4;
-    @FXML
-    private ImageView F5;
-    @FXML
-    private ImageView F6;
-    @FXML
-    private ImageView F7;
-    @FXML
-    private ImageView F8;
-    @FXML
-    private ImageView F9;
-    @FXML
-    private ImageView F10;
-    @FXML
-    private ImageView G1;
-    @FXML
-    private ImageView G2;
-    @FXML
-    private ImageView G3;
-    @FXML
-    private ImageView G4;
-    @FXML
-    private ImageView G5;
-    @FXML
-    private ImageView G6;
-    @FXML
-    private ImageView G7;
-    @FXML
-    private ImageView G8;
-    @FXML
-    private ImageView G9;
-    @FXML
-    private ImageView G10;
-    @FXML
-    private ImageView H1;
-    @FXML
-    private ImageView H2;
-    @FXML
-    private ImageView H3;
-    @FXML
-    private ImageView H4;
-    @FXML
-    private ImageView H5;
-    @FXML
-    private ImageView H6;
-    @FXML
-    private ImageView H7;
-    @FXML
-    private ImageView H8;
-    @FXML
-    private ImageView H9;
-    @FXML
-    private ImageView H10;
-    @FXML
-    private ImageView I1;
-    @FXML
-    private ImageView I2;
-    @FXML
-    private ImageView I3;
-    @FXML
-    private ImageView I4;
-    @FXML
-    private ImageView I5;
-    @FXML
-    private ImageView I6;
-    @FXML
-    private ImageView I7;
-    @FXML
-    private ImageView I8;
-    @FXML
-    private ImageView I9;
-    @FXML
-    private ImageView I10;
-    @FXML
-    private ImageView J1;
-    @FXML
-    private ImageView J2;
-    @FXML
-    private ImageView J3;
-    @FXML
-    private ImageView J4;
-    @FXML
-    private ImageView J5;
-    @FXML
-    private ImageView J6;
-    @FXML
-    private ImageView J7;
-    @FXML
-    private ImageView J8;
-    @FXML
-    private ImageView J9;
-    @FXML
-    private ImageView J10;
-    @FXML
-    private ImageView A1O;
-    @FXML
-    private ImageView A2O;
-    @FXML
-    private ImageView A3O;
-    @FXML
-    private ImageView A4O;
-    @FXML
-    private ImageView A5O;
-    @FXML
-    private ImageView A6O;
-    @FXML
-    private ImageView A7O;
-    @FXML
-    private ImageView A8O;
-    @FXML
-    private ImageView A9O;
-    @FXML
-    private ImageView A10O;
-    @FXML
-    private ImageView B1O;
-    @FXML
-    private ImageView B2O;
-    @FXML
-    private ImageView B3O;
-    @FXML
-    private ImageView B4O;
-    @FXML
-    private ImageView B5O;
-    @FXML
-    private ImageView B6O;
-    @FXML
-    private ImageView B7O;
-    @FXML
-    private ImageView B8O;
-    @FXML
-    private ImageView B9O;
-    @FXML
-    private ImageView B10O;
-    @FXML
-    private ImageView C1O;
-    @FXML
-    private ImageView C2O;
-    @FXML
-    private ImageView C3O;
-    @FXML
-    private ImageView C4O;
-    @FXML
-    private ImageView C5O;
-    @FXML
-    private ImageView C6O;
-    @FXML
-    private ImageView C7O;
-    @FXML
-    private ImageView C8O;
-    @FXML
-    private ImageView C9O;
-    @FXML
-    private ImageView C10O;
-    @FXML
-    private ImageView D1O;
-    @FXML
-    private ImageView D2O;
-    @FXML
-    private ImageView D3O;
-    @FXML
-    private ImageView D4O;
-    @FXML
-    private ImageView D5O;
-    @FXML
-    private ImageView D6O;
-    @FXML
-    private ImageView D7O;
-    @FXML
-    private ImageView D8O;
-    @FXML
-    private ImageView D9O;
-    @FXML
-    private ImageView D10O;
-    @FXML
-    private ImageView E1O;
-    @FXML
-    private ImageView E2O;
-    @FXML
-    private ImageView E3O;
-    @FXML
-    private ImageView E4O;
-    @FXML
-    private ImageView E5O;
-    @FXML
-    private ImageView E6O;
-    @FXML
-    private ImageView E7O;
-    @FXML
-    private ImageView E8O;
-    @FXML
-    private ImageView E9O;
-    @FXML
-    private ImageView E10O;
-    @FXML
-    private ImageView F1O;
-    @FXML
-    private ImageView F2O;
-    @FXML
-    private ImageView F3O;
-    @FXML
-    private ImageView F4O;
-    @FXML
-    private ImageView F5O;
-    @FXML
-    private ImageView F6O;
-    @FXML
-    private ImageView F7O;
-    @FXML
-    private ImageView F8O;
-    @FXML
-    private ImageView F9O;
-    @FXML
-    private ImageView F10O;
-    @FXML
-    private ImageView G1O;
-    @FXML
-    private ImageView G2O;
-    @FXML
-    private ImageView G3O;
-    @FXML
-    private ImageView G4O;
-    @FXML
-    private ImageView G5O;
-    @FXML
-    private ImageView G6O;
-    @FXML
-    private ImageView G7O;
-    @FXML
-    private ImageView G8O;
-    @FXML
-    private ImageView G9O;
-    @FXML
-    private ImageView G10O;
-    @FXML
-    private ImageView H1O;
-    @FXML
-    private ImageView H2O;
-    @FXML
-    private ImageView H3O;
-    @FXML
-    private ImageView H4O;
-    @FXML
-    private ImageView H5O;
-    @FXML
-    private ImageView H6O;
-    @FXML
-    private ImageView H7O;
-    @FXML
-    private ImageView H8O;
-    @FXML
-    private ImageView H9O;
-    @FXML
-    private ImageView H10O;
-    @FXML
-    private ImageView I1O;
-    @FXML
-    private ImageView I2O;
-    @FXML
-    private ImageView I3O;
-    @FXML
-    private ImageView I4O;
-    @FXML
-    private ImageView I5O;
-    @FXML
-    private ImageView I6O;
-    @FXML
-    private ImageView I7O;
-    @FXML
-    private ImageView I8O;
-    @FXML
-    private ImageView I9O;
-    @FXML
-    private ImageView I10O;
-    @FXML
-    private ImageView J1O;
-    @FXML
-    private ImageView J2O;
-    @FXML
-    private ImageView J3O;
-    @FXML
-    private ImageView J4O;
-    @FXML
-    private ImageView J5O;
-    @FXML
-    private ImageView J6O;
-    @FXML
-    private ImageView J7O;
-    @FXML
-    private ImageView J8O;
-    @FXML
-    private ImageView J9O;
-    @FXML
-    private ImageView J10O;
-    @FXML
-    private ImageView A1T;
-    @FXML
-    private ImageView A2T;
-    @FXML
-    private ImageView A3T;
-    @FXML
-    private ImageView A4T;
-    @FXML
-    private ImageView A5T;
-    @FXML
-    private ImageView A6T;
-    @FXML
-    private ImageView A7T;
-    @FXML
-    private ImageView A8T;
-    @FXML
-    private ImageView A9T;
-    @FXML
-    private ImageView A10T;
-    @FXML
-    private ImageView B1T;
-    @FXML
-    private ImageView B2T;
-    @FXML
-    private ImageView B3T;
-    @FXML
-    private ImageView B4T;
-    @FXML
-    private ImageView B5T;
-    @FXML
-    private ImageView B6T;
-    @FXML
-    private ImageView B7T;
-    @FXML
-    private ImageView B8T;
-    @FXML
-    private ImageView B9T;
-    @FXML
-    private ImageView B10T;
-    @FXML
-    private ImageView C1T;
-    @FXML
-    private ImageView C2T;
-    @FXML
-    private ImageView C3T;
-    @FXML
-    private ImageView C4T;
-    @FXML
-    private ImageView C5T;
-    @FXML
-    private ImageView C6T;
-    @FXML
-    private ImageView C7T;
-    @FXML
-    private ImageView C8T;
-    @FXML
-    private ImageView C9T;
-    @FXML
-    private ImageView C10T;
-    @FXML
-    private ImageView D1T;
-    @FXML
-    private ImageView D2T;
-    @FXML
-    private ImageView D3T;
-    @FXML
-    private ImageView D4T;
-    @FXML
-    private ImageView D5T;
-    @FXML
-    private ImageView D6T;
-    @FXML
-    private ImageView D7T;
-    @FXML
-    private ImageView D8T;
-    @FXML
-    private ImageView D9T;
-    @FXML
-    private ImageView D10T;
-    @FXML
-    private ImageView E1T;
-    @FXML
-    private ImageView E2T;
-    @FXML
-    private ImageView E3T;
-    @FXML
-    private ImageView E4T;
-    @FXML
-    private ImageView E5T;
-    @FXML
-    private ImageView E6T;
-    @FXML
-    private ImageView E7T;
-    @FXML
-    private ImageView E8T;
-    @FXML
-    private ImageView E9T;
-    @FXML
-    private ImageView E10T;
-    @FXML
-    private ImageView F1T;
-    @FXML
-    private ImageView F2T;
-    @FXML
-    private ImageView F3T;
-    @FXML
-    private ImageView F4T;
-    @FXML
-    private ImageView F5T;
-    @FXML
-    private ImageView F6T;
-    @FXML
-    private ImageView F7T;
-    @FXML
-    private ImageView F8T;
-    @FXML
-    private ImageView F9T;
-    @FXML
-    private ImageView F10T;
-    @FXML
-    private ImageView G1T;
-    @FXML
-    private ImageView G2T;
-    @FXML
-    private ImageView G3T;
-    @FXML
-    private ImageView G4T;
-    @FXML
-    private ImageView G5T;
-    @FXML
-    private ImageView G6T;
-    @FXML
-    private ImageView G7T;
-    @FXML
-    private ImageView G8T;
-    @FXML
-    private ImageView G9T;
-    @FXML
-    private ImageView G10T;
-    @FXML
-    private ImageView H1T;
-    @FXML
-    private ImageView H2T;
-    @FXML
-    private ImageView H3T;
-    @FXML
-    private ImageView H4T;
-    @FXML
-    private ImageView H5T;
-    @FXML
-    private ImageView H6T;
-    @FXML
-    private ImageView H7T;
-    @FXML
-    private ImageView H8T;
-    @FXML
-    private ImageView H9T;
-    @FXML
-    private ImageView H10T;
-    @FXML
-    private ImageView I1T;
-    @FXML
-    private ImageView I2T;
-    @FXML
-    private ImageView I3T;
-    @FXML
-    private ImageView I4T;
-    @FXML
-    private ImageView I5T;
-    @FXML
-    private ImageView I6T;
-    @FXML
-    private ImageView I7T;
-    @FXML
-    private ImageView I8T;
-    @FXML
-    private ImageView I9T;
-    @FXML
-    private ImageView I10T;
-    @FXML
-    private ImageView J1T;
-    @FXML
-    private ImageView J2T;
-    @FXML
-    private ImageView J3T;
-    @FXML
-    private ImageView J4T;
-    @FXML
-    private ImageView J5T;
-    @FXML
-    private ImageView J6T;
-    @FXML
-    private ImageView J7T;
-    @FXML
-    private ImageView J8T;
-    @FXML
-    private ImageView J9T;
-    @FXML
-    private ImageView J10T;
-    @FXML
-    private StackPane A1G;
-    @FXML
-    private StackPane A2G;
-    @FXML
-    private StackPane A3G;
-    @FXML
-    private StackPane A4G;
-    @FXML
-    private StackPane A5G;
-    @FXML
-    private StackPane A6G;
-    @FXML
-    private StackPane A7G;
-    @FXML
-    private StackPane A8G;
-    @FXML
-    private StackPane A9G;
-    @FXML
-    private StackPane A10G;
-    @FXML
-    private StackPane B1G;
-    @FXML
-    private StackPane B2G;
-    @FXML
-    private StackPane B3G;
-    @FXML
-    private StackPane B4G;
-    @FXML
-    private StackPane B5G;
-    @FXML
-    private StackPane B6G;
-    @FXML
-    private StackPane B7G;
-    @FXML
-    private StackPane B8G;
-    @FXML
-    private StackPane B9G;
-    @FXML
-    private StackPane B10G;
-    @FXML
-    private StackPane C1G;
-    @FXML
-    private StackPane C2G;
-    @FXML
-    private StackPane C3G;
-    @FXML
-    private StackPane C4G;
-    @FXML
-    private StackPane C5G;
-    @FXML
-    private StackPane C6G;
-    @FXML
-    private StackPane C7G;
-    @FXML
-    private StackPane C8G;
-    @FXML
-    private StackPane C9G;
-    @FXML
-    private StackPane C10G;
-    @FXML
-    private StackPane D1G;
-    @FXML
-    private StackPane D2G;
-    @FXML
-    private StackPane D3G;
-    @FXML
-    private StackPane D4G;
-    @FXML
-    private StackPane D5G;
-    @FXML
-    private StackPane D6G;
-    @FXML
-    private StackPane D7G;
-    @FXML
-    private StackPane D8G;
-    @FXML
-    private StackPane D9G;
-    @FXML
-    private StackPane D10G;
-    @FXML
-    private StackPane E1G;
-    @FXML
-    private StackPane E2G;
-    @FXML
-    private StackPane E3G;
-    @FXML
-    private StackPane E4G;
-    @FXML
-    private StackPane E5G;
-    @FXML
-    private StackPane E6G;
-    @FXML
-    private StackPane E7G;
-    @FXML
-    private StackPane E8G;
-    @FXML
-    private StackPane E9G;
-    @FXML
-    private StackPane E10G;
-    @FXML
-    private StackPane F1G;
-    @FXML
-    private StackPane F2G;
-    @FXML
-    private StackPane F3G;
-    @FXML
-    private StackPane F4G;
-    @FXML
-    private StackPane F5G;
-    @FXML
-    private StackPane F6G;
-    @FXML
-    private StackPane F7G;
-    @FXML
-    private StackPane F8G;
-    @FXML
-    private StackPane F9G;
-    @FXML
-    private StackPane F10G;
-    @FXML
-    private StackPane G1G;
-    @FXML
-    private StackPane G2G;
-    @FXML
-    private StackPane G3G;
-    @FXML
-    private StackPane G4G;
-    @FXML
-    private StackPane G5G;
-    @FXML
-    private StackPane G6G;
-    @FXML
-    private StackPane G7G;
-    @FXML
-    private StackPane G8G;
-    @FXML
-    private StackPane G9G;
-    @FXML
-    private StackPane G10G;
-    @FXML
-    private StackPane H1G;
-    @FXML
-    private StackPane H2G;
-    @FXML
-    private StackPane H3G;
-    @FXML
-    private StackPane H4G;
-    @FXML
-    private StackPane H5G;
-    @FXML
-    private StackPane H6G;
-    @FXML
-    private StackPane H7G;
-    @FXML
-    private StackPane H8G;
-    @FXML
-    private StackPane H9G;
-    @FXML
-    private StackPane H10G;
-    @FXML
-    private StackPane I1G;
-    @FXML
-    private StackPane I2G;
-    @FXML
-    private StackPane I3G;
-    @FXML
-    private StackPane I4G;
-    @FXML
-    private StackPane I5G;
-    @FXML
-    private StackPane I6G;
-    @FXML
-    private StackPane I7G;
-    @FXML
-    private StackPane I8G;
-    @FXML
-    private StackPane I9G;
-    @FXML
-    private StackPane I10G;
-    @FXML
-    private StackPane J1G;
-    @FXML
-    private StackPane J2G;
-    @FXML
-    private StackPane J3G;
-    @FXML
-    private StackPane J4G;
-    @FXML
-    private StackPane J5G;
-    @FXML
-    private StackPane J6G;
-    @FXML
-    private StackPane J7G;
-    @FXML
-    private StackPane J8G;
-    @FXML
-    private StackPane J9G;
-    @FXML
-    private StackPane J10G;
-    @FXML
-    private RadioButton horizontalShipRadio;
-    @FXML
-    private RadioButton verticalShipRadio;
-    @FXML
-    private RadioButton carrierRadio;
-    @FXML
-    private RadioButton battleshipRadio;
-    @FXML
-    private RadioButton destroyerRadio;
-    @FXML
-    private RadioButton submarineRadio;
-    @FXML
-    private RadioButton patrolRadio;
-    @FXML
-    private RadioButton yachtRadio;
-    @FXML
-    private RadioButton oceanGridRadio;
-    @FXML
-    private RadioButton targetGridRadio;
+    private RadioButton horizontalShipRadio, verticalShipRadio,
+            carrierRadio, battleshipRadio, destroyerRadio, submarineRadio, patrolRadio, yachtRadio,
+            oceanGridRadio, targetGridRadio;
     @FXML
     private VBox SelectBox;
     @FXML
@@ -868,13 +140,11 @@ public class PlayerBoardController {
     @FXML
     private Label attackingLabel;
     @FXML
-    private Label hoverLabel; 
+    private Label hoverLabel;
     @FXML
     private StackPane root;
 
-    private ImageView[] _middleBoard;
-    private ImageView[] _bottomBoard;
-    private ImageView[] _topBoard;
+    private ImageView[] _topBoard, _middleBoard, _bottomBoard;
     private StackPane[] _gridBoard;
     private int _selectedShip = 0;
     private transient BoardLocation _toHit = null;
@@ -882,40 +152,48 @@ public class PlayerBoardController {
     private Boat ghost = null;
     private BoardLocation attackHoverLocation = null;
     RadioButton[] shipRadios = new RadioButton[6];
-    private boolean BlockInput = false; 
+    private boolean BlockInput = false;
 
+    /**
+     * A thread that manages multiplayer communication.
+     * 
+     * This starts after each player selects their boats, and constantly messages
+     * the opponent.
+     * 
+     * If a message needs to be sent to the opponent, it is done here.
+     */
     private final Thread FeedManager = new Thread(() -> {
         String input;
-        while (true) {
-            if (GameManager.multiplayerFeed.isEmpty()) {
-                System.out.println(GameManager.multiplayerInput);
-                GameManager.out.println("ping");
+        while (true) { // Starts a loop that does not end.
+            if (GameManager.multiplayerFeed.isEmpty()) { // If there is no message to send to the opponent
+                GameManager.out.println("ping"); // Sends the word "ping", this is ignored by the opponent
                 try {
-                    input = GameManager.in.readLine();
-                    if (input == null) {
+                    input = GameManager.in.readLine(); // Awaits a response from the opponent
+                    if (input == null) { // If response is null, opponent has disconnected
                         Platform.runLater(() -> closeGame(true));
                         break;
                     }
-                    if (input.equals("win")) {
+                    if (input.equals("win")) { // if response is "win", that means all their ships are sunk
                         Platform.runLater(() -> endMessage(true));
                         break;
-                    }
-                    else if (!input.equals("ping")) {
-                        GameManager.multiplayerInput = input;
+                    } else if (!input.equals("ping")) { // if respomnse is anything other than "ping"
+                        GameManager.multiplayerInput = input; // The response is stored in a variable for usage
+                                                              // elsewhere.
                     }
                 } catch (IOException ex) {
-                    Platform.runLater(() -> closeGame(true));
+                    Platform.runLater(() -> closeGame(true)); // If an IO exception is thrown, the opponent has
+                                                              // disconnected.
                     break;
                 }
-            } else {
-                var x = GameManager.multiplayerFeed.removeFirst();
-                GameManager.out.println(x);
+            } else { // if the feed is NOT empty
+                var x = GameManager.multiplayerFeed.removeFirst(); // Removes the first entry in the feed
+                GameManager.out.println(x); // Sends the feed message to the opponent instead of "ping"
 
-                if (x.equals("win")) {
+                if (x.equals("win")) { // If we are sending win, it measns we lost. End the game with a lose message
                     endMessage(false);
                 }
             }
-            try {
+            try { // Wait 100 miliseconds
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
 
@@ -925,9 +203,12 @@ public class PlayerBoardController {
     });
 
     @FXML
-    public void initialize() {
-        GameManager.LoadSprites();
-        _bottomBoard = new ImageView[] { // Creates the grid for the Ocean
+    public void initialize() { // on view initialize
+        GameManager.LoadSprites(); // Loads all of our sprites into RAM
+
+        // Grid for showing the ocean sprites, modifiable in case a sprite needs another
+        // bottom sprite than the ocean
+        _bottomBoard = new ImageView[] {
                 A1O, A2O, A3O, A4O, A5O, A6O, A7O, A8O, A9O, A10O,
                 B1O, B2O, B3O, B4O, B5O, B6O, B7O, B8O, B9O, B10O,
                 C1O, C2O, C3O, C4O, C5O, C6O, C7O, C8O, C9O, C10O,
@@ -939,7 +220,9 @@ public class PlayerBoardController {
                 I1O, I2O, I3O, I4O, I5O, I6O, I7O, I8O, I9O, I10O,
                 J1O, J2O, J3O, J4O, J5O, J6O, J7O, J8O, J9O, J10O
         };
-        _middleBoard = new ImageView[] { // Creates the grid for the boats / flags
+
+        // Grid for showing the boat and flag sprites.
+        _middleBoard = new ImageView[] {
                 A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                 B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                 C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
@@ -951,7 +234,10 @@ public class PlayerBoardController {
                 I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
                 J1, J2, J3, J4, J5, J6, J7, J8, J9, J10
         };
-        _topBoard = new ImageView[] { // Creates the grid for the ghost / explosion
+
+        // Grid for showing the overlay sprites, such as the targeting lines, ship ghost
+        // for placing ships, and the exposion sprite when hit.
+        _topBoard = new ImageView[] {
                 A1T, A2T, A3T, A4T, A5T, A6T, A7T, A8T, A9T, A10T,
                 B1T, B2T, B3T, B4T, B5T, B6T, B7T, B8T, B9T, B10T,
                 C1T, C2T, C3T, C4T, C5T, C6T, C7T, C8T, C9T, C10T,
@@ -963,6 +249,9 @@ public class PlayerBoardController {
                 I1T, I2T, I3T, I4T, I5T, I6T, I7T, I8T, I9T, I10T,
                 J1T, J2T, J3T, J4T, J5T, J6T, J7T, J8T, J9T, J10T
         };
+
+        // Grid for detecting clicks and user input. The player does not click the
+        // image, they click the stackpane.
         _gridBoard = new StackPane[] { // Creates the grid of StackPanes
                 A1G, A2G, A3G, A4G, A5G, A6G, A7G, A8G, A9G, A10G,
                 B1G, B2G, B3G, B4G, B5G, B6G, B7G, B8G, B9G, B10G,
@@ -976,6 +265,10 @@ public class PlayerBoardController {
                 J1G, J2G, J3G, J4G, J5G, J6G, J7G, J8G, J9G, J10G
         };
 
+        // For each sprite layer, the bottom right corner needs to be clipped so it's
+        // curved.
+        // Each layer must have a path created, and the image clipped.
+        // Paths cannot be reused per image.
         var radius = 10;
 
         Path bottomClipPath = new Path(
@@ -1018,21 +311,26 @@ public class PlayerBoardController {
         _middleBoard[BoardLocation.J10.getIndex()].setClip(middleClipPath);
         _topBoard[BoardLocation.J10.getIndex()].setClip(topClipPath);
 
-        carrierRadio.getStyleClass().add("bad"); // sets the radio colors to red
+        // Mark all boat place radios as not placed
+        carrierRadio.getStyleClass().add("bad");
         battleshipRadio.getStyleClass().add("bad");
         destroyerRadio.getStyleClass().add("bad");
         submarineRadio.getStyleClass().add("bad");
         patrolRadio.getStyleClass().add("bad");
         yachtRadio.getStyleClass().add("bad");
 
+        // Makes an array of ship radios
         shipRadios[0] = carrierRadio;
         shipRadios[1] = battleshipRadio;
         shipRadios[2] = destroyerRadio;
         shipRadios[3] = submarineRadio;
         shipRadios[4] = patrolRadio;
         shipRadios[5] = yachtRadio;
-        
+
+        // Draws the user's grid for the first time
         Draw(GridType.Ocean);
+
+        // Ensure the ship select UI is showing
         SetUI();
 
         if (!GameManager.isSinglePlayer) { // If multiplayer, listens for when the opponent peer has placed their ships
@@ -1064,10 +362,13 @@ public class PlayerBoardController {
         });
     }
 
+    /**
+     * When a square has the mouse hovered over it, this function is called.
+     */
     @FXML
     void squareHover() {
 
-        if (BlockInput) {
+        if (BlockInput) { // Blocks input if transitioning between views
             ghost = null;
             attackHoverLocation = null;
             hoverLabel.setText("None");
@@ -1082,17 +383,16 @@ public class PlayerBoardController {
             }
         }
 
-        if(hoveredLocation != null)
+        if (hoveredLocation != null) // Sets the "hovered location" text
         {
             hoverLabel.setText(hoveredLocation.toString());
-        }
-        else
-        {
+        } else {
             hoverLabel.setText("None");
+            return;
         }
 
         switch (GameManager.gameState) {
-            case GameState.PlaceShips -> {
+            case GameState.PlaceShips -> { // Displays the ghost of the boat being placed
 
                 if (ghost == null || GameManager.player.boats[_selectedShip].name != ghost.name) {
                     ghost = new Boat(GameManager.player.boats[_selectedShip].name);
@@ -1108,7 +408,7 @@ public class PlayerBoardController {
 
                 Draw(GridType.Ocean);
             }
-            case GameState.PlayerTurn -> {
+            case GameState.PlayerTurn -> { // Sets the attack hover location if on the opponent's grid
                 if (targetGridRadio.isSelected()) {
                     attackHoverLocation = hoveredLocation;
                     Draw(GridType.Target);
@@ -1119,6 +419,9 @@ public class PlayerBoardController {
         }
     }
 
+    /**
+     * Runs when the mouse exits the entire grid, not run checked per-square
+     */
     @FXML
     void gridMouseExit() {
 
@@ -1127,11 +430,11 @@ public class PlayerBoardController {
         }
 
         switch (GameManager.gameState) {
-            case PlaceShips -> {
+            case PlaceShips -> { // Removes the ghost and sets it to null.
                 ghost = null;
                 Draw(GridType.Ocean);
             }
-            case PlayerTurn -> {
+            case PlayerTurn -> { // Resets the hover label, and sets the hover location to null
                 if (targetGridRadio.isSelected()) {
                     attackHoverLocation = null;
                     hoverLabel.setText("None");
@@ -1143,8 +446,11 @@ public class PlayerBoardController {
         }
     }
 
+    /**
+     * Runs every time any square is clicked.
+     */
     @FXML
-    void squareClicked() { // when a square is clicked
+    void squareClicked() {
 
         if (BlockInput) {
             return;
@@ -1199,14 +505,22 @@ public class PlayerBoardController {
         }
     }
 
+    /**
+     * Takes the user back to the main menu. Runs when the back button is pressed.
+     * 
+     * @throws IOException
+     */
     @FXML
     private void back() throws IOException {
         GameManager.Reset();
         App.setRoot("MainMenu");
     }
 
+    /**
+     * Runs every time the player changes the ship they are placing.
+     */
     @FXML
-    void selectShip() { // selects the new ship during ship selection
+    void selectShip() {
         if (carrierRadio.isSelected()) {
             _selectedShip = 0;
         } else if (battleshipRadio.isSelected()) {
@@ -1222,6 +536,13 @@ public class PlayerBoardController {
         }
     }
 
+    /**
+     * Override of the FXML function.
+     * Programatically changes the ship's type, and adjusts the radio buttons
+     * accordingly.
+     * 
+     * @param type The ship to change to
+     */
     void selectShip(BoatType type) {
         switch (type) {
             case battleship -> {
@@ -1251,8 +572,12 @@ public class PlayerBoardController {
         }
     }
 
+    /**
+     * Randomly places all the ships for the player. Run when the random button is
+     * placed.
+     */
     @FXML
-    private void randomizeShips() {// when the random button is pressed
+    private void randomizeShips() {
         for (var boat : GameManager.player.boats) { // for each boat
             var isHorizontal = Math.random() < 0.5; // 50% chance of being horizontal
             var loc = BoardLocation.randomLocation(); // picks a random location
@@ -1273,6 +598,9 @@ public class PlayerBoardController {
         setGrid(GridType.Ocean); // redraws the grid to show boats
     }
 
+    /**
+     * This is run when the player confirms all ships are placed.
+     */
     @FXML
     private void confirmShips() {
         if (GameManager.player.allBoatsPlaced()) { // checks if all the boats are placed
@@ -1325,27 +653,36 @@ public class PlayerBoardController {
         }
     }
 
+    /**
+     * When the fire button is pressed, this handles all the turns as well.
+     * 
+     * @throws InterruptedException
+     */
     @FXML
     private void fire() throws InterruptedException {
-        // when fire is hit (player's turn)
-        if (_toHit == null) {
+        if (_toHit == null) { // returns if no spot is selected to hit.
             return;
         }
-        BlockInput = true; 
-        attackingLabel.setText("None");
+        BlockInput = true; // Blocks input
+        attackingLabel.setText("None"); // Sets label text
         MessageText.setText("Firing...");
         PlayerTurn(); // send the player's turn to the oppoent
-        PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // wait
+        PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // Pause for a
+                                                                                                          // moment
         opponentTurnPause.setOnFinished(x -> OpponentTurn()); // when wait done, wait for opponent to fire back
-        opponentTurnPause.play();
-        checkWin();
+        opponentTurnPause.play(); // Runs the pause transition, pausing for a moment, then running the opponent
+                                  // turn.
+        checkWin(); // Checks to see if either party has won after their turn.
     }
 
+    /**
+     * Checks to see if either person playing has won.
+     */
     private void checkWin() {
-        // Check all boats to see if sunk
         if (GameManager.isSinglePlayer) { // Singleplayer
-            var allPlayerBoatsSunk = true;
-            for (var boat : GameManager.player.boats) {
+            var allPlayerBoatsSunk = true; // Says all player boats are sunk to start
+            for (var boat : GameManager.player.boats) { // checks all boats, if a boat is not sunk, sets
+                                                        // allPlayerBoatsSunk to false, then breaks the loop.
                 for (var att : boat.isHit) {
                     if (!att) {
                         allPlayerBoatsSunk = false;
@@ -1357,11 +694,11 @@ public class PlayerBoardController {
                     break;
                 }
             }
-            if (allPlayerBoatsSunk) {
+            if (allPlayerBoatsSunk) { // If all player's boats are sunk, is a LOSS.
                 endMessage(false);
             }
 
-            var allOpponentBoatsSunk = true;
+            var allOpponentBoatsSunk = true; // Does the same thing as the player for the opponent.
             for (var boat : GameManager.opponent.boats) {
                 for (var att : boat.isHit) {
                     if (!att) {
@@ -1438,8 +775,11 @@ public class PlayerBoardController {
         }).start();
     }
 
+    /**
+     * draws the grid selected by the radio buttons
+     */
     @FXML
-    private void setGrid() { // draws the grid selected by the radio buttons
+    private void setGrid() {
         if (oceanGridRadio.selectedProperty().get()) {
             fireButton.setDisable(true);
             Draw(GridType.Ocean);
@@ -1577,34 +917,28 @@ public class PlayerBoardController {
                     && (attackHoverLocation != null || _toHit != null) && !BlockInput) {
                 var imgName = "ind";
                 var loc = BoardLocation.parseInt(i);
-                if(_toHit != null)
-                {
-                    imgName += GameManager.LockColor; 
-                    if (_toHit == loc)
-                    {
-                        imgName += "Mid"; 
-                    } 
+                if (_toHit != null) {
+                    imgName += GameManager.LockColor;
+                    if (_toHit == loc) {
+                        imgName += "Mid";
+                    }
 
                     var img = GameManager.Sprites.get(imgName);
                     if (loc.getLetter() == _toHit.getLetter() || loc.getNumber() == _toHit.getNumber()) {
-                        if(loc.getLetter() == _toHit.getLetter())
-                        {
+                        if (loc.getLetter() == _toHit.getLetter()) {
                             _topBoard[i].setRotate(90);
                         }
                         _topBoard[i].setImage(img.TopImage);
                     }
-                }
-                else
-                {
-                    imgName += GameManager.SeekColor; 
-                    if (attackHoverLocation == loc)
-                    {
-                        imgName += "Mid"; 
-                    } 
+                } else {
+                    imgName += GameManager.SeekColor;
+                    if (attackHoverLocation == loc) {
+                        imgName += "Mid";
+                    }
                     var img = GameManager.Sprites.get(imgName);
-                    if (loc.getLetter() == attackHoverLocation.getLetter() || loc.getNumber() == attackHoverLocation.getNumber()) {
-                        if(loc.getLetter() == attackHoverLocation.getLetter() && (attackHoverLocation != loc))
-                        {
+                    if (loc.getLetter() == attackHoverLocation.getLetter()
+                            || loc.getNumber() == attackHoverLocation.getNumber()) {
+                        if (loc.getLetter() == attackHoverLocation.getLetter() && (attackHoverLocation != loc)) {
                             _topBoard[i].setRotate(90);
                         }
                         _topBoard[i].setImage(img.TopImage);
@@ -1694,12 +1028,6 @@ public class PlayerBoardController {
                                 .setImage(GameManager.Sprites.get("flagSunk").BottomImage);
                     }
                 }
-                // else {
-                // for (var x : boat.location) {
-                // if(x == null) continue;
-                // _bottomBoard[x.getIndex()].setImage(GameManager.Sprites.get("error").MiddleImage);
-                // }
-                // }
             }
         }
     }

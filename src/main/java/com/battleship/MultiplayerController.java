@@ -22,19 +22,11 @@ import javafx.scene.text.Text;
 @SuppressWarnings("unused")
 public class MultiplayerController {
     @FXML
-    private TextField hostPortText;
+    private TextField hostPortText, joinPortText, joinIPText;
     @FXML
-    private TextField joinPortText;
+    private Text statusMessage, localIPText; 
     @FXML
-    private TextField joinIPText;
-    @FXML
-    private Text statusMessage;
-    @FXML
-    private Text localIPText; 
-    @FXML
-    private TitledPane joinPane; 
-    @FXML 
-    private TitledPane hostPane; 
+    private TitledPane joinPane, hostPane; 
 
     private String ip; 
 

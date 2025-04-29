@@ -1,3 +1,6 @@
+/**
+ * Handles an opponent attack as a thread
+ */
 package com.battleship.Models;
 
 import java.util.ArrayList;
@@ -12,7 +15,7 @@ public class OpponentAttack extends Thread {
     }
 
     @Override
-    public void run() {
+    public void run() { 
         if (!GameManager.isSinglePlayer) {
             // Network play: use provided protocol.
                 while (GameManager.multiplayerInput.equals("")) {} // Wait for an input from client

@@ -1,3 +1,9 @@
+/**
+ * A sprite is a multilayered image. 
+ * 
+ * Allows for 3 images to be stacked at once, and loaded into memory for quick recall. 
+ */
+
 package com.battleship.Models;
 
 import javafx.scene.image.Image;
