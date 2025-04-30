@@ -71,16 +71,12 @@ public class CreditsController {
             GameManager.LockColor = "White";
         } else if (LockBlack.isSelected()) {
             GameManager.LockColor = "Black";
-
         } else if (LockRed.isSelected()) {
             GameManager.LockColor = "Red";
-
         } else if (LockGreen.isSelected()) {
             GameManager.LockColor = "Green";
-
         } else if (LockOrange.isSelected()) {
             GameManager.LockColor = "Orange";
-
         }
     }
 
@@ -93,16 +89,12 @@ public class CreditsController {
             GameManager.SeekColor = "White";
         } else if (SeekBlack.isSelected()) {
             GameManager.SeekColor = "Black";
-
         } else if (SeekRed.isSelected()) {
             GameManager.SeekColor = "Red";
-
         } else if (SeekGreen.isSelected()) {
             GameManager.SeekColor = "Green";
-
         } else if (SeekOrange.isSelected()) {
             GameManager.SeekColor = "Orange";
-
         }
     }
 
@@ -119,5 +111,4 @@ public class CreditsController {
     private void back() throws IOException {
         App.setRoot("MainMenu");
     }
-
 }

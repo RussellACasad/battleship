@@ -7,27 +7,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OpponentAttack extends Thread {
-    BoardLocation location;
-    public String out = "";
+    BoardLocation location; // coordinates for attack
+    public String out = ""; // formatted attack result
 
     public OpponentAttack(BoardLocation location) {
-        this.location = location;
+        this.location = location; // set object's location to location
     }
 
+    // main execution flow for opponent's attack
     @Override
     public void run() { 
         if (!GameManager.isSinglePlayer) {
             // Network play: use provided protocol.
                 while (GameManager.multiplayerInput.equals("")) {} // Wait for an input from client
-                this.location = BoardLocation.parseString(GameManager.multiplayerInput);
+                this.location = BoardLocation.parseString(GameManager.multiplayerInput); // use input to determine board location for attack
                 GameManager.multiplayerInput = "";
         } else {
             // Single-player: use the enhanced AI logic.
             this.location = getNextAttackLocation();
         }
 
-        boolean didHit = false;
-        Boat hitBoat = null;
+        boolean didHit = false; // false unless otherwise true
+        Boat hitBoat = null; // null unless otherwise value
         // Check if the chosen location hits any of the player's boats.
         for (Boat boat : GameManager.player.boats) {
             for (int i = 0; i < boat.location.length; i++) {
@@ -41,7 +42,7 @@ public class OpponentAttack extends Thread {
             if (didHit) break;
         }
 
-        GameManager.opponent.hitAttempts.add(new HitAttempt(this.location, didHit));
+        GameManager.opponent.hitAttempts.add(new HitAttempt(this.location, didHit)); // opponent atack
 
         String output = (this.location != null ? this.location.name() : "ERR");
         if (hitBoat != null) {
@@ -49,7 +50,7 @@ public class OpponentAttack extends Thread {
             output += (hitBoat.isSunk() ? "t" : "f");
         }
         if (!GameManager.isSinglePlayer) {
-            GameManager.multiplayerFeed.add(output); 
+            GameManager.multiplayerFeed.add(output);  // add hitBoat output to mutliplayer feed
         }
         this.out = output;
     }
@@ -97,7 +98,6 @@ public class OpponentAttack extends Thread {
     }
 
     //Checks if the chosen location has already been attacked.
-     
     private boolean hasAttempted(BoardLocation loc) {
         for (HitAttempt attempt : GameManager.opponent.hitAttempts) {
             if (attempt.location == loc) {
@@ -107,4 +107,3 @@ public class OpponentAttack extends Thread {
         return false;
     }
 }
-//******** 

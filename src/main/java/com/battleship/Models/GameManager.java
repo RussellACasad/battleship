@@ -22,22 +22,22 @@ public class GameManager {
     public static final String VERSION = "1.0.0"; // game version
     public static final int FIREPAUSE = 3; // the pause when the fire button is pressed
 
-    public static GameMode gameMode = GameMode.classic; 
-    public static volatile GameState gameState = GameState.PlaceShips; 
-    public static Player player = new Player();
-    public static Player opponent = new Player();
-    public static ServerSocket hostSocket = null;
-    public static volatile Socket clientSocket = null;
-    public static boolean isHost = false;
-    public static BufferedReader in = null;
-    public static PrintWriter out = null;
-    public static boolean isSinglePlayer = true;
-    public static volatile String multiplayerInput = ""; 
-    public static volatile List<String> multiplayerFeed = new ArrayList<>();
-    public static HashMap<String, Sprite> Sprites = new HashMap<>(); 
-    public static String textureFolder = "default"; 
-    public static String SeekColor = "White"; 
-    public static String LockColor = "Red"; 
+    public static GameMode gameMode = GameMode.classic; // set game mode
+    public static volatile GameState gameState = GameState.PlaceShips; // track game state
+    public static Player player = new Player(); // set player
+    public static Player opponent = new Player(); // set opponent
+    public static ServerSocket hostSocket = null; // host socket for hosting multiplayer game
+    public static volatile Socket clientSocket = null; // client socket for connecting to multiplayer game
+    public static boolean isHost = false; // who is the host?
+    public static BufferedReader in = null; // data streams for multiplaer
+    public static PrintWriter out = null; // data streams for multiplayer
+    public static boolean isSinglePlayer = true; // is the game single player?
+    public static volatile String multiplayerInput = ""; // initialize multiplayerInput string variable
+    public static volatile List<String> multiplayerFeed = new ArrayList<>(); // store multiplayer history
+    public static HashMap<String, Sprite> Sprites = new HashMap<>(); // store loaded sprites
+    public static String textureFolder = "default"; // default texture pack
+    public static String SeekColor = "White"; // white crosshairs while selecting tile
+    public static String LockColor = "Red"; // red crosshairs when ready to fire
 
     /**
      * Resets the GameManager to default settings, as well as closes all multiplayer streams and sets them back to NULL. 
@@ -79,10 +79,12 @@ public class GameManager {
         }
     }
 
+    // load sprites into HashMap
     public static void LoadSprites()
     {
+        // set variable for ocean (it's the background sprite that others will be on top of)
         var ocean = new Image("/com/battleship/Assets/textures/" + textureFolder +"/other/ocean.gif"); 
-
+        // load tile sprites
         Sprites.put("ocean", new Sprite(ocean));
         Sprites.put("oceanHit", new Sprite(ocean, new Image("/com/battleship/Assets/textures/" + textureFolder +"/other/Red_Flag.gif")));
         Sprites.put("flagSunk", new Sprite(ocean, new Image("/com/battleship/Assets/textures/" + textureFolder +"/other/Green_Flag.gif")));
@@ -91,6 +93,7 @@ public class GameManager {
         Sprites.put("select", new Sprite(new Image("/com/battleship/Assets/textures/" + textureFolder + "/other/overlay/select.png"), true));
         Sprites.put("hit", new Sprite(new Image("/com/battleship/Assets/textures/" + textureFolder + "/boats/hit.gif"), true));
         Sprites.put("error", new Sprite(new Image("/com/battleship/Assets/textures/error.png"), new Image("/com/battleship/Assets/textures/error.png"), new Image("/com/battleship/Assets/textures/error.png")));
+        // load boat sprites depending on boat size
         for(var i = 0; i < 5; i++)
         {
             if(i < 1)
@@ -116,7 +119,8 @@ public class GameManager {
             }
 
         }
-        String[] colors ={"Red", "White", "Orange", "Green", "Black"}; 
+        // load different colors
+        String[] colors = {"Red", "White", "Orange", "Green", "Black"}; 
         for (var color : colors) {
             Sprites.put("ind" + color, new Sprite(new Image("/com/battleship/Assets/textures/" + textureFolder + "/indicators/ind_" + color + "_line.png"), true));
             Sprites.put("ind" + color +"Mid", new Sprite(new Image("/com/battleship/Assets/textures/" + textureFolder + "/indicators/ind_" + color + "_mid.png"), true));

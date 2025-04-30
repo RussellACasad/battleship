@@ -11,8 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<!-- root VBox element -->
 <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" stylesheets="@css/Multiplayer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.MultiplayerController">
    <children>
+      <!-- header -->
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="250.0" styleClass="test-border">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Multiplayer">
@@ -28,10 +30,13 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>
       </VBox>
+      <!-- networking information -->
       <Text fx:id="localIPText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Your Local IP:  xxx.xxx.x.xxx" />
       <Text fx:id="statusMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Select an option..." />
+      <!-- host/join options -->
       <HBox alignment="CENTER" spacing="15.0">
          <children>
+            <!-- host panel -->
             <TitledPane fx:id="hostPane" alignment="CENTER" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" text="Host">
                <content>
                   <VBox alignment="CENTER" spacing="10.0">
@@ -53,6 +58,7 @@
                   </VBox>
                </content>
             </TitledPane>
+            <!-- join panel -->
             <TitledPane fx:id="joinPane" alignment="CENTER" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" text="Join">
                <content>
                   <VBox alignment="CENTER" spacing="10.0">
@@ -76,6 +82,7 @@
             </TitledPane>
          </children>
       </HBox>
+      <!-- back button -->
       <Button mnemonicParsing="false" onAction="#back" prefWidth="100.0" styleClass="red-button" text="Back" />
       <Accordion />
       <HBox alignment="CENTER" />

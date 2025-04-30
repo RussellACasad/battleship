@@ -3,7 +3,9 @@
  */
 package com.battleship.Models;
 
+// define types of ships
 public enum BoatType {
+    // as what was stated above: type of boat(size, display name)
     carrier(5, "Carrier"),
     battleship(4, "Battleship"),
     destroyer(3, "Destroyer"),
@@ -11,14 +13,16 @@ public enum BoatType {
     patrolBoat(2, "Patrol Boat"),
     yacht(1, "Transfer Boat");
 
-    private final int size;
-    private final String name; 
+    private final int size; // how many grids does this ship take up?
+    private final String name; // what is the name of the ship?
 
+    // constructor
     BoatType(int size, String name) {
         this.size = size;
         this.name = name; 
     }
 
+    // accessors
     /**
      * Gets the size of the boat type
      * @return the boat size as an INT
@@ -36,4 +40,3 @@ public enum BoatType {
         return name; 
     }
 }
-

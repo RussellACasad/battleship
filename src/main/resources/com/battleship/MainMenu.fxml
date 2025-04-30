@@ -8,13 +8,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<!-- root VBox element -->
 <VBox alignment="CENTER" spacing="20.0" stylesheets="@css/MainMenu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.battleship.MainMenuController">
    <children>
+      <!-- game logo -->
       <ImageView fitHeight="150.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/logo.png" />
          </image>
       </ImageView>
+      <!-- menu buttons -->
       <Button maxWidth="150.0" onAction="#play" prefWidth="100.0" text="Singleplayer">
          <font>
             <Font size="15.0" />
@@ -31,7 +34,9 @@
       <Button maxWidth="150.0" mnemonicParsing="false" onAction="#exit" text="Exit">
          <font>
             <Font size="15.0" />
-         </font></Button>
+         </font>
+      </Button>
+      <!-- version -->
       <Text fx:id="versionText" fill="#a1a1a1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Version x.x.x">
          <font>
             <Font name="System Italic" size="10.0" />

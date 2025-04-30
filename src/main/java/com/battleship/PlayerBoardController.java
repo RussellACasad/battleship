@@ -144,15 +144,15 @@ public class PlayerBoardController {
     @FXML
     private StackPane root;
 
-    private ImageView[] _topBoard, _middleBoard, _bottomBoard;
-    private StackPane[] _gridBoard;
-    private int _selectedShip = 0;
-    private transient BoardLocation _toHit = null;
-    private final Alert alert = new Alert(AlertType.INFORMATION);
-    private Boat ghost = null;
-    private BoardLocation attackHoverLocation = null;
-    RadioButton[] shipRadios = new RadioButton[6];
-    private boolean BlockInput = false;
+    private ImageView[] _topBoard, _middleBoard, _bottomBoard; // cursors and hits, ships and flags, ocean grid
+    private StackPane[] _gridBoard; // holds three layers as a StackPane
+    private int _selectedShip = 0; // index of selected ship for placement
+    private transient BoardLocation _toHit = null; // target location during attack phase
+    private final Alert alert = new Alert(AlertType.INFORMATION); // game messages
+    private Boat ghost = null; // ship placement preview
+    private BoardLocation attackHoverLocation = null; // currently hovered grid cell
+    RadioButton[] shipRadios = new RadioButton[6]; // ship selection radio buttons
+    private boolean BlockInput = false; // blocks input during transitions
 
     /**
      * A thread that manages multiplayer communication.
@@ -177,12 +177,10 @@ public class PlayerBoardController {
                         Platform.runLater(() -> endMessage(true));
                         break;
                     } else if (!input.equals("ping")) { // if respomnse is anything other than "ping"
-                        GameManager.multiplayerInput = input; // The response is stored in a variable for usage
-                                                              // elsewhere.
+                        GameManager.multiplayerInput = input; // The response is stored in a variable for usage elsewhere.
                     }
                 } catch (IOException ex) {
-                    Platform.runLater(() -> closeGame(true)); // If an IO exception is thrown, the opponent has
-                                                              // disconnected.
+                    Platform.runLater(() -> closeGame(true)); // If an IO exception is thrown, the opponent has disconnected.
                     break;
                 }
             } else { // if the feed is NOT empty
@@ -196,7 +194,6 @@ public class PlayerBoardController {
             try { // Wait 100 miliseconds
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-
                 System.out.println("Error in FeedManager Wait");
             }
         }
@@ -473,12 +470,10 @@ public class PlayerBoardController {
             }
         }
 
-        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and
-                                         // ships
+        switch (GameManager.gameState) { // manages the 2 states of when the player can select -- selecting hits and ships
             case PlaceShips -> {
 
-                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship
-                                                                     // horizontally
+                var isHorizontal = horizontalShipRadio.isSelected(); // checks if the player wants to place a ship horizontally
                 var wasSet = GameManager.player.boats[_selectedShip].isPlaced;
                 var didSet = GameManager.player.boats[_selectedShip].SetLocation(selectedLocation, isHorizontal,
                         GameManager.player); // attempts to set the boat
@@ -667,11 +662,9 @@ public class PlayerBoardController {
         attackingLabel.setText("None"); // Sets label text
         MessageText.setText("Firing...");
         PlayerTurn(); // send the player's turn to the oppoent
-        PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // Pause for a
-                                                                                                          // moment
+        PauseTransition opponentTurnPause = new PauseTransition(Duration.seconds(GameManager.FIREPAUSE)); // Pause for a moment
         opponentTurnPause.setOnFinished(x -> OpponentTurn()); // when wait done, wait for opponent to fire back
-        opponentTurnPause.play(); // Runs the pause transition, pausing for a moment, then running the opponent
-                                  // turn.
+        opponentTurnPause.play(); // Runs the pause transition, pausing for a moment, then running the opponent turn.
         checkWin(); // Checks to see if either party has won after their turn.
     }
 
@@ -681,8 +674,7 @@ public class PlayerBoardController {
     private void checkWin() {
         if (GameManager.isSinglePlayer) { // Singleplayer
             var allPlayerBoatsSunk = true; // Says all player boats are sunk to start
-            for (var boat : GameManager.player.boats) { // checks all boats, if a boat is not sunk, sets
-                                                        // allPlayerBoatsSunk to false, then breaks the loop.
+            for (var boat : GameManager.player.boats) { // checks all boats, if a boat is not sunk, sets allPlayerBoatsSunk to false, then breaks the loop.
                 for (var att : boat.isHit) {
                     if (!att) {
                         allPlayerBoatsSunk = false;
@@ -901,18 +893,18 @@ public class PlayerBoardController {
      * @param grid the grid to draw. Ocean represents the player's grid, Target
      *             represents the opponent's grid.
      */
-    private void Draw(GridType grid) {
+    private void Draw(GridType grid) { // rendering of the game board
         attackingLabel.setText((_toHit == null || BlockInput) ? "None" : _toHit.toString());
         for (var i = 0; i < _middleBoard.length; i++) {
-            _bottomBoard[i].setImage(GameManager.Sprites.get("ocean").BottomImage); // Set all squares to ocean
-                                                                                    // initially
-            _middleBoard[i].setImage(null);
-            _topBoard[i].setImage(null);
+            _bottomBoard[i].setImage(GameManager.Sprites.get("ocean").BottomImage); // Set all squares to ocean initially
+            _middleBoard[i].setImage(null); // no middle image
+            _topBoard[i].setImage(null); // no top image
 
-            _topBoard[i].setRotate(0);
-            _middleBoard[i].setRotate(0);
-            _bottomBoard[i].setRotate(0);
+            _topBoard[i].setRotate(0); // no rotation
+            _middleBoard[i].setRotate(0); // no rotation
+            _bottomBoard[i].setRotate(0); // no rotation
 
+            // grid rendering
             if ((grid == GridType.Target) && (GameManager.gameState == GameState.PlayerTurn)
                     && (attackHoverLocation != null || _toHit != null) && !BlockInput) {
                 var imgName = "ind";
@@ -948,7 +940,7 @@ public class PlayerBoardController {
             }
 
         }
-
+        // when the grid is the ocean...
         if (grid == GridType.Ocean) {
 
             if (ghost != null) {
@@ -978,8 +970,7 @@ public class PlayerBoardController {
                         if (grid == GridType.Ocean) {
                             for (var hit : GameManager.opponent.hitAttempts) {
                                 if (hit.location.equals(boat.location[i])) {
-                                    _topBoard[boat.location[i].getIndex()]
-                                            .setImage(GameManager.Sprites.get("hit").TopImage);
+                                    _topBoard[boat.location[i].getIndex()].setImage(GameManager.Sprites.get("hit").TopImage);
                                     break;
                                 }
                             }
@@ -1007,6 +998,7 @@ public class PlayerBoardController {
                     }
                 }
             }
+        // when the grid is the target...
         } else if (grid == GridType.Target) {
             for (var hit : GameManager.player.hitAttempts) {
                 if (!hit.didHit) {

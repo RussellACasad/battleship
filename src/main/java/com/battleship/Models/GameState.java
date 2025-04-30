@@ -5,7 +5,7 @@
 package com.battleship.Models;
 
 public enum GameState {
-    PlaceShips,
+    PlaceShips, // PlaceShips should be the default game mode
     Wait,
     PlayerTurn,
     OpponentTurn,

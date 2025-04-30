@@ -20,25 +20,25 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.text.Text;
 
 @SuppressWarnings("unused")
-public class MultiplayerController {
+public class MultiplayerController { // multiplayer setup screen
     @FXML
-    private TextField hostPortText, joinPortText, joinIPText;
+    private TextField hostPortText, joinPortText, joinIPText; // joining inputs
     @FXML
-    private Text statusMessage, localIPText; 
+    private Text statusMessage, localIPText; // connection status and user's IP
     @FXML
-    private TitledPane joinPane, hostPane; 
+    private TitledPane joinPane, hostPane; // panels for joining and hosting options
 
     private String ip; 
 
     @FXML
-    public void initialize() throws UnknownHostException
+    public void initialize() throws UnknownHostException // called when FXML loads to fetch and display local IP
     {
         ip = InetAddress.getLocalHost().getHostAddress(); 
         localIPText.setText("Your local IP: " + ip.trim()); // shows local IP on multiplayer menu
     }
 
     @FXML
-    public void copyIP()
+    public void copyIP() // when Copy IP is clicked, this method copies it to clipboard for easy sharing
     {
         Clipboard clipboard = Clipboard.getSystemClipboard(); 
         ClipboardContent content = new ClipboardContent(); 
@@ -47,7 +47,7 @@ public class MultiplayerController {
     }
 
     @FXML
-    public void copyPort()
+    public void copyPort() // when Copy Port is clicked, this method copies it to cipboard for easy sharing
     {
         Clipboard clipboard = Clipboard.getSystemClipboard(); 
         ClipboardContent content = new ClipboardContent(); 

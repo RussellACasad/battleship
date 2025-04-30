@@ -6,10 +6,10 @@ package com.battleship.Models;
 
 public class Boat 
 {
-    public BoatType name; 
-    public BoardLocation[] location; 
-    public boolean[] isHit; 
-    public boolean isPlaced; 
+    public BoatType name; // type of boat
+    public BoardLocation[] location; // grid coordinates of boat
+    public boolean[] isHit; // which segments are hit?
+    public boolean isPlaced; // has the ship been placed?
 
     /**
      * Constructor for Boat
@@ -33,15 +33,17 @@ public class Boat
         {
             var locLetter = location.getLetter(); // gets the location letter
             var locNumber = location.getNumber(); // gets the location  number
+            // ensure boat does not extend past the board horizontally
             if (locNumber + (name.getSize() - 1) > 10) // if the boat will fall out from the board...
             {
                 return false; // ... say location set failed
             }
 
-            for (var t : player.boats) { // check the boats already placed
+            for (var t : player.boats) { // check the boat is already placed
                 if (t == this) break;
                 for(var e : t.location)
                 {
+                    // check for ship overlap
                     if (e == null) continue;
                     if(e.equals(location))
                     {
@@ -53,7 +55,7 @@ public class Boat
                     }
                 }
             }
-
+            // fill location with adjacent columns
             for (int i = 0; i < name.getSize(); i++)
             {
                 this.location[i] = BoardLocation.parseString(String.valueOf(locLetter) + String.valueOf(i + locNumber));
@@ -64,6 +66,7 @@ public class Boat
         {
             var locLetterAsNum = BoardLocation.getRowNum(location.getLetter());
             var locNumber = location.getNumber();
+            // ensure boat does not extend past the board vertically
             if (locLetterAsNum + (name.getSize() - 1) > 10)
             {
                 return false; 
@@ -73,6 +76,7 @@ public class Boat
                 if (t == this) break;
                 for(var e : t.location)
                 {
+                    // check for ship overlap
                     if (e == null) continue;
                     if(e.equals(location))
                     {
@@ -84,7 +88,7 @@ public class Boat
                     }
                 }
             }
-
+            // fill location with adjacent rows
             for (int i = 0; i < name.getSize(); i++)
             {
                 this.location[i] = BoardLocation.parseString(String.valueOf(BoardLocation.getRowChar(locLetterAsNum + i)) + String.valueOf(locNumber));
@@ -93,14 +97,15 @@ public class Boat
         }
     }
 
+    // is the ship sunk?
     public boolean isSunk()
     {
-        for (var didHit : isHit) {
-            if (!didHit)
+        for (var didHit : isHit) { // for each didHit in isHit...
+            if (!didHit) // if it's not a didHit...
             {
-                return false; 
+                return false; // return false
             }
         }
-        return true; 
+        return true; // return true
     }
 }

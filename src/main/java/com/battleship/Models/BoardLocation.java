@@ -8,6 +8,7 @@ package com.battleship.Models;
 import java.util.ArrayList;
 import java.util.List;
 
+// enum of readable board coordinates with indicies
 public enum BoardLocation {
     A1(0), A2(1), A3(2), A4(3), A5(4), A6(5), A7(6), A8(7), A9(8), A10(9),
     B1(10), B2(11), B3(12), B4(13), B5(14), B6(15), B7(16), B8(17), B9(18), B10(19),
@@ -20,12 +21,15 @@ public enum BoardLocation {
     I1(80), I2(81), I3(82), I4(83), I5(84), I6(85), I7(86), I8(87), I9(88), I10(89),
     J1(90), J2(91), J3(92), J4(93), J5(94), J6(95), J7(96), J8(97), J9(98), J10(99);
 
+    // index is the number of the coordinate
     private final int index;
 
+    // assign's constructor's parameter of index to the instance field of this.index
     private BoardLocation(int index) {
         this.index = index;
     }
 
+    // accessors
     public int getIndex() {
         return this.index;
     }
@@ -38,6 +42,7 @@ public enum BoardLocation {
         return Integer.parseInt(this.name().substring(1));
     }
 
+    // parsing methods
     public static BoardLocation parseString(String location) {
         return valueOf(location);
     }
@@ -46,6 +51,7 @@ public enum BoardLocation {
         return values()[location];
     }
 
+    // convert 1-10 to A-J
     public static char getRowChar(int rowNum) {
         if (rowNum >= 0 && rowNum <= 26) {
             return (char) (65 + rowNum - 1);
@@ -54,6 +60,7 @@ public enum BoardLocation {
         }
     }
 
+    // convert A-J to 1-10
     public static int getRowNum(char rowChar) {
         if (rowChar >= 'A' && rowChar <= 'J') {
             return rowChar - 65 + 1;
@@ -62,12 +69,13 @@ public enum BoardLocation {
         }
     }
 
+    // return a random location on the board
     public static BoardLocation randomLocation() {
         return values()[(int)(Math.random() * 100.0)];
     }
 
-    
-     //***Returns a list of bordering board locations (up, down, left, right).
+    // I couldn't have explained this any better - Jordan
+    //***Returns a list of bordering board locations (up, down, left, right).
     public List<BoardLocation> getNeighbors() {
         List<BoardLocation> neighbors = new ArrayList<>();
         // Convert to 0-indexed row and column (A=0; 1 becomes 0)
@@ -101,4 +109,3 @@ public enum BoardLocation {
         return neighbors;
     }
 }
-//***

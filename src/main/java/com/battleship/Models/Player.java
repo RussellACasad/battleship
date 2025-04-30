@@ -15,6 +15,7 @@ public class Player {
     public volatile boolean shipsSet;
 
     public Player() {
+        // fleet of ships
         boats = new Boat[6];
         boats[0] = new Boat(BoatType.carrier);
         boats[1] = new Boat(BoatType.battleship);
@@ -22,8 +23,8 @@ public class Player {
         boats[3] = new Boat(BoatType.submarine);
         boats[4] = new Boat(BoatType.patrolBoat);
         boats[5] = new Boat(BoatType.yacht);
-        shipsSet = false;
-        hitAttempts = new ArrayList<>();
+        shipsSet = false; // set to true after all ships are set
+        hitAttempts = new ArrayList<>(); // track hit attempts
     }
 
     /**
