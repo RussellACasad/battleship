@@ -1,4 +1,4 @@
-Final project for CPT-237-W34 (Java 2) at Greenville Tech, 2025 
+Final project for Java 2 at Greenville Tech, 2025 
 
 This project is not affiliated in any way with Hasbro, or any other owners of the Battleship board game. 
 
