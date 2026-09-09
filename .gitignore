@@ -1,1 +1,3 @@
-target/classes/
+target
+.vscode
+.DS_Store
